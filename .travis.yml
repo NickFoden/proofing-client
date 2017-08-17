@@ -14,7 +14,7 @@ before_deploy:
 
 deploy:
   provider: script
-  script: netlify deploy -s "66c5e703-1f2a-4e1b-be30-fe3aae251233" -t "7b5cd8d1673fed6759f0a8b1e14f222b6b12b62cb38e1f0f9cd89dae3ef80b6e" -p ./build
+  script: netlify deploy -s $NETLIFY_SITE_ID -t $NETLIFY_ACCESS_TOKEN -p ./build
   skip_cleanup: true
   on:
     branch: master
