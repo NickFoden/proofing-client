@@ -12,9 +12,9 @@ export function PhotoUploadForm (props) {
             </div>
             <div className="field">
                 <label>Title</label>
-                <input className="input" name="title" type="text" placeholder="Title" />
+                <input className="input" name="title" type="text" placeholder="(Optional)" />
             </div>
-            <button className="upload-button" type="submit">Post</button>
+            <button className="upload-button" type="submit">Upload</button>
         </form>
     );
 }
