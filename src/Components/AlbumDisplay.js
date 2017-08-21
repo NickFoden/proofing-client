@@ -1,4 +1,6 @@
 import React from 'react';
+import {Approve} from './Approve';
+import './AlbumDisplay.css';
 import {CloudinaryContext, Transformation, Image} from 'cloudinary-react';
 require('dotenv').config();
 const {CLOUD_NAME, TESTING} = process.env;
@@ -8,13 +10,15 @@ console.log("Here it is", CLOUD_NAME);
 console.log("testing", TESTING);
     return (
         <div id="album">
-           {/*} <CloudinaryContext cloudName={CLOUD_NAME}>
-                <Image publicId="gmssxsrnfd5i7rivupjx">
-                </Image>        
-            </CloudinaryContext>*/}
+            <div className="Photo">
+                <CloudinaryContext cloudName={'proofer'}>
+                    <Image publicId="gmssxsrnfd5i7rivupjx">
+                    </Image>        
+                </CloudinaryContext>
+                <Approve />
+            </div>
         </div>
     );
 }
-
 
 export default AlbumDisplay;
