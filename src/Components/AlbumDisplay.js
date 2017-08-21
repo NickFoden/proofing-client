@@ -3,11 +3,11 @@ import {Approve} from './Approve';
 import './AlbumDisplay.css';
 import {CloudinaryContext, Transformation, Image} from 'cloudinary-react';
 require('dotenv').config();
-const {CLOUD_NAME, TESTING} = process.env;
+let CLOUD_NAME = process.env.CLOUD_NAME;
+
 
 export function AlbumDisplay (props) {
-console.log("Here it is", CLOUD_NAME);
-console.log("testing", TESTING);
+console.log(CLOUD_NAME);
     return (
         <div id="album">
             <div className="Photo">

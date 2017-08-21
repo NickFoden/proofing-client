@@ -1,26 +1,28 @@
 import React from 'react';
+import {Settings} from './Settings';
 import { 
     BrowserRouter as Router,
     Route,
     Link
  } from 'react-router-dom';
 
-const HeaderNav = () => (
+import './HeaderNav.css';
+
+const HeaderNav = () => {
+    return (
     <Router>
         <div>
+            <ul>
+                <li><Link to='/'> Home </Link></li>
+                <li><Link to='/photos'> Photos</Link></li>
+                <li><Link to='/register'> Register</Link></li>
+                <li><Link to='/LogIn'> Log In</Link></li>
+                <li><Link to='/settings'> Settings</Link></li>
+            </ul>    
 
-        {/*<Route path="/contacts" component={}>
-            <IndexRoute component={ContactListContainer} />
-            <Route path=":contactId" component={ContactContainer} />
-        </Route>*/}
-            <p> Hello</p>
-           {/* <link to='/'> Home </link>
-            <link to='/photos'> Photos</link>
-            <link to='/register'> Register</link>
-            <link to='/LogIn'> Log In</link>
-            <link to='/settings'> Settings</link>*/}
+            <Route exact path="/settings" component={Settings}/>
         </div>
     </Router>        
-)
+)}
 
 export default HeaderNav
