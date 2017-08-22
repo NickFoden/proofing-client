@@ -1,7 +1,5 @@
 import React from 'react';
 import './PhotoUploadForm.css';
-import {Image} from 'cloudinary-react';
-
 
 export function PhotoUploadForm (props) {
     return (
