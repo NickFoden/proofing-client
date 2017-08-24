@@ -2,7 +2,7 @@ import React from 'react';
 import {Images} from './Images';
 import './AlbumDisplay.css';
 
-export function AlbumDisplay (props) {
+export default function AlbumDisplay (props) {
     return (
         <div id="album">
             <Images />
@@ -10,4 +10,3 @@ export function AlbumDisplay (props) {
     );
 }
 
-export default AlbumDisplay;

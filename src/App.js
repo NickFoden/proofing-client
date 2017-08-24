@@ -5,7 +5,8 @@ import {
   Route,
   Link
 } from 'react-router-dom';
-import {PhotoUploadForm, AlbumDisplay} from'./Components/Index';
+import PhotoUploadForm from'./Components/PhotoUploadForm';
+import AlbumDisplay from'./Components/AlbumDisplay';
 import HeaderNav from './Components/HeaderNav';
 
 class App extends Component {
