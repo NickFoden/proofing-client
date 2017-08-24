@@ -1,9 +1,21 @@
 import React from 'react';
 import './PhotoUploadForm.css';
+import API_BASE_URL from '../config';
 
-export function PhotoUploadForm (props) {
+class PhotoUploadForm extends React.Component {
+    constructor(props){
+        super(props);
+    }
+
+    handleSubmit(e){
+        fetch(API_BASE_URL, {
+            method: 'POST'
+        });
+    }
+    render(){
+
     return (
-        <form className="upload" action="/create" method="post">
+        <form className="upload" onSubmit={this.handleSubmit}>
             <div className="field">
                 <label>Image</label>
                 <input className="input" name="image" type="file" />
@@ -15,6 +27,7 @@ export function PhotoUploadForm (props) {
             <button className="upload-button" type="submit">Upload</button>
         </form>
     );
+    }
 }
-    
+
 export default PhotoUploadForm;

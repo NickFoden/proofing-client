@@ -3,15 +3,15 @@ import {Approve} from './Approve';
 import {API_BASE_URL} from '../config';
 
 export function Images (props) {
-        return fetch('${API_BASE_URL}')
+        /*return fetch(`${API_BASE_URL}`)
         .then (res => {
             return res.json;
         })
-        .then(images =>
+        .then(images => {
             this.setState(
-                images: images.url;
+                images: images.url
         });
-        const images = this.state.url.map(image, id => (
+        const images = this.state.images.map(image, id => (
            <Image
                 key={id}
                 url={image.url}
@@ -22,10 +22,10 @@ export function Images (props) {
             <div className="images">
                 {images}
             </div>    
-        )
+        )*/
         return (
             <div id="Images">
-                {body}
+                {/*{body}*/}
             </div>
         );
     }
