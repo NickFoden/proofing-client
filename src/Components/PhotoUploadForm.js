@@ -6,10 +6,13 @@ class PhotoUploadForm extends React.Component {
     constructor(props){
         super(props);
     }
+    
 
     handleSubmit(e){
         fetch(API_BASE_URL, {
-            method: 'POST'
+            method: 'POST',
+            file: Image,
+            body: Image
         });
     }
     render(){
