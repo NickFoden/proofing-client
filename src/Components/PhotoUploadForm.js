@@ -10,18 +10,16 @@ class PhotoUploadForm extends React.Component {
 
     handleSubmit(e){
         fetch(API_BASE_URL, {
-            method: 'POST',
-            file: Image,
-            body: Image
+            method: 'POST'
         });
     }
     render(){
 
     return (
-        <form className="upload" onSubmit={this.handleSubmit}>
+        <form className="upload" encType="multipart/form-data" onSubmit={this.handleSubmit}>
             <div className="field">
                 <label>Image</label>
-                <input className="input" name="image" type="file" />
+                <input className="input" name="image" type="file" multiple="multiple" />
             </div>
             <div className="field">
                 <label>Title</label>
