@@ -14,7 +14,7 @@ class App extends Component {
     return (
       <div className="App">
         <HeaderNav />
-        <h2>Welcome to Proofing App The Wild Client Side</h2>
+        <h2>Welcome to Proofing</h2>
         <PhotoUploadForm/>
         <AlbumDisplay/>
       </div>

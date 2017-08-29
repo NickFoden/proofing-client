@@ -9,8 +9,10 @@ class PhotoUploadForm extends React.Component {
     
 
     handleSubmit(e){
+        e.preventDefault();
         fetch(API_BASE_URL, {
-            method: 'POST'
+            method: 'POST',
+            body: file
         });
     }
     render(){
@@ -19,7 +21,7 @@ class PhotoUploadForm extends React.Component {
         <form className="upload" encType="multipart/form-data" onSubmit={this.handleSubmit}>
             <div className="field">
                 <label>Image</label>
-                <input className="input" name="image" type="file" multiple="multiple" />
+                <input id="upload" className="input" name="file" type="file" multiple="multiple" />
             </div>
             <div className="field">
                 <label>Title</label>
