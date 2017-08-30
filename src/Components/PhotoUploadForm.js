@@ -48,16 +48,8 @@ class PhotoUploadForm extends React.Component {
     render(){
 
     return (
-        <form className="upload" encType="multipart/form-data" onSubmit={this.handleSubmit}>
-            <Dropzone onDrop={this.uploadFile.bind(this)} />
-            <div className="field">
-                <label>Title</label>
-                <input className="input" name="title" type="text" placeholder="(Optional)" />
-            </div>
-            <button className="upload-button" type="submit">Upload</button>
-        </form>
-    );
-    }
+        <Dropzone onDrop={this.uploadFile.bind(this)} />
+    )}
 }
 
 export default PhotoUploadForm;
