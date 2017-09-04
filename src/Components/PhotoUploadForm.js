@@ -42,14 +42,32 @@ class PhotoUploadForm extends React.Component {
                 return
             }
             console.log('UPLOAD COMPLETE: '+JSON.stringify(resp.body))
+            
+            const uploaded = resp.body         
         })
     }
-
     render(){
-
-    return (
-        <Dropzone onDrop={this.uploadFile.bind(this)} />
-    )}
+        return (
+            <Dropzone onDrop={this.uploadFile.bind(this)} />   
+        )}
 }
 
 export default PhotoUploadForm;
+
+/*const uploaded = resp.body
+
+let updatedImages = Object.assign([], this.state.images)
+updatedImages.push(uploaded)
+
+this.setState({
+    images: updatedImages
+})
+        const list = this.state.images.map((image, i) => {
+            return (
+                <li key={i}>
+                    <img src={image.secure_url} />
+                </li>
+            )
+        })
+
+*/
