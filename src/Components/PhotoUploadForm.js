@@ -3,6 +3,7 @@ import './PhotoUploadForm.css';
 import Dropzone from 'react-dropzone'
 import sha1 from 'sha1'
 import superagent from 'superagent'
+import { savePhoto } from './actions/index'
 
 class PhotoUploadForm extends React.Component {
     constructor(props){
@@ -43,7 +44,9 @@ class PhotoUploadForm extends React.Component {
             }
             console.log('UPLOAD COMPLETE: '+JSON.stringify(resp.body))
             
-            const uploaded = resp.body         
+            const uploaded = resp.body
+            this.props.dispatch(savePhoto(uploaded)) 
+                   
         })
     }
     render(){
@@ -53,21 +56,3 @@ class PhotoUploadForm extends React.Component {
 }
 
 export default PhotoUploadForm;
-
-/*const uploaded = resp.body
-
-let updatedImages = Object.assign([], this.state.images)
-updatedImages.push(uploaded)
-
-this.setState({
-    images: updatedImages
-})
-        const list = this.state.images.map((image, i) => {
-            return (
-                <li key={i}>
-                    <img src={image.secure_url} />
-                </li>
-            )
-        })
-
-*/
