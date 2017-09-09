@@ -3,6 +3,8 @@ import './PhotoUploadForm.css';
 import Dropzone from 'react-dropzone'
 import sha1 from 'sha1'
 import superagent from 'superagent'
+import { Component } from 'react';
+import { connect } from 'react-redux'
 import { savePhoto } from './actions/index'
 
 class PhotoUploadForm extends React.Component {
@@ -44,8 +46,8 @@ class PhotoUploadForm extends React.Component {
             }
             console.log('UPLOAD COMPLETE: '+JSON.stringify(resp.body))
             
-            const uploaded = resp.body
-            this.props.dispatch(savePhoto(uploaded)) 
+            let uploaded = resp.body
+            this.props.map(dispatch(savePhoto(uploaded))) 
                    
         })
     }

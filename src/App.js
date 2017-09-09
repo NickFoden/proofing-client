@@ -6,9 +6,9 @@ import {
   Link
 } from 'react-router-dom';
 import { connect } from 'react-redux'
-import PhotoUploadForm from'./components/PhotoUploadForm';
-import AlbumDisplay from'./components/AlbumDisplay';
-import HeaderNav from './components/HeaderNav';
+import PhotoUploadForm from'./components/PhotoUploadForm'
+import AlbumDisplay from'./components/AlbumDisplay'
+import HeaderNav from './components/HeaderNav'
 
 class App extends Component {
   render() {
