@@ -47,13 +47,15 @@ class PhotoUploadForm extends React.Component {
             console.log('UPLOAD COMPLETE: '+JSON.stringify(resp.body))
             
             let uploaded = resp.body
-            this.props.map(dispatch(savePhoto(uploaded))) 
+            //this.props.map(dispatch(savePhoto(uploaded))) 
                    
         })
     }
     render(){
         return (
-            <Dropzone onDrop={this.uploadFile.bind(this)} />   
+            <div className="drop">
+                <Dropzone onDrop={this.uploadFile.bind(this)} />  
+            </div>     
         )}
 }
 
