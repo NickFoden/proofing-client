@@ -1,4 +1,5 @@
 import React from 'react';
+import Redux from 'react-redux'
 import './PhotoUploadForm.css';
 import Dropzone from 'react-dropzone'
 import sha1 from 'sha1'
@@ -47,7 +48,7 @@ class PhotoUploadForm extends React.Component {
             console.log('UPLOAD COMPLETE: '+JSON.stringify(resp.body))
             
             let uploaded = resp.body
-            //this.props.map(dispatch(savePhoto(uploaded))) 
+            this.props.dispatch(savePhoto(uploaded)) 
                    
         })
     }
@@ -59,4 +60,4 @@ class PhotoUploadForm extends React.Component {
         )}
 }
 
-export default PhotoUploadForm;
+export default connect()(PhotoUploadForm);
