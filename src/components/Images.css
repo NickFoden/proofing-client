@@ -1,0 +1,14 @@
+.imgNo {
+    border: 1px solid red;
+}
+
+img {
+    margin: 0;
+    padding: 0;
+}
+
+.imgYes {
+    border: 1px solid green;
+    margin: 0 0 0 0;
+    padding: 0 0;
+}

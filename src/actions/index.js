@@ -22,7 +22,7 @@ export const savePhoto = (uploaded) => {
       })
     })
     .then(response => response.json())
-    .then(response => dispatch(receiveAlbum(json)))
+    .then(response => dispatch(receiveAlbum()))
     .catch(err => console.log(err))
   }
 }

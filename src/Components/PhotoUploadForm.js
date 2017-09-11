@@ -5,7 +5,7 @@ import sha1 from 'sha1'
 import superagent from 'superagent'
 import { Component } from 'react';
 import { connect } from 'react-redux'
-import { savePhoto } from './actions/index'
+import { savePhoto } from '../actions/index'
 
 class PhotoUploadForm extends React.Component {
     constructor(props){
