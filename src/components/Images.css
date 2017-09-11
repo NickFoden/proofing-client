@@ -1,14 +1,22 @@
-.imgNo {
-    border: 1px solid red;
+#imgNo {
+    border: 2px solid #ff4d4d
 }
 
-img {
-    margin: 0;
-    padding: 0;
-}
-
-.imgYes {
-    border: 1px solid green;
-    margin: 0 0 0 0;
+.rawImage {
+    width: 300px;
+    height: auto;
+    margin: 0 0;
     padding: 0 0;
+}
+
+.photoCard {
+    width: 300px;
+    height: auto;
+    margin: 0 0;
+    padding: 0 0;
+}
+
+#imgYes {
+    border: 2px solid #99ff99;
+    
 }

@@ -1,5 +1,6 @@
 import React from 'react';
 import './Images.css';
+import Proofing from './Proofing'
 
 export function Images (props) {
     const testImage = "http://res.cloudinary.com/proofer/image/upload/v1502816770/gmssxsrnfd5i7rivupjx.jpg"
@@ -7,7 +8,10 @@ export function Images (props) {
     return (
         <div id="Images">
             <ul> 
-                <li className="imgYes"><img src={testImage} alt="imageToBeApproved" /></li>
+                <li>
+                    <img className="rawImage" id="imgYes" src={testImage} alt="imageToBeApproved" />
+                    <Proofing />
+                </li>
             </ul>
         </div>
         );
