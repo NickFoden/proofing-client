@@ -4,11 +4,14 @@ const receiveAlbum = (album) => ({
   album
 })
 
-const GET_ALBUM = 'GET_ALBUM'
-const getAlbum = (album) => ({
-  type: GET_ALBUM,
-  album
-})
+export const getAlbum = () => {
+  return dispatch => {
+    fetch('http://localhost:8080')
+    .then(response => response.json())
+    .then(photos => dispatch(receiveAlbum(photos)))
+  }
+}
+
 
 export const savePhoto = (uploaded) => {
   return dispatch => {

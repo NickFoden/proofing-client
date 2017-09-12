@@ -8,12 +8,10 @@ const initialState = {
         return {
           ...state,
           data: action.album
-          }
-  
+        }
       default:
         return state
     }
   }
-
 
   export default album
