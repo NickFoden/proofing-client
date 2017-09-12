@@ -1,21 +1,20 @@
 import React from 'react';
-import { connect } from 'react-redux'
 import './Images.css';
 import Proofing from './Proofing'
 
 export function Images (props) {
-    /*const testImage = "http://res.cloudinary.com/proofer/image/upload/v1502816770/gmssxsrnfd5i7rivupjx.jpg"
-    const testStatus = "imgYes" */
+ 
+    const { images } = props;
     return (
         <div id="Images">
             <ul> 
-                <li>
-                    <img className="rawImage" id={props.status} src={props.image_url} alt="imageToBeApproved" />
+                {images.map((image, index) => <li key={index}>
+                    <img className="rawImage" src={image.image[0].secure_url} alt="imageToBeApproved" />
                     <Proofing />
-                </li>
+                </li>)}
             </ul>
         </div>
         );
     }
     
-export default connect()(Images);
+export default Images;

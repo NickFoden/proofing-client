@@ -1,15 +1,15 @@
-const RECEIVE_ALBUM = 'RECEIVE_ALBUM'
+const RECEIVE_ALBUM = 'RECEIVE_ALBUM';
+const GET_ALBUM = 'GET_ALBUM';
 const receiveAlbum = (album) => ({
   type: RECEIVE_ALBUM,
   album
 })
 
-export const getAlbum = () => {
-  return dispatch => {
-    fetch('http://localhost:8080')
-    .then(response => response.json())
-    .then(photos => dispatch(receiveAlbum(photos)))
-  }
+export function getAlbum(data) {
+  return {
+    type: GET_ALBUM,
+    data
+  };
 }
 
 

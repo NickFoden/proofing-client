@@ -1,23 +1,42 @@
 import React from 'react';
 import {Images} from './Images';
-import { connect } from 'react-redux'
+import { connect } from 'react-redux';
+import axios from 'axios';
+import { getAlbum } from '../actions/index';
 import './AlbumDisplay.css';
 /*import Lightbox from 'react-image-lightbox';*/
 
-function AlbumDisplay (props) {
+class AlbumDisplay extends React.Component {
+    constructor(props) {
+        super(props);
+    }
 
-    /*let testing = [
-        {imageUrl: "http://res.cloudinary.com/proofer/image/upload/v1502816770/gmssxsrnfd5i7rivupjx.jpg",
-        status: "imgYes" },
-        {imageUrl: "http://res.cloudinary.com/proofer/image/upload/v1505159131/grcqij4qz4ugcdy4ma3f.jpg",
-        status: "imgNo" }
-    ] */
+    componentDidMount() {
+        axios.get('http://localhost:8080')
+            .then((result) => {
+                 this.props.getAlbum(result.data);
+            });
+    }
 
-    return (
-        <div id="album">
-            <Images />
-        </div>
-    );
+    render() {
+        return(
+            <div id="album">
+                <Images images={this.props.allAlbums}/>
+            </div>
+        );
+    }
+}
+const mapDispatchToProps = (dispatch) => {
+    return {
+        getAlbum: (data) => {
+            return dispatch(getAlbum(data));
+        }
+    }
+}
+const mapStateToProps = (state) => {
+    return {
+        allAlbums: state.albums.data
+    };
 }
 
-export default connect()(AlbumDisplay)
+export default connect(mapStateToProps, mapDispatchToProps)(AlbumDisplay)

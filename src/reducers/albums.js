@@ -9,6 +9,11 @@ const initialState = {
           ...state,
           data: action.album
         }
+      case 'GET_ALBUM':
+        return {
+          ...state,
+          data: action.data
+        }
       default:
         return state
     }
