@@ -12,7 +12,6 @@ export function getAlbum(data) {
   };
 }
 
-
 export const savePhoto = (uploaded) => {
   return dispatch => {
     fetch('http://localhost:8080/', {
