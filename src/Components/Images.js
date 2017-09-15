@@ -9,7 +9,7 @@ export function Images (props) {
         <div id="Images">
             <ul> 
                 {images.map((image, index) => <li key={index}>
-                    <img className="rawImage" src={image.image[0].secure_url} alt="imageToBeApproved" />
+                    <img className="rawImage" id={image.status} src={image.image[0].secure_url} alt="imageToBeApproved" />
                     <Proofing />
                 </li>)}
             </ul>
