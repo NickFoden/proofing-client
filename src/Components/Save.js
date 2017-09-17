@@ -5,7 +5,7 @@ import saveAction from '../actions/'
 export default function Save (props) {
     return (
         <div>
-            <button id="Save"> Save Review</button>
+            <button id="Save">Save Review</button>
         </div>
     );
 }
