@@ -29,7 +29,7 @@ export const savePhoto = (uploaded) => {
   }
 }
 
-export const saveAction = (...images) => {
+/*export const saveAction = (...images) => {
   return dispatch => {
     fetch('http://localhost:8080/', {
       method: 'POST',
@@ -44,4 +44,4 @@ export const saveAction = (...images) => {
     .then(response => dispatch(receiveAlbum()))
     .catch(err => console.log(err))
   }
-}
+}*/
