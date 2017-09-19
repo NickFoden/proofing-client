@@ -1,8 +1,8 @@
 import { combineReducers } from 'redux'
-import albums from './albums'
+import album from './albums'
 
 const rootReducer = combineReducers({
-  albums
+  album
 })
 
 export default rootReducer

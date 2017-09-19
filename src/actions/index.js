@@ -1,3 +1,4 @@
+
 const RECEIVE_ALBUM = 'RECEIVE_ALBUM';
 const receiveAlbum = (album) => ({
   type: RECEIVE_ALBUM,
@@ -23,11 +24,20 @@ export const savePhoto = (uploaded) => {
         uploaded
       })
     })
-    .then(response => response.json())
-    .then(response => dispatch(receiveAlbum()))
+    .then(
+      fetch('http://localhost:8080')
+      .then(response => response.json())
+      .then((response) => {
+        console.log(response),
+        dispatch(getAlbum(response));
+      })
+    )
+    /*.then(response => dispatch(receiveAlbum()))*/
     .catch(err => console.log(err))
   }
 }
+
+
 
 /*export const saveAction = (...images) => {
   return dispatch => {

@@ -35,7 +35,7 @@ const mapDispatchToProps = (dispatch) => {
 }
 const mapStateToProps = (state) => {
     return {
-        allAlbums: state.albums.data
+        allAlbums: state.album.data
     };
 }
 
