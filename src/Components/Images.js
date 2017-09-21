@@ -1,20 +1,31 @@
 import React from 'react';
 import './Images.css';
-import Proofing from './Proofing'
 
 export function Images (props) {
- 
+
     const { images } = props;
+
+    /*approve(image) {
+        return;
+    }
+
+    disprove(image) {
+        return;
+    }*/
+
     return (
-        <div id="Images">
+        <div>
             <ul> 
                 {images.map((image, index) => <li key={index}>
                     <img className={image.class} id={image.status} src={image.image[0].secure_url} alt="imageToBeApproved" />
-                    <Proofing />
+                    <button id="yes" onClick={() => this.approve(image.image[0]._id)}> </button>
+                    <button id="no" onClick={() => this.disprove(image.image[0]._id)} > </button>
                 </li>)}
             </ul>
-        </div>
-        );
-    }
+        </div>    
+     )
+}
+
     
 export default Images;
+

@@ -18,6 +18,13 @@ class AlbumDisplay extends React.Component {
             });
     }
 
+    componentWillUpdate() {
+        axios.get('http://localhost:8080')
+            .then((result) => {
+                 this.props.getAlbum(result.data);
+            });
+    }
+
     render() {
         return(
             <div id="album">
