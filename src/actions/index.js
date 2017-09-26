@@ -28,7 +28,7 @@ export const savePhoto = (uploaded) => {
       fetch('http://localhost:8080')
       .then(response => response.json())
       .then((response) => {
-        console.log(response),
+        console.log(response);
         dispatch(getAlbum(response));
       })
     )

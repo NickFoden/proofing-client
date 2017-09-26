@@ -1,5 +1,5 @@
 import React from 'react';
-import {Images} from './Images';
+import Images from './Images';
 import { connect } from 'react-redux';
 import axios from 'axios';
 import { getAlbum } from '../actions/index';
