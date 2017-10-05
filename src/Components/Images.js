@@ -9,9 +9,7 @@ class Images extends React.Component {
         this.disprove = this.disprove.bind(this);
     }
     approve(image) {
-       console.log(image);
-       return {
-       }
+        console.log(image);
     }
 
     disprove(image) {
@@ -24,8 +22,9 @@ class Images extends React.Component {
                 <ul> 
                     {this.props.images.map((image, index) => <li key={index}>
                         <img className={image.class} src={image.image[0].secure_url} alt="imageToBeApproved" />
-                        <button id="yes" onClick={() => this.approve(image)}> </button>
-                        <button id="no" onClick={() => this.disprove(image)} > </button>
+                        <br />
+                        <button id="yes" onClick={(e) => this.approve(image)}> </button>
+                        <button id="no" onClick={(e) => this.disprove(image)} > </button>
                     </li>)}
                 </ul>
             </div>
