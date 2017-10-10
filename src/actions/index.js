@@ -7,6 +7,12 @@ export function getAlbum(data) {
   };
 }
 
+export const approve = (image) => {
+  return (
+    image.class = "rawImageYes"
+  )
+}
+
 export const savePhoto = (uploaded) => {
   return dispatch => {
     fetch('http://localhost:8080/', {

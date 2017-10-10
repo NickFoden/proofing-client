@@ -2,14 +2,17 @@ const initialState = {
     imageData: []
   }
 
+  const APPROVE = 'APPROVE';
+  const DISPROVE = 'DISPROVE';
+
   const images = (state = initialState, action) => {
     switch(action.type) {
-      case 'APPROVE':
+      case APPROVE:
         return {
           ...state,
           imageData : action.imageData
         }
-      case 'DISPROVE':
+      case DISPROVE:
         return {
           ...state,
           imageData: action.imageData

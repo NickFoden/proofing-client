@@ -2,9 +2,8 @@ import React from 'react';
 import Images from './Images';
 import { connect } from 'react-redux';
 import axios from 'axios';
-import { getAlbum } from '../actions/index';
+import { getAlbum, approve } from '../actions/index';
 import './AlbumDisplay.css';
-/*import Lightbox from 'react-image-lightbox';*/
 
 class AlbumDisplay extends React.Component {
     constructor(props) {
@@ -17,18 +16,24 @@ class AlbumDisplay extends React.Component {
                  this.props.getAlbum(result.data);
             });
     }
+    
+    approve = (image) => {
+        return (
+          image.class = "rawImageYes"
+        )
+      }
 
-    componentWillUpdate() {
+    /*componentWillUpdate() {
         axios.get('http://localhost:8080')
             .then((result) => {
                  this.props.getAlbum(result.data);
             });
-    }
+    }*/
 
     render() {
         return(
             <div id="album">
-                <Images images={this.props.allAlbums}/>
+                <Images approve={this.props.approve} images={this.props.allAlbums}/>
             </div>
         );
     }
