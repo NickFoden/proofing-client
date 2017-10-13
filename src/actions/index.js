@@ -7,10 +7,16 @@ export function getAlbum(data) {
   };
 }
 
-export const approve = (image) => {
-  return (
-    image.class = "rawImageYes"
-  )
+const APPROVE = 'APPROVE';
+export function approve(image) {
+  fetch('http://localhost:8080/images/' + image._id +'/approve', {
+    method: 'PUT'
+  })
+  
+  return {
+    type: APPROVE,
+    image
+  };
 }
 
 export const savePhoto = (uploaded) => {

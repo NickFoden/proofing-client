@@ -14,6 +14,20 @@ const initialState = {
           ...state,
           data: action.data
         }
+      case 'APPROVE':
+        return {
+          ...state,
+          data: state.data.map((imageData) => {
+            if (action.image._id !== imageData._id) {
+              return imageData;
+            }
+
+            return {
+              ...imageData,
+              approved: true
+            }
+          })
+        }
       default:
         return state
     }

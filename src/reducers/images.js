@@ -7,11 +7,7 @@ const initialState = {
 
   const images = (state = initialState, action) => {
     switch(action.type) {
-      case APPROVE:
-        return {
-          ...state,
-          imageData : action.imageData
-        }
+      
       case DISPROVE:
         return {
           ...state,

@@ -7,6 +7,8 @@ class Images extends React.Component {
         super();
     }
     render() {
+        // const className = image.approved ? 'img-approved' : 'img-not-approved'
+
         return(
             <div>
                 <ul> 

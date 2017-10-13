@@ -16,19 +16,6 @@ class AlbumDisplay extends React.Component {
                  this.props.getAlbum(result.data);
             });
     }
-    
-    approve = (image) => {
-        return (
-          image.class = "rawImageYes"
-        )
-      }
-
-    /*componentWillUpdate() {
-        axios.get('http://localhost:8080')
-            .then((result) => {
-                 this.props.getAlbum(result.data);
-            });
-    }*/
 
     render() {
         return(
@@ -38,17 +25,14 @@ class AlbumDisplay extends React.Component {
         );
     }
 }
-const mapDispatchToProps = (dispatch) => {
-    return {
-        getAlbum: (data) => {
-            return dispatch(getAlbum(data));
-        }
-    }
-}
-const mapStateToProps = (state) => {
-    return {
-        allAlbums: state.album.data
-    };
-}
 
-export default connect(mapStateToProps, mapDispatchToProps)(AlbumDisplay)
+const mapStateToProps = (state) => ({
+    allAlbums: state.album.data
+});
+
+export default connect(mapStateToProps, { approve, getAlbum })(AlbumDisplay)
+
+
+// const x = 3;
+
+// export x;
