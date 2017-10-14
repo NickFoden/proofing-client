@@ -6,23 +6,23 @@ li {
 }
 
 .rawImage {
-    width: 300px;
-    height: auto;
+    width: auto;
+    height: 300px;
     margin: 0 0 0 0;
     padding: 0 0;
 }
 
 .rawImageNo {
-    width: 300px;
-    height: auto;
+    width: auto;
+    height: 300px;
     margin: 20 0 0 0;
     padding: 0 0;
     border: 2px solid #ff4d4d;
 }
 
 .rawImageYes {
-    width: 300px;
-    height: auto;
+    width: auto;
+    height: 300px;
     margin: 20 0 0 0;
     padding: 0 0;
     border: 2px solid #99ff99;

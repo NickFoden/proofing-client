@@ -9,7 +9,7 @@ class Images extends React.Component {
         return(
             <div>
                 <ul> 
-                    {this.props.images.map((image, index) => 
+                    {this.props.images.slice(0).reverse().map((image, index) => 
                         <li key={index}> 
                             <img className={image.approved ? 'rawImageYes ' : 'rawImageNo'} 
                             src={image.image[0].secure_url} alt="imageToBeApproved" />
