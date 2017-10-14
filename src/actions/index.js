@@ -7,12 +7,19 @@ export function getAlbum(data) {
   };
 }
 
+const RECEIVE_ALBUM = 'RECEIVE_ALBUM';
+export function receiveAlbum(album) {
+  return {
+    type: RECEIVE_ALBUM,
+    album
+  };
+}
+
 const APPROVE = 'APPROVE';
 export function approve(image) {
   /*fetch('http://localhost:8080/images/' + image._id +'/approve', {
     method: 'PUT'
   })*/
-
   return {
     type: APPROVE,
     image

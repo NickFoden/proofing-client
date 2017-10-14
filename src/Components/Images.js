@@ -5,17 +5,18 @@ import { connect } from 'react-redux'
 class Images extends React.Component {
     
     render() {
-        const imageStatus = image.approved ? 'rawImageYes ' : 'rawImageNo';
-
+    
         return(
             <div>
                 <ul> 
-                    {this.props.images.map((image, index) => <li key={index}>
-                        <img className={imageStatus} src={image.image[0].secure_url} alt="imageToBeApproved" />
-                        <br />
-                        <button id="yes" onClick={(e) => this.props.approve(image)}> </button>
-                        <button id="no" onClick={(e) => this.props.disprove(image)} > </button>
-                    </li>)}
+                    {this.props.images.map((image, index) => 
+                        <li key={index}> 
+                            <img className={image.approved ? 'rawImageYes ' : 'rawImageNo'} 
+                            src={image.image[0].secure_url} alt="imageToBeApproved" />
+                            <br />
+                            <button id="yes" onClick={(e) => this.props.approve(image)}> </button>
+                            <button id="no" onClick={(e) => this.props.disprove(image)} > </button>
+                        </li>)}
                 </ul>
             </div>
         )       
