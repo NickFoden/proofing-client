@@ -28,6 +28,20 @@ const initialState = {
             }
           })
         }
+      case 'DISPROVE':
+        return {
+          ...state,
+          data: state.data.map((imageData) => {
+            if (action.image._id !== imageData._id) {
+              return imageData;
+            }
+
+            return {
+              ...imageData,
+              approved: false
+            }
+          })
+        }
       default:
         return state
     }

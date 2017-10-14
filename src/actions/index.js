@@ -7,13 +7,14 @@ export function getAlbum(data) {
   };
 }
 
+/*   Added on whim, need to check
 const RECEIVE_ALBUM = 'RECEIVE_ALBUM';
 export function receiveAlbum(album) {
   return {
     type: RECEIVE_ALBUM,
     album
   };
-}
+}*/
 
 const APPROVE = 'APPROVE';
 export function approve(image) {
@@ -22,6 +23,17 @@ export function approve(image) {
   })*/
   return {
     type: APPROVE,
+    image
+  };
+}
+
+const DISPROVE = 'DISPROVE';
+export function disprove(image) {
+  /*fetch('http://localhost:8080/images/' + image._id +'/disprove', {
+    method: 'PUT'
+  })*/
+  return {
+    type: DISPROVE,
     image
   };
 }

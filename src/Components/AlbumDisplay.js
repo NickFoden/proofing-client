@@ -2,7 +2,7 @@ import React from 'react';
 import Images from './Images';
 import { connect } from 'react-redux';
 import axios from 'axios';
-import { getAlbum, approve } from '../actions/index';
+import { getAlbum, approve, disprove } from '../actions/index';
 import './AlbumDisplay.css';
 
 class AlbumDisplay extends React.Component {
@@ -17,7 +17,7 @@ class AlbumDisplay extends React.Component {
     render() {
         return(
             <div id="album">
-                <Images approve={this.props.approve} images={this.props.allAlbums}/>
+                <Images approve={this.props.approve} disprove={this.props.disprove} images={this.props.allAlbums}/>
             </div>
         );
     }
