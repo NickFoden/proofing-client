@@ -3,7 +3,6 @@ import './App.css';
 import PhotoUploadForm from'./Components/PhotoUploadForm'
 import AlbumDisplay from'./Components/AlbumDisplay'
 import HeaderNav from './Components/HeaderNav'
-import Save from './Components/Save'
 
 class App extends Component {
   render() {
@@ -13,7 +12,6 @@ class App extends Component {
         <h2>Welcome to Proofing</h2>
         <PhotoUploadForm/>
         <AlbumDisplay/>
-        <Save />
       </div>
     );
   }

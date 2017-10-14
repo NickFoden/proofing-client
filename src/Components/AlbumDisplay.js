@@ -6,9 +6,6 @@ import { getAlbum, approve } from '../actions/index';
 import './AlbumDisplay.css';
 
 class AlbumDisplay extends React.Component {
-    constructor(props) {
-        super(props);
-    }
 
     componentDidMount() {
         axios.get('http://localhost:8080')
