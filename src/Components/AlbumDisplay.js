@@ -27,7 +27,7 @@ const mapStateToProps = (state) => ({
     allAlbums: state.album.data
 });
 
-export default connect(mapStateToProps, { approve, getAlbum })(AlbumDisplay)
+export default connect(mapStateToProps, { approve, disprove, getAlbum })(AlbumDisplay)
 
 
 // const x = 3;
