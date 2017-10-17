@@ -18,7 +18,7 @@ export function receiveAlbum(album) {
 
 const APPROVE = 'APPROVE';
 export function approve(image) {
-  fetch('http://localhost:8080/images/' + image._id +'/approve', {
+  fetch('http://localhost:8080/images/' + image._id + '/approve', {
     method: 'PUT'
   })
   return {
@@ -29,7 +29,7 @@ export function approve(image) {
 
 const DISPROVE = 'DISPROVE';
 export function disprove(image) {
-  fetch('http://localhost:8080/images/' + image._id +'/disprove', {
+  fetch('http://localhost:8080/images/' + image._id + '/disprove', {
     method: 'PUT'
   })
   return {
