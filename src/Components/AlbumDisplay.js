@@ -7,12 +7,28 @@ import './AlbumDisplay.css';
 
 class AlbumDisplay extends React.Component {
 
+    /*constructor() {
+        super()
+    
+    start();
+    }
+
+    start() {
+        axios.get('http://localhost:8080')
+            .then((result) => {
+                 this.props.getAlbum(result.data);
+            });
+    }
+
+    store.subscribe(start);*/
+
     componentDidMount() {
         axios.get('http://localhost:8080')
             .then((result) => {
                  this.props.getAlbum(result.data);
             });
     }
+
 
     render() {
         return(
@@ -28,8 +44,3 @@ const mapStateToProps = (state) => ({
 });
 
 export default connect(mapStateToProps, { approve, disprove, getAlbum })(AlbumDisplay)
-
-
-// const x = 3;
-
-// export x;

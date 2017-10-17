@@ -23,4 +23,11 @@ class Images extends React.Component {
     }
 }
 
+/*function mapStateToProps(state) {
+    return {
+        images: state.images
+    }
+}*/
+
+
 export default connect()(Images);

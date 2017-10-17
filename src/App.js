@@ -11,7 +11,7 @@ class App extends Component {
         <HeaderNav />
         <h2>Welcome to Proofing</h2>
         <PhotoUploadForm/>
-        <AlbumDisplay/>
+        <AlbumDisplay />
       </div>
     );
   }
