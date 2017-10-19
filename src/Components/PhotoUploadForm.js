@@ -40,7 +40,7 @@ class PhotoUploadForm extends React.Component {
                 return
             }
             let uploaded = resp.body
-            console.log('UPLOAD COMPLETE: '+JSON.stringify(uploaded))
+            //console.log('UPLOAD COMPLETE: '+JSON.stringify(uploaded))
             this.props.dispatch(savePhoto(uploaded))
              
                    

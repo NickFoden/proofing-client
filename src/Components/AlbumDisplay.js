@@ -6,18 +6,6 @@ import './AlbumDisplay.css';
 import {getAlbum} from '../actions/index';
 
 class AlbumDisplay extends React.Component {
-    /*constructor() {
-        super()
-    start();
-    }
-    start() {
-        axios.get('http://localhost:8080')
-            .then((result) => {
-                 this.props.getAlbum(result.data);
-            });
-    }
-    store.subscribe(start);*/
-
     componentDidMount() {
         axios.get('http://localhost:8080')
             .then((result) => {
@@ -33,9 +21,5 @@ class AlbumDisplay extends React.Component {
         );
     }
 }
-
-/*const mapStateToProps = (state) => ({
-    allAlbums: state.album.data
-});*/
 
 export default connect(null, {getAlbum})(AlbumDisplay)

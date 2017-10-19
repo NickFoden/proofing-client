@@ -49,15 +49,10 @@ export const savePhoto = (uploaded) => {
         uploaded
       })
     })
-    .then(
-      fetch('http://localhost:8080', {
-        method: 'GET'
-      })
-      .then(response => response.json())
-      .then((response) => {
-        dispatch(getAlbum(response));
-      })
-    )
+    .then((response) => response.json())
+    .then((photos) => {
+      dispatch(getAlbum(photos));
+    })
     .catch(err => console.log(err))
   }
 }
