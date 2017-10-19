@@ -2,24 +2,20 @@ import React from 'react';
 import Images from './Images';
 import { connect } from 'react-redux';
 import axios from 'axios';
-import { getAlbum, approve, disprove } from '../actions/index';
 import './AlbumDisplay.css';
+import {getAlbum} from '../actions/index';
 
 class AlbumDisplay extends React.Component {
-
     /*constructor() {
         super()
-    
     start();
     }
-
     start() {
         axios.get('http://localhost:8080')
             .then((result) => {
                  this.props.getAlbum(result.data);
             });
     }
-
     store.subscribe(start);*/
 
     componentDidMount() {
@@ -29,18 +25,17 @@ class AlbumDisplay extends React.Component {
             });
     }
 
-
     render() {
         return(
             <div id="album">
-                <Images approve={this.props.approve} disprove={this.props.disprove} images={this.props.allAlbums}/>
+                <Images />
             </div>
         );
     }
 }
 
-const mapStateToProps = (state) => ({
+/*const mapStateToProps = (state) => ({
     allAlbums: state.album.data
-});
+});*/
 
-export default connect(mapStateToProps, { approve, disprove, getAlbum })(AlbumDisplay)
+export default connect(null, {getAlbum})(AlbumDisplay)

@@ -9,7 +9,6 @@ import { savePhoto } from '../actions/index'
 class PhotoUploadForm extends React.Component {
     
     uploadFile(files){
-        console.log('uploadFile: ')
         const image = files[0]
 
         const cloudName = 'proofer'
@@ -40,9 +39,8 @@ class PhotoUploadForm extends React.Component {
                 alert(err)
                 return
             }
-            console.log('UPLOAD COMPLETE: '+JSON.stringify(resp.body))
-            
             let uploaded = resp.body
+            console.log('UPLOAD COMPLETE: '+JSON.stringify(uploaded))
             this.props.dispatch(savePhoto(uploaded))
              
                    

@@ -1,11 +1,10 @@
 import React from 'react';
 import './Images.css';
-import { connect } from 'react-redux'
+import { connect } from 'react-redux';
+import { approve, disprove } from '../actions/index';
 
 class Images extends React.Component {
-    
     render() {
-    
         return(
             <div>
                 <ul> 
@@ -23,11 +22,11 @@ class Images extends React.Component {
     }
 }
 
-/*function mapStateToProps(state) {
+function mapStateToProps(state) {
     return {
-        images: state.images
+        images: state.album.data
     }
-}*/
+}
 
 
-export default connect()(Images);
+export default connect(mapStateToProps, {approve, disprove})(Images);
