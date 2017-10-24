@@ -1,3 +1,4 @@
+import {API_BASE_URL} from '../config';
 
 const GET_ALBUM = 'GET_ALBUM';
 export function getAlbum(data) {
@@ -18,7 +19,7 @@ export function receiveAlbum(album) {
 
 const APPROVE = 'APPROVE';
 export function approve(image) {
-  fetch('http://localhost:8080/images/' + image._id + '/approve', {
+  fetch(`${API_BASE_URL}images/${image._id}/approve`, {
     method: 'PUT'
   })
   return {
@@ -29,7 +30,7 @@ export function approve(image) {
 
 const DISPROVE = 'DISPROVE';
 export function disprove(image) {
-  fetch('http://localhost:8080/images/' + image._id + '/disprove', {
+  fetch(`${API_BASE_URL}images/${image._id}/disprove`, {
     method: 'PUT'
   })
   return {
@@ -40,7 +41,7 @@ export function disprove(image) {
 
 export const savePhoto = (uploaded) => {
   return dispatch => {
-    fetch('http://localhost:8080/', {
+    fetch(`${API_BASE_URL}`, {
       method: 'POST',
       headers: {
         'Content-Type' : 'application/json'

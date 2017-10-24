@@ -35,10 +35,12 @@ class PhotoUploadForm extends React.Component {
         })
 
         uploadRequest.end((err, resp) => {
+            console.log(resp);
             if (err){
                 alert(err)
                 return
             }
+            //resp.body.userName = "test-user";
             let uploaded = resp.body
             //console.log('UPLOAD COMPLETE: '+JSON.stringify(uploaded))
             this.props.dispatch(savePhoto(uploaded))

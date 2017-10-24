@@ -27,7 +27,6 @@ class HeaderNav extends React.Component {
             );
         }
 
-
     return (
         <Router>
             <div>
