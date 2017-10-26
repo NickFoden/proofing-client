@@ -44,7 +44,6 @@ export const login = (username, password) => dispatch => {
             .then(res => normalizeResponseErrors(res))
             .then(res => res.json())
             .then(({authToken}) => storeAuthInfo(authToken, dispatch))
-            .then(dispatch(setCurrentUser(username)))
             .catch(err => {
                 const {code} = err;
                 if (code === 401) {
