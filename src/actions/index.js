@@ -19,7 +19,7 @@ export function receiveAlbum(album) {
 
 const APPROVE = 'APPROVE';
 export function approve(image) {
-  fetch(`${API_BASE_URL}images/${image._id}/approve`, {
+  fetch(`${API_BASE_URL}/images/${image._id}/approve`, {
     method: 'PUT'
   })
   return {
@@ -30,7 +30,7 @@ export function approve(image) {
 
 const DISPROVE = 'DISPROVE';
 export function disprove(image) {
-  fetch(`${API_BASE_URL}images/${image._id}/disprove`, {
+  fetch(`${API_BASE_URL}/images/${image._id}/disprove`, {
     method: 'PUT'
   })
   return {
@@ -39,12 +39,15 @@ export function disprove(image) {
   };
 }
 
+//const authToken = getState().auth.authToken;
+
 export const savePhoto = (uploaded) => {
   return dispatch => {
     fetch(`${API_BASE_URL}`, {
       method: 'POST',
       headers: {
-        'Content-Type' : 'application/json'
+        'Content-Type' : 'application/json'/*, 
+        'Authorization' : `Bearer ${authToken}`*/
       },
       body: JSON.stringify({
         uploaded

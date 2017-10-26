@@ -30,6 +30,7 @@ export const login = (username, password) => dispatch => {
     // Base64 encode the string username:password, used in the basic
     // auth field
     const token = btoa(`${username}:${password}`);
+    
     return (
         fetch(`${API_BASE_URL}/auth/login`, {
             method: 'POST',
@@ -43,6 +44,7 @@ export const login = (username, password) => dispatch => {
             .then(res => normalizeResponseErrors(res))
             .then(res => res.json())
             .then(({authToken}) => storeAuthInfo(authToken, dispatch))
+            .then(dispatch(setCurrentUser(username)))
             .catch(err => {
                 const {code} = err;
                 if (code === 401) {

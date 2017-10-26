@@ -40,7 +40,8 @@ class PhotoUploadForm extends React.Component {
                 alert(err)
                 return
             }
-            //resp.body.userName = "test-user";
+            resp.body.user = this.props.currentUser
+            console.log(resp.body.user)
             let uploaded = resp.body
             //console.log('UPLOAD COMPLETE: '+JSON.stringify(uploaded))
             this.props.dispatch(savePhoto(uploaded))
@@ -56,4 +57,10 @@ class PhotoUploadForm extends React.Component {
         )}
 }
 
-export default connect()(PhotoUploadForm);
+function mapStateToProps(state) {
+    return {
+        currentUser: state.currentUser
+    }
+}
+
+export default connect(mapStateToProps)(PhotoUploadForm);
