@@ -9,6 +9,9 @@ import {
  import {setCurrentUser, setAuthToken} from '../actions/auth';
  import {clearAuthToken} from '../local-storage';
 
+import LoginForm from './Login-form';
+import RegistrationForm from './Registration-form';
+
 import './HeaderNav.css';
 
 class HeaderNav extends React.Component {
@@ -40,6 +43,8 @@ class HeaderNav extends React.Component {
                 </ul>    
 
                 <Route exact path="/settings" component={Settings}/>
+                <Route exact path="/LogIn" component={LoginForm}/>
+                <Route exact path="/register" component={RegistrationForm}/>
             </div>
         </Router>        
     )}
