@@ -6,6 +6,7 @@ import './AlbumDisplay.css';
 import {getAlbum} from '../actions/index';
 import {API_BASE_URL} from '../config';
 
+
 class AlbumDisplay extends React.Component {
     componentDidMount() {
         axios.get(`${API_BASE_URL}`)
