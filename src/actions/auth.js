@@ -21,6 +21,7 @@ export const setCurrentUser = currentUser => ({
 // the user data stored in the token
 const storeAuthInfo = (authToken, dispatch) => {
     const decodedToken = jwtDecode(authToken);
+    console.log("User line 24" + decodedToken.user.username);
     dispatch(setAuthToken(authToken));
     dispatch(setCurrentUser(decodedToken.user));
     saveAuthToken(authToken);
