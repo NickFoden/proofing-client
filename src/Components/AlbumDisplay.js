@@ -9,7 +9,7 @@ import {API_BASE_URL} from '../config';
 
 class AlbumDisplay extends React.Component {
     componentDidMount() {
-        axios.get(`${API_BASE_URL}`)
+        axios.get(`${API_BASE_URL}/photos/${this.props.currentUser}`)
             .then((result) => {
                  this.props.getAlbum(result.data);
             });
@@ -24,4 +24,10 @@ class AlbumDisplay extends React.Component {
     }
 }
 
-export default connect(null, {getAlbum})(AlbumDisplay)
+function mapStateToProps(state) {
+    return {
+        currentUser: state.userReducer.currentUser
+    }
+}
+
+export default connect(mapStateToProps, {getAlbum})(AlbumDisplay)

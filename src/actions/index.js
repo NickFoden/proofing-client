@@ -41,9 +41,9 @@ export function disprove(image) {
 
 //const authToken = getState().auth.authToken;
 
-export const savePhoto = (uploaded) => {
+export const savePhoto = (uploaded, currentUser) => {
   return dispatch => {
-    fetch(`${API_BASE_URL}`, {
+    fetch(`${API_BASE_URL}/photos/${currentUser}`, {
       method: 'POST',
       headers: {
         'Content-Type' : 'application/json'/*, 
