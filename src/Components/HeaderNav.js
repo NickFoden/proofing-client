@@ -6,6 +6,7 @@ import {
     Route,
     Link
  } from 'react-router-dom';
+ import AlbumDisplay from '../Components/AlbumDisplay';
  import {setCurrentUser, setAuthToken} from '../actions/auth';
  import {clearAuthToken} from '../local-storage';
 
@@ -28,7 +29,9 @@ class HeaderNav extends React.Component {
             logOutButton = (
                 <li><button onClick={() => this.logOut()}>Log out</button></li>
             );
+            <AlbumDisplay />
         }
+        
 
     return (
         <Router>
@@ -45,7 +48,9 @@ class HeaderNav extends React.Component {
                 <Route exact path="/settings" component={Settings}/>
                 <Route exact path="/LogIn" component={LoginForm}/>
                 <Route exact path="/register" component={RegistrationForm}/>
+                { <AlbumDisplay /> }
             </div>
+            
         </Router>        
     )}
 }    

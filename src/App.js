@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import PhotoUploadForm from'./Components/PhotoUploadForm'
-import AlbumDisplay from'./Components/AlbumDisplay'
+//import AlbumDisplay from'./Components/AlbumDisplay'
 import HeaderNav from './Components/HeaderNav'
 
 class App extends Component {
@@ -11,11 +11,10 @@ class App extends Component {
         <HeaderNav />
         <h2>Welcome to Proofing</h2>
         <PhotoUploadForm/>
-        <AlbumDisplay />
+        {/* <AlbumDisplay /> */}
       </div>
     );
   }
 }
-
 
 export default App;
