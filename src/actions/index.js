@@ -43,7 +43,7 @@ export function disprove(image) {
 
 export const savePhoto = (uploaded, currentUser) => {
   return dispatch => {
-    fetch(`${API_BASE_URL}/photos/${currentUser}`, {
+    fetch(`${API_BASE_URL}/photos/${currentUser.userName}`, {
       method: 'POST',
       headers: {
         'Content-Type' : 'application/json'/*, 
