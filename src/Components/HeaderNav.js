@@ -1,16 +1,10 @@
 import React from 'react';
 import {connect} from 'react-redux';
-import {Settings} from './Settings';
 import { 
-    BrowserRouter as Router,
-    Route,
     Link
  } from 'react-router-dom';
  import {setCurrentUser, setAuthToken} from '../actions/auth';
  import {clearAuthToken} from '../local-storage';
-
-import LoginForm from './Login-form';
-import RegistrationForm from './Registration-form';
 
 import './HeaderNav.css';
 
