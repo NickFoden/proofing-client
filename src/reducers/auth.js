@@ -3,7 +3,7 @@ import {SET_AUTH_TOKEN, SET_CURRENT_USER} from '../actions/auth';
 const initialState = {
     authToken: null, // authToken !== null does not mean it has been validated
     currentUser: {
-        username: 'test',
+        username: null,
         firstName: null,
         lastName: null
     }

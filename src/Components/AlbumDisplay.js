@@ -8,7 +8,6 @@ import {API_BASE_URL} from '../config';
 
 class AlbumDisplay extends React.Component {
     componentDidMount() {
-        console.log(this.props)
         axios.get(`${API_BASE_URL}/photos/${this.props.currentUser.username}`)
             .then((result) => {
                  this.props.getAlbum(result.data);

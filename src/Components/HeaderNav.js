@@ -18,7 +18,7 @@ class HeaderNav extends React.Component {
 
     render() {
         let logOutButton;
-        if (this.props.loggedIn) {
+        if (this.props.currentUser === !null) {
             logOutButton = (
                 <li><button onClick={() => this.logOut()}>Log out</button></li>
             );
@@ -41,7 +41,8 @@ class HeaderNav extends React.Component {
 }    
 
 const mapStateToProps = state => ({
-    loggedIn: state.auth.currentUser !== null
+    loggedIn: state.auth.currentUser !== null,
+    currentUser: state.userReducer.currentUser
 });
 
 export default connect(mapStateToProps)(HeaderNav);
