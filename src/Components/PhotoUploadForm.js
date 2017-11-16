@@ -44,7 +44,8 @@ class PhotoUploadForm extends React.Component {
             //console.log("Line 44 + " + resp.body.user)
             let uploaded = resp.body
             console.log('UPLOAD COMPLETE: '+JSON.stringify(uploaded))
-            this.props.dispatch(savePhoto(uploaded, this.props.currentUser))
+            console.log('Current User user name', this.props.currentUser.username )
+            this.props.dispatch(savePhoto(uploaded, this.props.currentUser.username))
              
                    
         })
