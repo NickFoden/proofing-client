@@ -17,21 +17,26 @@ class HeaderNav extends React.Component {
     }
 
     render() {
-        let logOutButton;
-        if (this.props.currentUser === !null) {
-            logOutButton = (
+        let logButton;
+        if (this.props.currentUser.username === null) {
+            logButton = (
+                <li><Link to='/LogIn'> Log In</Link></li>
+            
+        )} else {
+            logButton = (
                 <li><button onClick={() => this.logOut()}>Log out</button></li>
-            );
+            )
+        }      
+//Add removal of log in button here
 
-        }
     return (
         <div>
             <ul>
                 <li><Link to='/'> Home </Link></li>
                 <li><Link to='/photos'> Photos</Link></li>
                 <li><Link to='/register'> Register</Link></li>
-                <li><Link to='/LogIn'> Log In</Link></li>
-                {logOutButton}
+                {/*<li><Link to='/LogIn'> Log In</Link></li>*/}
+                {logButton}
                 <li><Link to='/settings'> Settings</Link></li>
             </ul>    
 
