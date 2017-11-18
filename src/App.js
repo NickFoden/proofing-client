@@ -29,7 +29,7 @@ class App extends Component {
             }
           />
           <PhotoUploadForm/>
-          { this.props.currentUser  == null ? false : <AlbumDisplay /> } 
+          { this.props.currentUser.username  == null ? false : <AlbumDisplay /> } 
         </div>
       </Router>  
     );
