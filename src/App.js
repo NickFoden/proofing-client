@@ -24,7 +24,7 @@ class App extends Component {
             <Route exact path="/settings" component={Settings}/>
             <Route exact path="/LogIn" component={LoginForm}/>
             <Route exact path="/register" component={RegistrationForm}/>
-            <Route exact path="/welcome" render={() =>
+            <Route exact path="/" render={() =>
               <h2>Welcome to Proofing</h2>
             }
           />
