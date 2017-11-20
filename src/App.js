@@ -24,12 +24,9 @@ class App extends Component {
             <Route exact path="/settings" component={Settings}/>
             <Route exact path="/LogIn" component={LoginForm}/>
             <Route exact path="/register" component={RegistrationForm}/>
-            <Route exact path="/" render={() =>
-              <h2>Welcome to Proofing</h2>
-            }
-          />
-          <PhotoUploadForm/>
-          { this.props.currentUser.username  == null ? false : <AlbumDisplay /> } 
+            <Route exact path="/photos" component={PhotoUploadForm} />
+            <Route exact path="/" render={() => <h2>Welcome to Proofing</h2>} />
+            { this.props.currentUser.username  == null ? false : <AlbumDisplay /> } 
         </div>
       </Router>  
     );
