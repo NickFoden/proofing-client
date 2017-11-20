@@ -1,16 +1,19 @@
 import React from 'react';
-import { 
-    withRouter
-  } from 'react-router-dom';
 import {Field, reduxForm, focus} from 'redux-form';
-import {compose} from 'redux';
 import Input from './input';
 import {login} from '../actions/auth';
 import {required, nonEmpty} from '../validators';
 
 export class LoginForm extends React.Component {
-    onSubmit(values) {
-        return this.props.dispatch(login(values.username, values.password));
+    async onSubmit(values) {
+        try {
+            await this.props.dispatch(login(values.username, values.password))
+            
+            this.props.history.push('/photos')
+        } catch (error) {
+            
+        }
+        
     }
 
     render() {
