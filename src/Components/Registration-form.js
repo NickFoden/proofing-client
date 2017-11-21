@@ -1,9 +1,11 @@
 import React from 'react';
-import {Field, reduxForm, focus} from 'redux-form';
+// import {connect} from 'react-redux';
+import {Field, focus, reduxForm} from 'redux-form';
 import {registerUser} from '../actions/users';
 import {login} from '../actions/auth';
 import Input from './input';
 import {required, nonEmpty, matches, length, isTrimmed} from '../validators';
+// import { Redirect } from 'react-router-dom';
 
 export class RegistrationForm extends React.Component {
     onSubmit(values) {
@@ -12,7 +14,14 @@ export class RegistrationForm extends React.Component {
         return this.props
             .dispatch(registerUser(user))
             .then(() => this.props.dispatch(login(username, password)));
+            // .then(checkForUser());
     }
+
+    // checkForUser(props) {
+    //     if(props.loggedIn){
+    //         return <Redirect to="/photos" />;
+    //     }
+    // }    
 
     render() {
         return (
@@ -55,6 +64,18 @@ export class RegistrationForm extends React.Component {
         );
     }
 }
+
+/*const mapStateToProps = state => ({
+    loggedIn: state.auth.currentUser !== null
+});
+
+const registrationForm = ( reduxForm({
+    form: 'registration',
+    onSubmitFail: (errors, dispatch) =>
+        dispatch(focus('registration', Object.keys(errors)[0]))
+})(RegistrationForm));
+
+export default connect(mapStateToProps)(registrationForm)*/
 
 export default reduxForm({
     form: 'registration',
