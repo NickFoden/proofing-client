@@ -1,11 +1,12 @@
 import React from 'react';
-// import {connect} from 'react-redux';
 import {Field, focus, reduxForm} from 'redux-form';
 import {registerUser} from '../actions/users';
 import {login} from '../actions/auth';
 import Input from './input';
 import {required, nonEmpty, matches, length, isTrimmed} from '../validators';
-// import { Redirect } from 'react-router-dom';
+
+//Now exports to RegistrationPage to handle redirect 
+//if sign up succesful and user gets logged in right away
 
 export class RegistrationForm extends React.Component {
     onSubmit(values) {
@@ -14,14 +15,7 @@ export class RegistrationForm extends React.Component {
         return this.props
             .dispatch(registerUser(user))
             .then(() => this.props.dispatch(login(username, password)));
-            // .then(checkForUser());
     }
-
-    // checkForUser(props) {
-    //     if(props.loggedIn){
-    //         return <Redirect to="/photos" />;
-    //     }
-    // }    
 
     render() {
         return (
