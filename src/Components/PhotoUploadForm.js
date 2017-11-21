@@ -55,7 +55,7 @@ class PhotoUploadForm extends React.Component {
         return (
             <div className="drop">
                 <Dropzone onDrop={this.uploadFile.bind(this)} >
-                    <div className="drop-text">Drop your photo</div>
+                    <div className="drop-text">Drop your photo or click to add a photo</div>
                 </Dropzone>  
             </div>     
         )}

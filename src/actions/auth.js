@@ -17,6 +17,11 @@ export const setCurrentUser = currentUser => ({
     currentUser
 });
 
+export const LOG_OUT_CURRENT_USER = 'LOG_OUT_CURRENT_USER';
+export const logOutCurrentUser = () => ({
+    type: LOG_OUT_CURRENT_USER
+})
+
 // Stores the auth token in state and localStorage, and decodes and stores
 // the user data stored in the token
 const storeAuthInfo = (authToken, dispatch) => {

@@ -4,6 +4,13 @@ import { connect } from 'react-redux';
 import { approve, disprove } from '../actions/index';
 
 class Images extends React.Component {
+
+    //sort array by approve property after clicking save button
+    //this.props.images.sort(function(a, b) {
+    //    return b.approved - a.approved
+    //})
+
+
     render() {
         return(
             <div>

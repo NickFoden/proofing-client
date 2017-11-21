@@ -1,4 +1,4 @@
-import {SET_AUTH_TOKEN, SET_CURRENT_USER} from '../actions/auth';
+import {SET_AUTH_TOKEN, SET_CURRENT_USER, LOG_OUT_CURRENT_USER} from '../actions/auth';
 
 const initialState = {
     authToken: null, // authToken !== null does not mean it has been validated
@@ -19,6 +19,10 @@ export default function userReducer(state = initialState, action) {
         return Object.assign({}, state, {
             currentUser: action.currentUser
         });
+    } else if (action.type === LOG_OUT_CURRENT_USER) {
+        return Object.assign({}, state, {
+            currentUser : { username : null} 
+        })
     }
     return state;
 }

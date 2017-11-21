@@ -4,6 +4,7 @@
 }
 
 .drop-text {
+    margin-top: 75px;
     text-align: center;
-    line-height: 200px;
+    vertical-align: center;
 }
