@@ -1,5 +1,6 @@
 import React from 'react';
-import {Field, reduxForm, focus} from 'redux-form';
+//import { connect } from 'react-redux'
+import {Field, focus, reduxForm, SubmissionError} from 'redux-form';
 import Input from './input';
 import {login} from '../actions/auth';
 import {required, nonEmpty} from '../validators';
@@ -11,9 +12,8 @@ export class LoginForm extends React.Component {
             
             this.props.history.push('/photos')
         } catch (error) {
-            
-        }
-        
+            throw new SubmissionError({ _error: 'Incorrect username or password'})
+        }     
     }
 
     render() {
@@ -60,6 +60,20 @@ export default reduxForm({
     form: 'login',
     onSubmitFail: (errors, dispatch) => dispatch(focus('login', 'username'))
 })(LoginForm)
+
+
+/*function mapStateToProps(state) {
+    return {
+        errors : (errors, dispatch) => dispatch(focus('login', 'username'))
+    }
+}
+
+const formExport = ( reduxForm({
+    form: 'login',
+    onSubmitFail: (errors, dispatch) => dispatch(focus('login', 'username'))
+})(LoginForm))
+
+export default connect(mapStateToProps)(formExport);*/
 
 /*export default compose(
     withRouter(),
