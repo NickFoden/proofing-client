@@ -5,7 +5,6 @@ import axios from 'axios';
 import './AlbumDisplay.css';
 import {getAlbum} from '../actions/index';
 import {API_BASE_URL} from '../config';
-//import { error } from 'util';
 
 class AlbumDisplay extends React.Component {
     componentDidMount() {
