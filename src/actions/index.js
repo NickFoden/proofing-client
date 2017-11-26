@@ -30,15 +30,13 @@ export function disprove(image) {
   };
 }
 
-//const authToken = getState().auth.authToken;
-
-export const savePhoto = (uploaded, currentUser) => {
+export const savePhoto = (uploaded, currentUser, authToken) => {
   return dispatch => {
     fetch(`${API_BASE_URL}/photos/${currentUser}`, {
       method: 'POST',
       headers: {
-        'Content-Type' : 'application/json'/*, 
-        'Authorization' : `Bearer ${authToken}`*/
+        'Content-Type' : 'application/json', 
+        'Authorization' : `Bearer ${authToken}`
       },
       body: JSON.stringify({
         uploaded

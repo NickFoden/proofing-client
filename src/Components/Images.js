@@ -10,7 +10,6 @@ class Images extends React.Component {
     //    return b.approved - a.approved
     //})
 
-
     render() {
         return(
             <div>
@@ -34,6 +33,5 @@ function mapStateToProps(state) {
         images: state.album.data
     }
 }
-
 
 export default connect(mapStateToProps, {approve, disprove})(Images);

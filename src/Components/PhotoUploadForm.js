@@ -45,7 +45,7 @@ class PhotoUploadForm extends React.Component {
             let uploaded = resp.body
             console.log('UPLOAD COMPLETE: '+JSON.stringify(uploaded))
             console.log('Current User user name', this.props.currentUser.username )
-            this.props.dispatch(savePhoto(uploaded, this.props.currentUser.username))
+            this.props.dispatch(savePhoto(uploaded, this.props.currentUser.username, this.props.authToken))
              
                    
         })
@@ -63,7 +63,8 @@ class PhotoUploadForm extends React.Component {
 
 function mapStateToProps(state) {
     return {
-        currentUser: state.userReducer.currentUser
+        currentUser: state.userReducer.currentUser,
+        authToken : state.userReducer.authToken
     }
 }
 
