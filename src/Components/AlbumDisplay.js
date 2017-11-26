@@ -8,7 +8,11 @@ import {API_BASE_URL} from '../config';
 
 class AlbumDisplay extends React.Component {
     componentDidMount() {
-        axios.get(`${API_BASE_URL}/photos/${this.props.currentUser.username}`)
+        axios.get(`${API_BASE_URL}/photos/${this.props.currentUser.username}`, {
+            headers : {
+                "Authorization" : `Bearer ${this.props.authToken}` 
+            }
+        })
             .then((result) => {
                  this.props.getAlbum(result.data);
             })
@@ -24,10 +28,10 @@ class AlbumDisplay extends React.Component {
     }
 }
 
-
 function mapStateToProps(state) {
     return {
-        currentUser: state.userReducer.currentUser
+        currentUser: state.userReducer.currentUser,
+        authToken : state.userReducer.authToken
     }
 }
 
