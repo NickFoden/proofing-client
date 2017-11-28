@@ -11,18 +11,14 @@ import AlbumDisplay from'./Components/AlbumDisplay';
 import HeaderNav from './Components/HeaderNav';
 import LoginForm from './Components/Login-form';
 import RegistrationPage from './Components/RegistrationPage';
-import {Settings} from './Components/Settings';
 
 class App extends Component {
-
-  
 
   render() {
     return (
       <Router>
         <div className="App">
           <HeaderNav />
-            <Route exact path="/settings" component={Settings}/>
             <Route exact path="/LogIn" component={LoginForm}/>
             <Route exact path="/register" component={RegistrationPage}/>
             <Route exact path="/photos" component={PhotoUploadForm} />

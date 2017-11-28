@@ -36,7 +36,6 @@ class HeaderNav extends React.Component {
                 <li><Link to='/photos'> Photos</Link></li>
                 <li><Link to='/register'> Register</Link></li>
                 {logButton}
-                <li><Link to='/settings'> Settings</Link></li>
             </ul>    
         </div>      
     )}
