@@ -6,6 +6,7 @@ import {
  } from 'react-router-dom';
  import {logOutCurrentUser, setAuthToken } from '../actions/auth';
  import {clearAuthToken} from '../local-storage';
+ import { slide as Menu } from 'react-burger-menu';
 
 import './HeaderNav.css';
 
@@ -17,21 +18,33 @@ class HeaderNav extends React.Component {
         clearAuthToken();
         this.props.history.push('/')
     }
+    showSettings(event) {
+        event.preventDefault();
+      }
 
     render() {
         let logButton;
         if (this.props.currentUser.username === null) {
             logButton = (
-                <li><Link to='/LogIn'> Log In</Link></li>
+                /*<li>*/<Link  className="menu-item" to='/LogIn'> Log In</Link>/*</li>*/
             
         )} else {
             logButton = (
-                <li><button onClick={() => this.logOut()}>Log out</button></li>
+                /*<li>*/<button  className="menu-item" onClick={() => this.logOut()}>Log out</button>/*</li>*/
             )
         }      
-//Add removal of log in button here
 
-    return (
+        return (
+            <Menu width={150} >
+                <Link className="menu-item" to='/'>Home </Link>
+                <Link className="menu-item" to='/photos'> Photos</Link>
+                <Link className="menu-item" to='/register'> Register</Link>
+                {logButton}
+                {/* <Link className="menu-item" to='/settings'> Settings</Link> */}
+                <a onClick={ this.showSettings } className="menu-item--small" href="/settings">Settings</a>
+            </Menu>    
+        )
+    {/* return (
         <div>
             <ul>
                 <li><Link to='/'> Home </Link></li>
@@ -41,7 +54,8 @@ class HeaderNav extends React.Component {
                 <li><Link to='/settings'> Settings</Link></li>
             </ul>    
         </div>      
-    )}
+    )} */}
+    }
 }    
 
 const mapStateToProps = state => ({

@@ -5,6 +5,7 @@ import {
   Route
 } from 'react-router-dom';
 import './App.css';
+import Home from './Components/Home'
 import PhotoUploadForm from'./Components/PhotoUploadForm';
 import AlbumDisplay from'./Components/AlbumDisplay';
 import HeaderNav from './Components/HeaderNav';
@@ -25,7 +26,7 @@ class App extends Component {
             <Route exact path="/LogIn" component={LoginForm}/>
             <Route exact path="/register" component={RegistrationPage}/>
             <Route exact path="/photos" component={PhotoUploadForm} />
-            <Route exact path="/" render={() => <h2>Welcome to Proofing</h2>} />
+            <Route exact path="/" component={Home} />
             { this.props.currentUser.username  == null ? false : <AlbumDisplay /> } 
         </div>
       </Router>  
