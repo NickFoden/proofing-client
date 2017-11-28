@@ -6,6 +6,7 @@ const Home = (props) => {
         <div>
             <h2>Welcome to Proofing</h2>
             <p>An app where you can upload photos and vote which ones make the cut</p>
+            <p> Note for Nick -> Put a sample image in action here one approved one not</p>
         </div>    
     );
 };

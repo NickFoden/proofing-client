@@ -1,6 +1,7 @@
 .drop {
     margin-top: 40px;
-    margin-left: 41%;
+    width: 200px;
+    margin: 0 auto;
 }
 
 .drop-text {
@@ -8,3 +9,8 @@
     text-align: center;
     vertical-align: center;
 }
+
+/* #drop-zone-box {
+    margin: 0 auto;
+    width: 200px;
+} */
