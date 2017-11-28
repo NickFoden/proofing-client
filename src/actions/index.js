@@ -8,6 +8,16 @@ export function getAlbum(data) {
   };
 }
 
+const SORT_APPROVED = 'SORT_APPROVED';
+export function sortApproved(data){
+  let temp = data;
+  temp.sort((a,b) => {return a.approved - b.approved})
+  return{ 
+    type: SORT_APPROVED,
+    data:temp
+  };
+}
+
 const APPROVE = 'APPROVE';
 export function approve(image) {
   fetch(`${API_BASE_URL}/images/${image._id}/approve`, {

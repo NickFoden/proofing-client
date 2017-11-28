@@ -3,7 +3,7 @@ import Images from './Images';
 import { connect } from 'react-redux';
 import axios from 'axios';
 import './AlbumDisplay.css';
-import {getAlbum} from '../actions/index';
+import {getAlbum, sortApproved} from '../actions/index';
 import {API_BASE_URL} from '../config';
 
 class AlbumDisplay extends React.Component {
@@ -19,9 +19,12 @@ class AlbumDisplay extends React.Component {
             .catch(error => console.log(error));
     }
 
+
+
     render() {
         return(
             <div id="album">
+                <button onClick={(e) => sortApproved(this.props.images)}> Sort the approved </button>
                 <Images />
             </div>
         );
@@ -31,7 +34,8 @@ class AlbumDisplay extends React.Component {
 function mapStateToProps(state) {
     return {
         currentUser: state.userReducer.currentUser,
-        authToken : state.userReducer.authToken
+        authToken : state.userReducer.authToken,
+        images: state.album.data
     }
 }
 

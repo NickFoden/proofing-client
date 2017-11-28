@@ -19,8 +19,8 @@ class Images extends React.Component {
                             <img className={image.approved ? 'rawImageYes ' : 'rawImageNo'} 
                             src={image.image[0].secure_url} alt="imageToBeApproved" />
                             <br />
-                            <button id="yes" onClick={(e) => this.props.approve(image)}> </button>
-                            <button id="no" onClick={(e) => this.props.disprove(image)} > </button>
+                            <button id="yes" onClick={(e) => this.props.approve(image)}>Yes</button>
+                            <button id="no" onClick={(e) => this.props.disprove(image)} >No </button>
                         </li>)}
                 </ul>
             </div>
