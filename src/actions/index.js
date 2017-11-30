@@ -8,15 +8,44 @@ export function getAlbum(data) {
   };
 }
 
-const SORT_APPROVED = 'SORT_APPROVED';
-export function sortApproved(data){
-  let temp = data;
-  temp.sort((a,b) => {return a.approved - b.approved})
-  return{ 
-    type: SORT_APPROVED,
-    data:temp
-  };
+export const sortApproved = (album, currentUser, authToken) => { 
+  return dispatch => {
+  fetch(`${API_BASE_URL}/photos/sort/${currentUser}`, {
+    method: 'GET',
+    headers : {
+      'Content-Type' : 'application/json', 
+      "Authorization" : `Bearer ${authToken}` 
+    }
+  })
+  .then((result) => result.json())
+  .then((result) => {
+    dispatch(getAlbum(result.data));
+  })
+  .catch(error => console.log(error));
+  }
 }
+
+// const SORT_APPROVED = 'SORT_APPROVED';
+// export function sortApproved(data){
+//   let temp = data;
+//   temp.sort((a,b) => {return a.approved - b.approved})
+//   return{ 
+//     type: SORT_APPROVED,
+//     data:temp
+//   };
+// }
+
+// const SORT_APPROVED = 'SORT_APPROVED';
+// export function sortApproved(data){ 
+//   console.log(data + ' data before')
+//   let tempData = data.slice().sort((a, b) => {return a.approved - b.approved})
+//   console.log(tempData + ' temp Data after')
+//   return {  
+//     type: SORT_APPROVED,
+//     data : tempData
+//   }  
+// };
+    
 
 const APPROVE = 'APPROVE';
 export function approve(image) {
