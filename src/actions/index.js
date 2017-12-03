@@ -25,6 +25,9 @@ export const sortApproved = (album, currentUser, authToken) => {
   }
 }
 
+//First one sort of works after clicking another up or down
+
+
 // const SORT_APPROVED = 'SORT_APPROVED';
 // export function sortApproved(data){
 //   let temp = data;

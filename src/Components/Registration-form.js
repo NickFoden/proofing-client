@@ -4,6 +4,7 @@ import {registerUser} from '../actions/users';
 import {login} from '../actions/auth';
 import Input from './input';
 import {required, nonEmpty, matches, length, isTrimmed} from '../validators';
+import "./Form.css";
 
 //Now exports to RegistrationPage to handle redirect 
 //if sign up succesful and user gets logged in right away
@@ -24,25 +25,25 @@ export class RegistrationForm extends React.Component {
                 onSubmit={this.props.handleSubmit(values =>
                     this.onSubmit(values)
                 )}>
-                <label htmlFor="firstName">First name</label>
+                <label className="form-label" htmlFor="firstName">First name</label>
                 <Field component={Input} type="text" name="firstName" />
-                <label htmlFor="lastName">Last name</label>
+                <label className="form-label" htmlFor="lastName">Last name</label>
                 <Field component={Input} type="text" name="lastName" />
-                <label htmlFor="username">Username</label>
+                <label className="form-label" htmlFor="username">Username</label>
                 <Field
                     component={Input}
                     type="text"
                     name="username"
                     validate={[required, nonEmpty, isTrimmed]}
                 />
-                <label htmlFor="password">Password</label>
+                <label className="form-label" htmlFor="password">Password</label>
                 <Field
                     component={Input}
                     type="password"
                     name="password"
                     validate={[required, length({min: 4, max: 10}), isTrimmed]}
                 />
-                <label htmlFor="passwordConfirm">Confirm password</label>
+                <label className="form-label" htmlFor="passwordConfirm">Confirm password</label>
                 <Field
                     component={Input}
                     type="password"
@@ -50,6 +51,7 @@ export class RegistrationForm extends React.Component {
                     validate={[required, nonEmpty, matches('password')]}
                 />
                 <button
+                    className="form-button"
                     type="submit"
                     disabled={this.props.pristine || this.props.submitting}>
                     Register

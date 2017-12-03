@@ -22,19 +22,19 @@ class HeaderNav extends React.Component {
         let logButton;
         if (this.props.currentUser.username === null) {
             logButton = (
-                <li><Link  className="menu-item" to='/LogIn'> Log In</Link></li>
+                <li><Link  className="log-button" to='/LogIn'> Log In</Link></li>
             
         )} else {
             logButton = (
-                <li><button  className="menu-item" onClick={() => this.logOut()}>Log out</button></li>
+                <li><button  className="log-button" onClick={() => this.logOut()}>Log out</button></li>
             )
         }      
     return (
-        <div>
+        <div id="header-nav">
             <ul>
-                <li><Link to='/'> Home </Link></li>
-                <li><Link to='/photos'> Photos</Link></li>
-                <li><Link to='/register'> Register</Link></li>
+                <li id="home-link"><Link className="header-links" to='/'> Home </Link></li>
+                <li><Link className="header-links" to='/photos'> Photos</Link></li>
+                <li><Link className="header-links" to='/register'> Register</Link></li>
                 {logButton}
             </ul>    
         </div>      

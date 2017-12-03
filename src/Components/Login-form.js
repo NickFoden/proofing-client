@@ -4,6 +4,7 @@ import {Field, focus, reduxForm, SubmissionError} from 'redux-form';
 import Input from './input';
 import {login} from '../actions/auth';
 import {required, nonEmpty} from '../validators';
+import './Form.css';
 
 export class LoginForm extends React.Component {
     async onSubmit(values) {
@@ -32,15 +33,16 @@ export class LoginForm extends React.Component {
                     this.onSubmit(values)
                 )}>
                 {error}
-                <label htmlFor="username">Username</label>
+                <label className="form-label" htmlFor="username">Username</label>
                 <Field
+                    classNamer="form-field"
                     component={Input}
                     type="text"
                     name="username"
                     id="username"
                     validate={[required, nonEmpty]}
                 />
-                <label htmlFor="password">Password</label>
+                <label className="form-label" htmlFor="password">Password</label>
                 <Field
                     component={Input}
                     type="password"
@@ -48,7 +50,7 @@ export class LoginForm extends React.Component {
                     id="password"
                     validate={[required, nonEmpty]}
                 />
-                <button disabled={this.props.pristine || this.props.submitting}>
+                <button className="form-button" disabled={this.props.pristine || this.props.submitting}>
                     Log in
                 </button>
             </form>

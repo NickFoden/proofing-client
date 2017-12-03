@@ -21,7 +21,7 @@ class AlbumDisplay extends React.Component {
     render() {
         return(
             <div id="album">
-                <button onClick={() => sortApproved(this.props.images, this.props.currentUser, this.props.authToken)}> Sort ! </button>
+                {/* <button onClick={() => sortApproved(this.props.images, this.props.currentUser, this.props.authToken)}> Sort ! </button> */}
                 <Images />
             </div>
         );
