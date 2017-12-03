@@ -36,11 +36,12 @@ a {
     box-shadow : 0px 1px 6px;
     background-color:#bfbfbf;
     text-align: center;
+    width: 100%;
 }
 
 #header-nav ul {
-    margin-top: 0;
-    list-style: none;    
+    list-style: none;  
+    margin-bottom: 20px;  
 }
 
 #header-nav #home-link:hover {

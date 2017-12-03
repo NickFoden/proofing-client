@@ -1,4 +1,3 @@
-
 li {
     display: inline-block;
     margin-top: 10px;
@@ -7,43 +6,92 @@ li {
 
 .rawImage {
     width: auto;
-    height: 300px;
+    height: 150px;
     margin: 0 0 0 0;
     padding: 0 0;
 }
 
 .rawImageNo {
     width: auto;
-    height: 300px;
+    height: 150px;
     margin: 20 0 0 0;
     padding: 0 0;
-    border: 2px solid #ff4d4d;
+    border: 2px solid #E55345;
 }
 
 .rawImageYes {
     width: auto;
-    height: 300px;
+    height: 150px;
     margin: 20 0 0 0;
     padding: 0 0;
-    border: 2px solid #99ff99;
+    border: 2px solid #2EE23B;
 }
 #photoCard {
-    width: 300px;
+    width: 150px;
     height: auto;
     margin: 0 0;
     padding: 0 0 20px 0;
 }
 
 button {
-    width: 80px;
+    width: 40px;
     height: 20px;
+    font-family: 'Roboto Slab', serif;
 }
 
 #yes {
-    background-color: #99ff99;
+    background-color: #2EE23B;
 }
 
 #no {
-    background-color: #ff4d4d;
+    background-color: #E55345;
 }
+@media only screen and (min-width: 640px) {
+    li {
+        display: inline-block;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
 
+    .rawImage {
+        width: auto;
+        height: 300px;
+        margin: 0 0 0 0;
+        padding: 0 0;
+    }
+
+    .rawImageNo {
+        width: auto;
+        height: 300px;
+        margin: 20 0 0 0;
+        padding: 0 0;
+        border: 2px solid #ff4d4d;
+    }
+
+    .rawImageYes {
+        width: auto;
+        height: 300px;
+        margin: 20 0 0 0;
+        padding: 0 0;
+        border: 2px solid #99ff99;
+    }
+    #photoCard {
+        width: 300px;
+        height: auto;
+        margin: 0 0;
+        padding: 0 0 20px 0;
+    }
+
+    button {
+        width: 80px;
+        height: 20px;
+    }
+
+    #yes {
+        background-color: #99ff99;
+    }
+
+    #no {
+        background-color: #ff4d4d;
+    }
+}

@@ -1,4 +1,10 @@
-img {
-    width: 250px;
+.button-sort {
+    font-size: 18px;
     height: auto;
+    width: auto;
+    margin-top: 20px;
+    margin-bottom: 40px;
+    border-radius: 5px;
+    background-color: #7CB0FF;
+    font-family: 'Roboto Slab', serif;
 }
