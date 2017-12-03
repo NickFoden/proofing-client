@@ -9,7 +9,7 @@ li {
 
 .header-links {
     color: black;
-    font-size: 20px;
+    font-size: 14px;
     font-family: 'Roboto Slab', serif;
 }
 
@@ -22,8 +22,10 @@ a {
     padding: 6px;
     border-radius: 5px;
     color: black;
-    font-size: 20px;
+    font-size: 10px;
     font-family: 'Roboto Slab', serif;
+    width: auto;
+    height: auto;
 }
 
 .log-button:hover {
@@ -33,20 +35,92 @@ a {
 #header-nav {
     box-shadow : 0px 1px 6px;
     background-color:#bfbfbf;
-    text-align: right;
+    text-align: center;
 }
 
 #header-nav ul {
     margin-top: 0;
-    list-style: none;
-    margin-right: 10px;
-    
+    list-style: none;    
 }
 
-#header-nav #home-link {
-    float: left;
-    color: black;
-}
 #header-nav #home-link:hover {
     color: #56F8FF;
+}
+
+.header-links-home:hover {
+    color: #56F8FF;
+}
+
+.header-links-home {
+    color: black;
+    font-size: 16px;
+    font-family: 'Roboto Slab', serif;
+}
+
+@media only screen and (min-width: 640px) {
+    li {
+        display: inline-block;
+        padding: 0 25px;
+    }
+    
+    .header-links:hover {
+        color: #56F8FF;
+    }
+    
+    .header-links {
+        color: black;
+        font-size: 20px;
+        font-family: 'Roboto Slab', serif;
+    }
+    
+    a {
+        text-decoration: none;
+    }
+    
+    .log-button {
+        background-color: #5AF1FF;
+        padding: 6px;
+        border-radius: 5px;
+        color: black;
+        font-size: 20px;
+        font-family: 'Roboto Slab', serif;
+        width: auto;
+        height: auto;
+    }
+    
+    .log-button:hover {
+        background-color: #87F6FF;
+    }
+    
+    #header-nav {
+        box-shadow : 0px 1px 6px;
+        background-color:#bfbfbf;
+        text-align: right;
+    }
+    
+    #header-nav ul {
+        margin-top: 0;
+        list-style: none;
+        margin-right: 10px;
+        
+    }
+    
+    #header-nav #home-link {
+        float: left;
+        color: black;
+    }
+    #header-nav #home-link:hover {
+        color: #56F8FF;
+    }
+    
+    .header-links-home:hover {
+        color: #56F8FF;
+    }
+    
+    .header-links-home {
+        color: black;
+        font-size: 30px;
+        font-family: 'Roboto Slab', serif;
+    } 
+   
 }
