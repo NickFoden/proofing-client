@@ -19,10 +19,11 @@ class AlbumDisplay extends React.Component {
             .catch(error => console.log(error));
     }
     render() {
+        console.log('Image Array -> ' + JSON.stringify(this.props.images));
         return(
             <div id="album">
                 <Images />
-                <button className="button-sort" onClick={() => sortApproved(this.props.images, this.props.currentUser, this.props.authToken)}> Sort ! </button>
+                <button className="button-sort" onClick={() => sortApproved(this.props.currentUser.username, this.props.authToken)}> Sort ! </button>
             </div>
         );
     }

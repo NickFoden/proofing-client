@@ -24,7 +24,7 @@ li {
     height: 150px;
     margin: 20 0 0 0;
     padding: 0 0;
-    border: 2px solid #2EE23B;
+    border: 2px solid #5EE83C;
 }
 #photoCard {
     width: 150px;
@@ -40,7 +40,7 @@ button {
 }
 
 #yes {
-    background-color: #2EE23B;
+    background-color: #5EE83C;
 }
 
 #no {

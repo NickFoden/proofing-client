@@ -1,4 +1,5 @@
 import {API_BASE_URL} from '../config';
+import axios from 'axios';
 
 const GET_ALBUM = 'GET_ALBUM';
 export function getAlbum(data) {
@@ -8,22 +9,33 @@ export function getAlbum(data) {
   };
 }
 
-export const sortApproved = (album, currentUser, authToken) => { 
-  return dispatch => {
-  fetch(`${API_BASE_URL}/photos/sort/${currentUser}`, {
-    method: 'GET',
-    headers : {
-      'Content-Type' : 'application/json', 
-      "Authorization" : `Bearer ${authToken}` 
-    }
-  })
-  .then((result) => result.json())
-  .then((result) => {
-    dispatch(getAlbum(result.data));
-  })
-  .catch(error => console.log(error));
-  }
+export const sortApproved = (username, authToken) => { 
+    axios.get(`${API_BASE_URL}/photos/sort/${username}`, {
+      headers : {
+        'Content-Type' : 'application/json', 
+        "Authorization" : `Bearer ${authToken}` 
+      }
+    })
+    .then((photos) => getAlbum(photos))
+    .catch(error => console.log(error));
 }
+
+// export const sortApproved = (currentUser, authToken) => { 
+//   return dispatch => {
+//     fetch(`${API_BASE_URL}/photos/sort/${currentUser}`, {
+//       method: 'GET',
+//       headers : {
+//         'Content-Type' : 'application/json', 
+//         "Authorization" : `Bearer ${authToken}` 
+//       }
+//     })
+//     .then((result) => result.json())
+//     .then((result) => {
+//       dispatch(getAlbum(result.data));
+//     })
+//     .catch(error => console.log(error));
+//   }
+// }
 
 //First one sort of works after clicking another up or down
 
@@ -48,7 +60,27 @@ export const sortApproved = (album, currentUser, authToken) => {
 //     data : tempData
 //   }  
 // };
-    
+
+// const compare = (a, b)  => {
+//   if (a.approved && !b.approved) {
+//     return -1;
+//   }
+//   if (!a.approved && b.approved) {
+//     return 1;
+//   }
+//   return 0;
+// }
+
+// const SORT_APPROVED = 'SORT_APPROVED';
+// export function sortApproved(data){ 
+//   console.log(data + ' data before')
+//   let tempData = data.slice().sort(compare());
+//   console.log(tempData + ' temp Data after')
+//   return {  
+//     type: SORT_APPROVED,
+//     data : tempData
+//   }  
+// };
 
 const APPROVE = 'APPROVE';
 export function approve(image) {
