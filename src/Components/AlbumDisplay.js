@@ -19,7 +19,6 @@ class AlbumDisplay extends React.Component {
             .catch(error => console.log(error));
     }
     render() {
-        console.log('Image Array -> ' + JSON.stringify(this.props.images));
         return(
             <div id="album">
                 <Images />
@@ -37,4 +36,4 @@ function mapStateToProps(state) {
     }
 }
 
-export default connect(mapStateToProps, {getAlbum})(AlbumDisplay)
+export default connect(mapStateToProps, {getAlbum, sortApproved})(AlbumDisplay)
