@@ -19,9 +19,9 @@ export const sortApproved = (username, authToken) => {
   .then((result) => { 
     getAlbum(result.data)
   })
-  .then((result) => {
-    console.log((result.data))
-  })
+  // .then((result) => {
+  //   console.log(result.data))
+  // }
   .catch(error => console.log(error));
 }
    
