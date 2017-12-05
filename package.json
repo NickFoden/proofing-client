@@ -2,6 +2,7 @@
   "name": "proofing-client",
   "version": "0.1.0",
   "private": true,
+  "homepage" : "https://proofing.netlify.com",
   "dependencies": {
     "axios": "^0.16.2",
     "cloudinary-react": "^1.0.4",
