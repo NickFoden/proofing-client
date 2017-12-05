@@ -15,3 +15,8 @@
 .form-field {
     margin: 20 0;
 }
+
+.welcome-div{
+    font-size: 20px;
+    font-family: 'Roboto Slab', serif; 
+}
