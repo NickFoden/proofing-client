@@ -1,14 +1,15 @@
 import {API_BASE_URL} from '../config';
 import axios from 'axios';
 
-const GET_ALBUM = 'GET_ALBUM';
-export function getAlbum(data) {
+const MAP_ALBUM = 'MAP_ALBUM';
+export function mapAlbum(data) {
   return {
-    type: GET_ALBUM,
+    type: MAP_ALBUM,
     data
   };
 }
 
+const SORT_APPROVED = 'SORT_APPROVED';
 export const sortApproved = (username, authToken) => { 
   axios.get(`${API_BASE_URL}/photos/sort/${username}`, {
     headers : {
@@ -16,15 +17,13 @@ export const sortApproved = (username, authToken) => {
       "Authorization" : `Bearer ${authToken}` 
     }
   })
-  .then((result) => { 
-    getAlbum(result.data)
-  })
-  // .then((result) => {
-  //   console.log(result.data))
-  // }
+  .then(result => { 
+    return {
+      type: SORT_APPROVED,
+      data: result.data 
+    }})  
   .catch(error => console.log(error));
 }
-   
 
 const APPROVE = 'APPROVE';
 export function approve(image) {
@@ -62,71 +61,8 @@ export const savePhoto = (uploaded, currentUser, authToken) => {
     })
     .then((response) => response.json())
     .then((photos) => {
-      dispatch(getAlbum(photos));
+      dispatch(mapAlbum(photos));
     })
     .catch(err => console.log(err))
   }
 }
-
-
-// export const sortApproved = (currentUser, authToken) => { 
-//   return dispatch => {
-//     fetch(`${API_BASE_URL}/photos/sort/${currentUser}`, {
-//       method: 'GET',
-//       headers : {
-//         'Content-Type' : 'application/json', 
-//         "Authorization" : `Bearer ${authToken}` 
-//       }
-//     })
-//     .then((result) => result.json())
-//     .then((result) => {
-//       dispatch(getAlbum(result.data));
-//     })
-//     .catch(error => console.log(error));
-//   }
-// }
-
-//First one sort of works after clicking another up or down
-
-
-// const SORT_APPROVED = 'SORT_APPROVED';
-// export function sortApproved(data){
-//   let temp = data;
-//   temp.sort((a,b) => {return a.approved - b.approved})
-//   return{ 
-//     type: SORT_APPROVED,
-//     data:temp
-//   };
-// }
-
-// const SORT_APPROVED = 'SORT_APPROVED';
-// export function sortApproved(data){ 
-//   console.log(data + ' data before')
-//   let tempData = data.slice().sort((a, b) => {return a.approved - b.approved})
-//   console.log(tempData + ' temp Data after')
-//   return {  
-//     type: SORT_APPROVED,
-//     data : tempData
-//   }  
-// };
-
-// const compare = (a, b)  => {
-//   if (a.approved && !b.approved) {
-//     return -1;
-//   }
-//   if (!a.approved && b.approved) {
-//     return 1;
-//   }
-//   return 0;
-// }
-
-// const SORT_APPROVED = 'SORT_APPROVED';
-// export function sortApproved(data){ 
-//   console.log(data + ' data before')
-//   let tempData = data.slice().sort(compare());
-//   console.log(tempData + ' temp Data after')
-//   return {  
-//     type: SORT_APPROVED,
-//     data : tempData
-//   }  
-// };

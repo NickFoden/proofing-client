@@ -3,7 +3,7 @@ import Images from './Images';
 import { connect } from 'react-redux';
 import axios from 'axios';
 import './AlbumDisplay.css';
-import {getAlbum, sortApproved} from '../actions/index';
+import {mapAlbum, sortApproved} from '../actions/index';
 import {API_BASE_URL} from '../config';
 
 class AlbumDisplay extends React.Component {
@@ -14,15 +14,21 @@ class AlbumDisplay extends React.Component {
             }
         })
             .then((result) => {
-                 this.props.getAlbum(result.data);
+                this.props.mapAlbum(result.data);
             })
             .catch(error => console.log(error));
     }
+
+    sort(){
+       this.props.dispatch(sortApproved(this.props.currentUser.username, this.props.authToken))
+    }
+
+
     render() {
         return(
             <div id="album">
                 <Images />
-                <button className="button-sort" onClick={() => sortApproved(this.props.currentUser.username, this.props.authToken)}> Sort ! </button>
+                <button className="button-sort" onClick={() => this.sort()}> Sort ! </button>
             </div>
         );
     }
@@ -36,4 +42,12 @@ function mapStateToProps(state) {
     }
 }
 
-export default connect(mapStateToProps, {getAlbum, sortApproved})(AlbumDisplay)
+function mapDispatchToProps = (dispatch) => {
+    return {
+        () => dispatch();
+    }
+}
+
+
+
+export default connect(mapStateToProps, {mapAlbum, mapDispatchToProps, sortApproved})(AlbumDisplay);

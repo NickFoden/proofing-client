@@ -4,16 +4,16 @@ const initialState = {
 
   const album = (state = initialState, action) => {
     switch(action.type) {
-      case 'GET_ALBUM':
+      case 'MAP_ALBUM':
         return {
           ...state,
           data: action.data
         }
-        case 'SORT_APPROVED':
-          return {
-            ...state,
-            data: action.data
-          }
+      case 'SORT_APPROVED':
+        return {
+          ...state,
+          data: action.data
+        }
       case 'APPROVE':
         return {
           ...state,
