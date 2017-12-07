@@ -6,6 +6,8 @@ import './AlbumDisplay.css';
 import {mapAlbum, sortApproved} from '../actions/index';
 import {API_BASE_URL} from '../config';
 
+//Move axios get to actions index
+
 class AlbumDisplay extends React.Component {
     componentDidMount() {
         axios.get(`${API_BASE_URL}/photos/${this.props.currentUser.username}`, {
@@ -20,10 +22,8 @@ class AlbumDisplay extends React.Component {
     }
 
     sort(){
-       this.props.dispatch(sortApproved(this.props.currentUser.username, this.props.authToken))
+       this.props.sortApproved(this.props.currentUser.username, this.props.authToken)
     }
-
-
     render() {
         return(
             <div id="album">
@@ -42,12 +42,4 @@ function mapStateToProps(state) {
     }
 }
 
-function mapDispatchToProps = (dispatch) => {
-    return {
-        () => dispatch();
-    }
-}
-
-
-
-export default connect(mapStateToProps, {mapAlbum, mapDispatchToProps, sortApproved})(AlbumDisplay);
+export default connect(mapStateToProps, {mapAlbum, sortApproved})(AlbumDisplay);

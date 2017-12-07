@@ -9,19 +9,16 @@ export function mapAlbum(data) {
   };
 }
 
-const SORT_APPROVED = 'SORT_APPROVED';
-export const sortApproved = (username, authToken) => { 
+export const sortApproved = (username, authToken) => (dispatch) => { 
   axios.get(`${API_BASE_URL}/photos/sort/${username}`, {
     headers : {
       // 'Content-Type' : 'application/json', 
       "Authorization" : `Bearer ${authToken}` 
     }
   })
-  .then(result => { 
-    return {
-      type: SORT_APPROVED,
-      data: result.data 
-    }})  
+  .then(result => {
+      dispatch(mapAlbum(result.data))
+    })
   .catch(error => console.log(error));
 }
 
