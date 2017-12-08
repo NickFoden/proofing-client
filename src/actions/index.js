@@ -22,6 +22,24 @@ export const sortApproved = (username, authToken) => (dispatch) => {
   .catch(error => console.log(error));
 }
 
+export const saveAlbum = (username, authToken, images) => (dispatch) => { 
+  axios.post(`${API_BASE_URL}/albums/${username}`, {
+    headers : {
+      // 'Content-Type' : 'application/json', 
+      "Authorization" : `Bearer ${authToken}` 
+    },
+    data : {
+      username,
+      images
+    }
+  })
+  .then(result => {
+    console.log('result from api ' + result)
+      // dispatch(mapAlbum(result)
+    })
+  .catch(error => console.log(error));
+}
+
 const APPROVE = 'APPROVE';
 export function approve(image) {
   fetch(`${API_BASE_URL}/images/${image._id}/approve`, {
