@@ -1,5 +1,6 @@
 import React from 'react';
 import Images from './Images';
+import AlbumList from './AlbumList';
 import { connect } from 'react-redux';
 import axios from 'axios';
 import './AlbumDisplay.css';
@@ -24,13 +25,19 @@ class AlbumDisplay extends React.Component {
        this.props.sortApproved(this.props.currentUser.username, this.props.authToken)
     }
     save(){
-        this.props.saveAlbum(this.props.currentUser.username, this.props.authToken, this.props.images)
+        let imageArray = this.props.images;
+        console.log(imageArray + " image array before sort")
+        let newImageArray = ((this.props.images).filter(photo => photo.approved))
+        console.log(newImageArray + ' new image array');
+        this.props.saveAlbum(this.props.currentUser.username, this.props.authToken, newImageArray)
      }
 
     render() {
+        // console.log(JSON.stringify(this.props.images[1]) + " this props images")
         return(
             <div id="album">
                 <Images />
+                {/* <AlbumList /> */}
                 <button className="button-sort" onClick={() => this.sort()}> Sort </button>
                 <button className="button-save-album" onClick={() => this.save()}> Save as Album </button>
             </div>
