@@ -7,17 +7,18 @@ import {loadPhotos, mapAlbum, saveAlbum, sortApproved} from '../actions/index';
 
 class AlbumDisplay extends React.Component {
     componentDidMount() {
-        loadPhotos(this.props.username, this.props.authToken)
+        this.props.loadPhotos(this.props.currentUser.username, this.props.authToken)
     }
     sort(){
        this.props.sortApproved(this.props.currentUser.username, this.props.authToken)
     }
     save(){
-        let imageArray = this.props.images;
-        console.log(imageArray + " image array before sort")
-        let newImageArray = ((this.props.images).filter(photo => photo.approved))
-        console.log(newImageArray + ' new image array');
-        this.props.saveAlbum(this.props.currentUser.username, this.props.authToken, newImageArray)
+        let newImageArray = (this.props.images.filter(photo => photo.approved))
+        this.props.saveAlbum(
+            this.props.currentUser.username, 
+            this.props.authToken,
+            newImageArray
+        )
      }
      
     render() {
@@ -25,7 +26,7 @@ class AlbumDisplay extends React.Component {
             
             <div id="album">
                 <Images />
-                {/* <AlbumList /> */}
+                <AlbumList />
                 <button className="button-sort" onClick={() => this.sort()}> Sort </button>
                 <button className="button-save-album" onClick={() => this.save()}> Save as Album </button>
             </div>

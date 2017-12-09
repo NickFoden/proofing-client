@@ -12,11 +12,13 @@ class AlbumList extends React.Component {
     render() {
         return(
             <div id="album-list">
+                <h2>Album List</h2>
                 <ul>
-                {this.props.photoAlbums.map((album, index) => 
+                {/* {this.props.photoAlbums.map((album, index) => 
                     <li key={index}> 
                         <a>{album.albumId}</a>
-                    </li>)}
+                    </li>)} */}
+                    <li>Here is an album + {this.props.photoAlbums}</li>
                 </ul>
             </div>
         );

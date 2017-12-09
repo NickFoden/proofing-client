@@ -54,10 +54,10 @@ export const sortApproved = (username, authToken) => (dispatch) => {
 export const loadPhotos = (username, authToken) => (dispatch) => {
   axios.get(`${API_BASE_URL}/photos/${username}`, {
     headers : {
-        "Authorization" : `Bearer ${this.props.authToken}` 
+        "Authorization" : `Bearer ${authToken}` 
     }
   })
-    .then((result) => {
+    .then(result => {
         dispatch(mapAlbum(result.data));
     })
     .catch(error => console.log(error));
@@ -66,19 +66,18 @@ export const loadPhotos = (username, authToken) => (dispatch) => {
 export const saveAlbum = (username, authToken, images) => (dispatch) => { 
   fetch(`${API_BASE_URL}/albums/${username}`, {
     method: 'POST',
-    headers : {
+    headers: {
       'Content-Type' : 'application/json', 
       "Authorization" : `Bearer ${authToken}` 
     },
-    body : JSON.stringify({
-      username: username,
-      images:images
+    body: JSON.stringify({
+      images
     })
   })
+  .then((response) => response.json())
   .then((album) => {
-    // dispatch(mapAlbum(album))
-    // })
-    console.log('result from api ' + JSON.stringify(album) + " and without JSON stringify " + album)
+    dispatch(mapAlbum(album))
+    // console.log('result from api ' + JSON.stringify(album) + " and without JSON stringify " + album)
   })  
   .catch(error => console.log(error));
 }
