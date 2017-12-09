@@ -37,7 +37,7 @@ class AlbumDisplay extends React.Component {
         return(
             <div id="album">
                 <Images />
-                {/* <AlbumList /> */}
+                <AlbumList />
                 <button className="button-sort" onClick={() => this.sort()}> Sort </button>
                 <button className="button-save-album" onClick={() => this.save()}> Save as Album </button>
             </div>
@@ -49,7 +49,8 @@ function mapStateToProps(state) {
     return {
         currentUser: state.userReducer.currentUser,
         authToken : state.userReducer.authToken,
-        images: state.album.data
+        images: state.album.data,
+        photoAlbums: state.photoAlbum.photoAlbums
     }
 }
 

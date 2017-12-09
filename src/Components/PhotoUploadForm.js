@@ -39,9 +39,7 @@ class PhotoUploadForm extends React.Component {
                 alert(err)
                 return
             }
-            //console.log("Line 42 + props currentUser.username " + this.props.currentUser.username)
             resp.body.userName = this.props.currentUser
-            //console.log("Line 44 + " + resp.body.user)
             let uploaded = resp.body
             console.log('UPLOAD COMPLETE: '+JSON.stringify(uploaded))
             console.log('Current User user name', this.props.currentUser.username )
@@ -51,7 +49,6 @@ class PhotoUploadForm extends React.Component {
         })
     }
     render() {
-        console.log({user: this.props.currentUser})
         return (
             <div className="drop">
                 <Dropzone onDrop={this.uploadFile.bind(this)} >
