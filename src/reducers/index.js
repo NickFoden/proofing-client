@@ -1,13 +1,13 @@
 import { combineReducers } from 'redux';
 import {reducer as formReducer} from 'redux-form';
-import album from './albums';
+import photoReducer from './photoReducer';
 import userReducer from './auth';
 import authReducer from './auth';
 import protectedDataReducer from './protected-data';
-import photoAlbumReducer from './photoAlbums';
+import photoAlbumReducer from './photoAlbumReducer';
 
 const rootReducer = combineReducers({
-  album,
+  photoReducer,
   userReducer,
   form :formReducer,
   auth: authReducer,

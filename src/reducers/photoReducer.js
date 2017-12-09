@@ -1,27 +1,26 @@
 const initialState = {
-    data: []
+    photosState: []
   }
 
-  const album = (state = initialState, action) => {
+  const photoReducer = (state = initialState, action) => {
     switch(action.type) {
       case 'MAP_ALBUM':
         return {
           ...state,
-          data: action.data
+          photosState: action.data
         }
       case 'SORT_APPROVED':
         return {
           ...state,
-          data: action.data
+          photosState: action.data
         }
       case 'APPROVE':
         return {
           ...state,
-          data: state.data.map((imageData) => {
+          photosState: state.photosState.map((imageData) => {
             if (action.image._id !== imageData._id) {
               return imageData;
             }
-
             return {
               ...imageData,
               approved: true
@@ -31,11 +30,10 @@ const initialState = {
       case 'DISPROVE':
         return {
           ...state,
-          data: state.data.map((imageData) => {
+         photosState: state.data.map((imageData) => {
             if (action.image._id !== imageData._id) {
               return imageData;
             }
-
             return {
               ...imageData,
               approved: false
@@ -47,4 +45,4 @@ const initialState = {
     }
   }
 
-  export default album
+  export default photoReducer

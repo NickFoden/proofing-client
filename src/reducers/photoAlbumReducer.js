@@ -14,5 +14,5 @@ const initialState = {
     }
   }
 
-  export default photoAlbumReducer;
+  export default photoAlbumReducer
 

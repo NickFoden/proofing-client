@@ -31,7 +31,6 @@ export const sortApproved = (username, authToken) => (dispatch) => {
 }
 
 export const saveAlbum = (username, authToken, images) => (dispatch) => { 
-  // let newAlbumArray = JSON.stringify(images);
   fetch(`${API_BASE_URL}/albums/${username}`, {
     method: 'POST',
     headers : {
@@ -41,7 +40,6 @@ export const saveAlbum = (username, authToken, images) => (dispatch) => {
     body : JSON.stringify({
       username: username,
       images:images
-      // images: newAlbumArray
     })
   })
   .then((album) => {
@@ -53,6 +51,7 @@ export const saveAlbum = (username, authToken, images) => (dispatch) => {
 }
 
 //Axios version returns unauthorized
+//TODO Look at more axios examples for post
 
 // export const saveAlbum = (username, authToken, images) => (dispatch) => { 
 //   axios.post(`${API_BASE_URL}/albums/${username}`, {

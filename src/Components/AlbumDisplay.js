@@ -49,8 +49,8 @@ function mapStateToProps(state) {
     return {
         currentUser: state.userReducer.currentUser,
         authToken : state.userReducer.authToken,
-        images: state.album.data,
-        photoAlbums: state.photoAlbum.photoAlbums
+        images: state.photoReducer.photosState,
+        photoAlbums: state.photoAlbumReducer.photoAlbums
     }
 }
 

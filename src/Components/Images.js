@@ -24,7 +24,7 @@ class Images extends React.Component {
 
 function mapStateToProps(state) {
     return {
-        images: state.album.data
+        images: state.photoReducer.photosState
     }
 }
 
