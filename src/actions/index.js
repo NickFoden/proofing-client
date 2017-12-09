@@ -16,6 +16,27 @@ export function addAlbums(data) {
     data
   };
 }
+const APPROVE = 'APPROVE';
+export function approve(image) {
+  fetch(`${API_BASE_URL}/images/${image._id}/approve`, {
+    method: 'PUT'
+  })
+  return {
+    type: APPROVE,
+    image
+  };
+}
+
+const DISPROVE = 'DISPROVE';
+export function disprove(image) {
+  fetch(`${API_BASE_URL}/images/${image._id}/disprove`, {
+    method: 'PUT'
+  })
+  return {
+    type: DISPROVE,
+    image
+  };
+}
 
 export const sortApproved = (username, authToken) => (dispatch) => { 
   axios.get(`${API_BASE_URL}/photos/sort/${username}`, {
@@ -28,6 +49,18 @@ export const sortApproved = (username, authToken) => (dispatch) => {
       dispatch(mapAlbum(result.data))
     })
   .catch(error => console.log(error));
+}
+
+export const loadPhotos = (username, authToken) => (dispatch) => {
+  axios.get(`${API_BASE_URL}/photos/${username}`, {
+    headers : {
+        "Authorization" : `Bearer ${this.props.authToken}` 
+    }
+  })
+    .then((result) => {
+        dispatch(mapAlbum(result.data));
+    })
+    .catch(error => console.log(error));
 }
 
 export const saveAlbum = (username, authToken, images) => (dispatch) => { 
@@ -71,28 +104,6 @@ export const saveAlbum = (username, authToken, images) => (dispatch) => {
 //   .catch(error => console.log(error));
 // }
 
-const APPROVE = 'APPROVE';
-export function approve(image) {
-  fetch(`${API_BASE_URL}/images/${image._id}/approve`, {
-    method: 'PUT'
-  })
-  return {
-    type: APPROVE,
-    image
-  };
-}
-
-const DISPROVE = 'DISPROVE';
-export function disprove(image) {
-  fetch(`${API_BASE_URL}/images/${image._id}/disprove`, {
-    method: 'PUT'
-  })
-  return {
-    type: DISPROVE,
-    image
-  };
-}
-
 export const savePhoto = (uploaded, currentUser, authToken) => {
   return dispatch => {
     fetch(`${API_BASE_URL}/photos/${currentUser}`, {
@@ -113,14 +124,14 @@ export const savePhoto = (uploaded, currentUser, authToken) => {
   }
 }
 
-export const getAlbums = (username, authToken) => {
+export const getAlbums = (username, authToken) => (dispatch) => {
   axios.get(`${API_BASE_URL}/albums/${username}`, {
     headers : {
-        "Authorization" : `Bearer ${this.props.authToken}` 
+        "Authorization" : `Bearer ${authToken}` 
     }
   })
     .then((result) => {
-        this.props.addAlbums(result.data);
+        dispatch(addAlbums(result.data));
     })
     .catch(error => console.log(error));
   }

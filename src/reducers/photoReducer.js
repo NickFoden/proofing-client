@@ -30,7 +30,7 @@ const initialState = {
       case 'DISPROVE':
         return {
           ...state,
-         photosState: state.data.map((imageData) => {
+         photosState: state.photosState.map((imageData) => {
             if (action.image._id !== imageData._id) {
               return imageData;
             }

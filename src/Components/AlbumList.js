@@ -25,7 +25,7 @@ class AlbumList extends React.Component {
 
 function mapStateToProps(state) {
     return {
-        photoAlbums: state.photoAlbumReducer.photoAlbums
+        photoAlbums: state.photoAlbumReducer.albumArray
     }
 }
 
