@@ -9,10 +9,10 @@ export function mapAlbum(data) {
   };
 }
 
-const ADD_ALBUMS = 'ADD_ALBUMS';
-export function addAlbums(data) {
+const ADD_ALBUM = 'ADD_ALBUM';
+export function addAlbum(data) {
   return {
-    type: ADD_ALBUMS,
+    type: ADD_ALBUM,
     data
   };
 }
@@ -76,10 +76,21 @@ export const saveAlbum = (username, authToken, images) => (dispatch) => {
   })
   .then((response) => response.json())
   .then((album) => {
-    dispatch(mapAlbum(album))
-    // console.log('result from api ' + JSON.stringify(album) + " and without JSON stringify " + album)
+    dispatch(addAlbum(album))
   })  
   .catch(error => console.log(error));
+}
+
+export const loadAlbums = (username, authToken) => (dispatch) => {
+  axios.get(`${API_BASE_URL}/albums/${username}`, {
+    headers : {
+        "Authorization" : `Bearer ${authToken}` 
+    }
+  })
+    .then(result => {
+        dispatch(addAlbum(result));
+    })
+    .catch(error => console.log(error));
 }
 
 //Axios version returns unauthorized
@@ -123,14 +134,14 @@ export const savePhoto = (uploaded, currentUser, authToken) => {
   }
 }
 
-export const getAlbums = (username, authToken) => (dispatch) => {
-  axios.get(`${API_BASE_URL}/albums/${username}`, {
-    headers : {
-        "Authorization" : `Bearer ${authToken}` 
-    }
-  })
-    .then((result) => {
-        dispatch(addAlbums(result.data));
-    })
-    .catch(error => console.log(error));
-  }
+// export const getAlbums = (username, authToken) => (dispatch) => {
+//   axios.get(`${API_BASE_URL}/albums/${username}`, {
+//     headers : {
+//         "Authorization" : `Bearer ${authToken}` 
+//     }
+//   })
+//     .then((result) => {
+//         dispatch(addAlbums(result.data));
+//     })
+//     .catch(error => console.log(error));
+//   }

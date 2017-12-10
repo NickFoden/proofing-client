@@ -1,14 +1,13 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import './AlbumDisplay.css';
-import {getAlbums} from '../actions/index';
+import {loadAlbums} from '../actions/index';
 
 
 class AlbumList extends React.Component {
     componentDidMount() {
-       getAlbums()
+       loadAlbums()
     }
-    
     render() {
         return(
             <div id="album-list">
@@ -18,7 +17,7 @@ class AlbumList extends React.Component {
                     <li key={index}> 
                         <a>{album.albumId}</a>
                     </li>)}
-                    <li>Here is an album + {this.props.photoAlbums}</li>
+                    <li>Here is an album + {this.props.photoAlbums.owner}</li>
                 </ul>
             </div>
         );
@@ -31,4 +30,4 @@ function mapStateToProps(state) {
     }
 }
 
-export default connect(mapStateToProps, {getAlbums})(AlbumList);
+export default connect(mapStateToProps, {loadAlbums})(AlbumList);

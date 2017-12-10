@@ -3,7 +3,7 @@ import Images from './Images';
 import AlbumList from './AlbumList';
 import { connect } from 'react-redux';
 import './AlbumDisplay.css';
-import {loadPhotos, mapAlbum, saveAlbum, sortApproved} from '../actions/index';
+import {loadPhotos, addAlbum, saveAlbum, sortApproved} from '../actions/index';
 
 class AlbumDisplay extends React.Component {
     componentDidMount() {
@@ -42,4 +42,4 @@ function mapStateToProps(state) {
     }
 }
 
-export default connect(mapStateToProps, {loadPhotos,mapAlbum, saveAlbum, sortApproved})(AlbumDisplay);
+export default connect(mapStateToProps, {loadPhotos, addAlbum, saveAlbum, sortApproved})(AlbumDisplay);

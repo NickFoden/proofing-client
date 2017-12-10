@@ -4,7 +4,7 @@ const initialState = {
 
   const photoAlbumReducer = (state = initialState, action) => {
     switch(action.type) {
-        case 'ADD_ALBUMS':
+        case 'ADD_ALBUM':
             return {
             ...state,
             albumArray: action.data
@@ -14,5 +14,5 @@ const initialState = {
     }
   }
 
-  export default photoAlbumReducer
+  export default photoAlbumReducer;
 
