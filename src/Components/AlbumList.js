@@ -15,9 +15,9 @@ class AlbumList extends React.Component {
        this.props.loadAlbums(this.props.currentUser.username, this.props.authToken)
     }   
     
-    // onClick(data){
-    //     this.props.setCurrentAlbum(data);
-    // }
+    setAlbum(data){
+        this.props.setCurrentAlbum(data);
+    }
 
     // onClick={this.props.onClick(`${album.albumId}`)}
 
@@ -27,7 +27,7 @@ class AlbumList extends React.Component {
                 <h2>Album List</h2>
                 <ul>
                 {this.props.photoAlbums.map((album, index) => 
-                    <li key={index}> 
+                    <li key={index} onClick={() => this.setAlbum(`${album}`)}> 
                         <Link className="album-links" to={`/albums/${album.albumId}`}>
                             {album.albumId}
                         </Link>    

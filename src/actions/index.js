@@ -86,7 +86,7 @@ export const saveAlbum = (username, authToken, images) => (dispatch) => {
   .then((response) => response.json())
   .then((album) => {
     dispatch(addAlbum(album))
-  })  
+  })
   .catch(error => console.log(error));
 }
 
@@ -154,3 +154,10 @@ export const savePhoto = (uploaded, currentUser, authToken) => {
 //     })
 //     .catch(error => console.log(error));
 //   }
+
+
+export const mountCurrentAlbum = (albums, currentAlbum) => {
+  return dispatch => {
+    let newImageArray = (albums.filter(album => album.currentAlbum))
+  } 
+}

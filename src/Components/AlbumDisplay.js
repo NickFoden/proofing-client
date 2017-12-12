@@ -20,6 +20,8 @@ class AlbumDisplay extends React.Component {
             newImageArray
         )
      }
+
+    //  https://github.com/KanoComputing/nodejs-profanity-util
      
     render() {
         return(
