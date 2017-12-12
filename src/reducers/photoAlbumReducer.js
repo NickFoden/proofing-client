@@ -1,5 +1,6 @@
 const initialState = {
-    albumArray: []
+    albumArray: [],
+    currentAblum: {}
   }
 
   const photoAlbumReducer = (state = initialState, action) => {
@@ -9,6 +10,10 @@ const initialState = {
             ...state,
             albumArray: action.data
             }
+        case 'SET_CURRENT_ALBUM':
+            return {
+            currentAlbum: action.data
+            }   
         default:
             return state
     }

@@ -11,6 +11,7 @@ import AlbumDisplay from'./Components/AlbumDisplay';
 import HeaderNav from './Components/HeaderNav';
 import LoginForm from './Components/Login-form';
 import RegistrationPage from './Components/RegistrationPage';
+import AlbumRender from './Components/AlbumRender';
 
 class App extends Component {
 
@@ -23,6 +24,7 @@ class App extends Component {
             <Route exact path="/register" component={RegistrationPage}/>
             <Route exact path="/photos" component={PhotoUploadForm} />
             <Route exact path="/" component={Home} />
+            <Route path={`/albums/${this.props.currentAlbum}`} component={AlbumRender} />
             { this.props.currentUser.username  == null ? false : <AlbumDisplay /> } 
         </div>
       </Router>  
@@ -33,7 +35,8 @@ class App extends Component {
 
 function mapStateToProps(state) {
   return {
-      currentUser: state.userReducer.currentUser
+      currentUser: state.userReducer.currentUser,
+      currentAlbum: state.photoAlbumReducer.currentAlbum
   }
 }
 

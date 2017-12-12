@@ -16,6 +16,15 @@ export function addAlbum(data) {
     data
   };
 }
+
+const SET_CURRENT_ALBUM = 'SET_CURRENT_ALBUM';
+export function setCurrentAlbum(data) {
+  return {
+    type: SET_CURRENT_ALBUM,
+    data
+  };
+}
+
 const APPROVE = 'APPROVE';
 export function approve(image) {
   fetch(`${API_BASE_URL}/images/${image._id}/approve`, {
@@ -88,7 +97,7 @@ export const loadAlbums = (username, authToken) => (dispatch) => {
     }
   })
     .then(result => {
-        dispatch(addAlbum(result));
+      dispatch(addAlbum(result.data));
     })
     .catch(error => console.log(error));
 }

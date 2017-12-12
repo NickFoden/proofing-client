@@ -1,13 +1,26 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { 
+    Link,
+    withRouter
+ } from 'react-router-dom';
 import './AlbumDisplay.css';
 import {loadAlbums} from '../actions/index';
+import './AlbumList.css';
+import {setCurrentAlbum} from '../actions';
 
 
 class AlbumList extends React.Component {
     componentDidMount() {
-       loadAlbums()
-    }
+       this.props.loadAlbums(this.props.currentUser.username, this.props.authToken)
+    }   
+    
+    // onClick(data){
+    //     this.props.setCurrentAlbum(data);
+    // }
+
+    // onClick={this.props.onClick(`${album.albumId}`)}
+
     render() {
         return(
             <div id="album-list">
@@ -15,9 +28,11 @@ class AlbumList extends React.Component {
                 <ul>
                 {this.props.photoAlbums.map((album, index) => 
                     <li key={index}> 
-                        <a>{album.albumId}</a>
+                        <Link className="album-links" to={`/albums/${album.albumId}`}>
+                            {album.albumId}
+                        </Link>    
                     </li>)}
-                    <li>Here is an album + {this.props.photoAlbums.owner}</li>
+
                 </ul>
             </div>
         );
@@ -26,8 +41,10 @@ class AlbumList extends React.Component {
 
 function mapStateToProps(state) {
     return {
+        authToken : state.userReducer.authToken,
+        currentUser: state.userReducer.currentUser,
         photoAlbums: state.photoAlbumReducer.albumArray
     }
 }
 
-export default connect(mapStateToProps, {loadAlbums})(AlbumList);
+export default withRouter(connect(mapStateToProps, {loadAlbums, setCurrentAlbum})(AlbumList));
