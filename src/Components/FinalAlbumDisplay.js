@@ -7,6 +7,7 @@ class FinalAlbumDisplay extends React.Component {
     render() {
         return(
             <div>
+                <AlbumList />
                 <ul> 
                     {this.props.images.map((image, index) => 
                         <li key={index}> 
@@ -14,7 +15,7 @@ class FinalAlbumDisplay extends React.Component {
                             src={image.image[0].secure_url} alt="final-album-images" />
                     </li>)}
                 </ul>
-                <AlbumList />
+                
             </div>
         )       
     }
@@ -22,7 +23,7 @@ class FinalAlbumDisplay extends React.Component {
 
 function mapStateToProps(state) {
     return {
-        images: state.photoAlbumReducer.currentAlbum
+        images: state.photoAlbumReducer.currentAlbum.albumArray
     }
 }
 

@@ -34,12 +34,14 @@ class HeaderNav extends React.Component {
             registerLink = (
                 <li><Link className="header-links" to='/register'> Register</Link></li>
             
-        )}    
+        )}
+
     return (
         <div id="header-nav">
             <ul>
                 <li id="home-link"><Link className="header-links-home" to='/'> Home </Link></li>
-                <li><Link className="header-links" to='/photos'> Photos</Link></li>
+                {this.props.currentUser.username  == null ? false : <li><Link className="header-links" to='/photos'>Photos</Link></li>} 
+                {this.props.currentUser.username  == null ? false : <li><Link className="header-links" to='/albums'>Albums</Link></li>} 
                 {registerLink}
                 {logButton}
             </ul>    

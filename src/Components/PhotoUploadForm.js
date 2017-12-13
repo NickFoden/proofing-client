@@ -3,6 +3,7 @@ import './PhotoUploadForm.css';
 import Dropzone from 'react-dropzone'
 import sha1 from 'sha1'
 import superagent from 'superagent'
+import AlbumDisplay from './AlbumDisplay';
 import { connect } from 'react-redux'
 import { savePhoto } from '../actions/index'
 
@@ -50,11 +51,14 @@ class PhotoUploadForm extends React.Component {
     }
     render() {
         return (
-            <div className="drop">
-                <Dropzone onDrop={this.uploadFile.bind(this)} >
-                    <div className="drop-text">Drop your photo or click to add a photo</div>
-                </Dropzone>  
-            </div>     
+            <div>
+                <div className="drop">
+                    <Dropzone onDrop={this.uploadFile.bind(this)} >
+                        <div className="drop-text">Drop your photo or click to add a photo</div>
+                    </Dropzone>  
+                </div>
+                { this.props.currentUser.username  == null ? false : <AlbumDisplay /> }    
+            </div>      
         )}
 }
 

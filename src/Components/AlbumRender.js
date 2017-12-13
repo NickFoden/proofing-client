@@ -16,8 +16,8 @@ class AlbumRender extends React.Component {
 render(){
     return (
         <div>
-            <h2>{this.props.currentAlbum.albumId}</h2>
-            <FinalAlbumDisplay images={this.newImageArray} />
+            <h2>{this.props.currentAlbum.albumTitle}</h2>
+            <FinalAlbumDisplay />
         </div>    
         )
     }

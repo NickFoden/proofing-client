@@ -137,8 +137,8 @@ export const savePhoto = (uploaded, currentUser, authToken) => {
 //     .catch(error => console.log(error));
 //   }
 
-export const saveAlbum = (username, title, authToken, images) => dispatch => { 
-  fetch(`${API_BASE_URL}/albums/${username}/${title}`, {
+export const saveAlbum = (title, username, authToken, images) => dispatch => { 
+  fetch(`${API_BASE_URL}/albums/${title}/${username}`, {
     method: 'POST',
     headers: {
       'Content-Type' : 'application/json', 
