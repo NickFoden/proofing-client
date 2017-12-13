@@ -1,6 +1,7 @@
 import React from 'react';
 import './Images.css';
 import { connect } from 'react-redux';
+import AlbumList from './AlbumList';
 
 class FinalAlbumDisplay extends React.Component {
     render() {
@@ -13,6 +14,7 @@ class FinalAlbumDisplay extends React.Component {
                             src={image.image[0].secure_url} alt="final-album-images" />
                     </li>)}
                 </ul>
+                <AlbumList />
             </div>
         )       
     }

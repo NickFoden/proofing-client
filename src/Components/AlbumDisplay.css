@@ -17,3 +17,14 @@
     margin: 20px 10px 40px 10px;
     width: auto;
 }
+
+.button-remove-approved {
+    border-radius: 5px;
+    background-color: orange;
+    font-family: 'Roboto Slab', serif;
+    font-size: 18px;
+    height: auto;
+    margin: 20px 10px 40px 10px;
+    width: auto;
+
+}

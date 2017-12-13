@@ -14,14 +14,14 @@ class AlbumDisplay extends React.Component {
     }
     save(){
         let newImageArray = (this.props.images.filter(photo => photo.approved))
-        this.props.saveAlbum( this.props.currentUser.username, this.props.authToken, newImageArray)
+        this.props.saveAlbum( this.input.value, this.props.currentUser.username, this.props.authToken, newImageArray)
      }
 
     remove(){
         let newImageArray = (this.props.images.filter(photo => photo.approved))
         this.props.removeApproved( this.props.currentUser.username, this.props.authToken, newImageArray)
      }
-     
+
     //  https://github.com/KanoComputing/nodejs-profanity-util
      
     render() {
@@ -31,11 +31,15 @@ class AlbumDisplay extends React.Component {
                 <Images />
                 <AlbumList />
                 <button className="button-sort" onClick={() => this.sort()}> Sort </button>
-                <form>
-                    {/* <input name="Album-Name" /> */}
-                    <button className="button-save-album" onClick={() => this.save()}> Save as Album </button>
+                <form id="album-form" onSubmit={() => this.save()}>
+                    <label>
+                        Album Title:
+                        <input type="text" ref={(input) => this.input = input} />
+                    </label>
+                    
+                    <button className="button-save-album">Save as Album </button>
                 </form>
-                <button className="button-remove-approved" onClick={() => this.remove()}> Remove Approved </button>
+                <button className="button-remove-approved" onClick={() => this.remove()}> Remove Approved from Queue</button>
             </div>
         );
     }

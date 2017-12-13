@@ -28,8 +28,8 @@ class AlbumList extends React.Component {
                 <ul>
                 {this.props.photoAlbums.map((album, index) => 
                     <li key={index} onClick={() => this.setAlbum(`${album}`)}> 
-                        <Link className="album-links" to={`/albums/${album.albumId}`}>
-                            {album.albumId}
+                        <Link className="album-links" to={`/albums/${album.albumTitle}`}>
+                            {album.albumTitle}
                         </Link>    
                     </li>)}
 
