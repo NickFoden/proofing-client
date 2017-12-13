@@ -72,7 +72,7 @@ export const loadPhotos = (username, authToken) => (dispatch) => {
     .catch(error => console.log(error));
 }
 
-export const saveAlbum = (username, authToken, images) => (dispatch) => { 
+export const saveAlbum = (username, authToken, images) => dispatch => { 
   fetch(`${API_BASE_URL}/albums/${username}`, {
     method: 'POST',
     headers: {
@@ -86,6 +86,24 @@ export const saveAlbum = (username, authToken, images) => (dispatch) => {
   .then((response) => response.json())
   .then((album) => {
     dispatch(addAlbum(album))
+  })
+  .catch(error => console.log(error));
+}
+
+export const removeApproved = (username, authToken, images) => dispatch => { 
+  fetch(`${API_BASE_URL}/images/remove/${username}`, {
+    method: 'DELETE',
+    headers: {
+      'Content-Type' : 'application/json', 
+      "Authorization" : `Bearer ${authToken}` 
+    },
+    body: JSON.stringify({
+      images
+    })
+  })
+  .then((response) => {
+    debugger;
+    console.log(response)
   })
   .catch(error => console.log(error));
 }

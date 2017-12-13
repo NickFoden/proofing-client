@@ -24,7 +24,7 @@ class App extends Component {
             <Route exact path="/register" component={RegistrationPage}/>
             <Route exact path="/photos" component={PhotoUploadForm} />
             <Route exact path="/" component={Home} />
-            <Route path={`/albums/${this.props.currentAlbum}`} component={AlbumRender} />
+            <Route exact path={`/albums/${this.props.currentAlbum}`} component={AlbumRender} />
             { this.props.currentUser.username  == null ? false : <AlbumDisplay /> } 
         </div>
       </Router>  

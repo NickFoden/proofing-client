@@ -3,7 +3,7 @@ import Images from './Images';
 import AlbumList from './AlbumList';
 import { connect } from 'react-redux';
 import './AlbumDisplay.css';
-import {loadPhotos, addAlbum, saveAlbum, sortApproved} from '../actions/index';
+import {loadPhotos, addAlbum, removeApproved, saveAlbum, sortApproved} from '../actions/index';
 
 class AlbumDisplay extends React.Component {
     componentDidMount() {
@@ -14,13 +14,14 @@ class AlbumDisplay extends React.Component {
     }
     save(){
         let newImageArray = (this.props.images.filter(photo => photo.approved))
-        this.props.saveAlbum(
-            this.props.currentUser.username, 
-            this.props.authToken,
-            newImageArray
-        )
+        this.props.saveAlbum( this.props.currentUser.username, this.props.authToken, newImageArray)
      }
 
+    remove(){
+        let newImageArray = (this.props.images.filter(photo => photo.approved))
+        this.props.removeApproved( this.props.currentUser.username, this.props.authToken, newImageArray)
+     }
+     
     //  https://github.com/KanoComputing/nodejs-profanity-util
      
     render() {
@@ -30,7 +31,11 @@ class AlbumDisplay extends React.Component {
                 <Images />
                 <AlbumList />
                 <button className="button-sort" onClick={() => this.sort()}> Sort </button>
-                <button className="button-save-album" onClick={() => this.save()}> Save as Album </button>
+                <form>
+                    {/* <input name="Album-Name" /> */}
+                    <button className="button-save-album" onClick={() => this.save()}> Save as Album </button>
+                </form>
+                <button className="button-remove-approved" onClick={() => this.remove()}> Remove Approved </button>
             </div>
         );
     }
@@ -44,4 +49,4 @@ function mapStateToProps(state) {
     }
 }
 
-export default connect(mapStateToProps, {loadPhotos, addAlbum, saveAlbum, sortApproved})(AlbumDisplay);
+export default connect(mapStateToProps, {loadPhotos, addAlbum, removeApproved, saveAlbum, sortApproved})(AlbumDisplay);
