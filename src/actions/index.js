@@ -154,10 +154,3 @@ export const savePhoto = (uploaded, currentUser, authToken) => {
 //     })
 //     .catch(error => console.log(error));
 //   }
-
-
-export const mountCurrentAlbum = (albums, currentAlbum) => {
-  return dispatch => {
-    let newImageArray = (albums.filter(album => album.currentAlbum))
-  } 
-}
