@@ -61,18 +61,6 @@ export class RegistrationForm extends React.Component {
     }
 }
 
-/*const mapStateToProps = state => ({
-    loggedIn: state.auth.currentUser !== null
-});
-
-const registrationForm = ( reduxForm({
-    form: 'registration',
-    onSubmitFail: (errors, dispatch) =>
-        dispatch(focus('registration', Object.keys(errors)[0]))
-})(RegistrationForm));
-
-export default connect(mapStateToProps)(registrationForm)*/
-
 export default reduxForm({
     form: 'registration',
     onSubmitFail: (errors, dispatch) =>

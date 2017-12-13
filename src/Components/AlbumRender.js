@@ -7,12 +7,6 @@ class AlbumRender extends React.Component {
     //    this.props.mountCurrentAlbum(this.props.photoAlbums, this.props.currentAlbum)
     }
 
-    // mountCurrentAlbum = (albums, currentAlbum) => {
-    //     return dispatch => {
-    //       let newImageArray = (albums.filter(album => album.currentAlbum))
-    //     } 
-    //   }
-
 render(){
     return (
         <div>
