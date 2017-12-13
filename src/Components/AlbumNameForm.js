@@ -1,4 +1,5 @@
 import React from 'react';
+import { withRouter } from 'react-router';
 import {Field, focus, reduxForm, SubmissionError} from 'redux-form';
 import Input from './input';
 import {required, nonEmpty} from '../validators';
@@ -50,10 +51,10 @@ export class AlbumNameForm extends React.Component {
     }
 }
 
-export default reduxForm({
+export default withRouter(reduxForm({
     form: 'albumName',
     onSubmitFail: (errors, dispatch) => dispatch(focus('albumName'))
-})(AlbumNameForm)
+})(AlbumNameForm))
 
 
 
