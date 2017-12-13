@@ -4,10 +4,9 @@ import {
     Link,
     withRouter
  } from 'react-router-dom';
-import './AlbumDisplay.css';
-import {loadAlbums} from '../actions/index';
+import {loadAlbums, setCurrentAlbum} from '../actions/index';
+import PreviewCard from './PreviewCard';
 import './AlbumList.css';
-import {setCurrentAlbum} from '../actions';
 
 
 class AlbumList extends React.Component {
@@ -24,13 +23,11 @@ class AlbumList extends React.Component {
     render() {
         return(
             <div id="album-list">
-                <h2>Album List</h2>
+                <h2 className="album-list-title">Album List</h2>
                 <ul>
                 {this.props.photoAlbums.map((album, index) => 
                     <li key={index} onClick={() => this.setAlbum(`${album}`)}> 
-                        <Link className="album-links" to={`/albums/${album.albumTitle}`}>
-                            {album.albumTitle}
-                        </Link>    
+                        <PreviewCard album={album}/>    
                     </li>)}
 
                 </ul>

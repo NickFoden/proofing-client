@@ -20,8 +20,7 @@ render(){
 
 function mapStateToProps(state){
     return {
-        currentAlbum: state.photoAlbumReducer.currentAlbum,
-        photoAlbums: state.photoAlbumReducer.albumArray
+        currentAlbum: state.photoAlbumReducer.currentAlbum
     } 
 };
 

@@ -11,7 +11,6 @@ export class AlbumNameForm extends React.Component {
         let newImageArray = (this.props.images.filter(photo => photo.approved))
         try {
             await this.props.dispatch(saveAlbum(values.albumName, this.props.currentUser.username, this.props.authToken, newImageArray))
-            debugger;
             this.props.history.push('/albums')
         } catch (error) {
             throw new SubmissionError({ _error: 'Album Name Already in Use'})
