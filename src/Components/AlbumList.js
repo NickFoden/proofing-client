@@ -15,8 +15,6 @@ class AlbumList extends React.Component {
         this.props.setCurrentAlbum(data);
     }
 
-    // onClick={this.props.onClick(`${album.albumId}`)}
-
     render() {
         return(
             <div id="album-list">
@@ -37,7 +35,8 @@ function mapStateToProps(state) {
     return {
         authToken : state.userReducer.authToken,
         currentUser: state.userReducer.currentUser,
-        photoAlbums: state.photoAlbumReducer.albumArray
+        photoAlbums: state.photoAlbumReducer.albumArray,
+        images: state.photoAlbumReducer.currentAlbum.albumArray
     }
 }
 

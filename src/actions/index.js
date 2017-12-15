@@ -167,7 +167,7 @@ export const removeApproved = (username, authToken, images) => dispatch => {
     })
   })
   .then((response) => {
-    console.log(response)
+    dispatch(loadPhotos(username, authToken))
   })
   .catch(error => console.log(error));
 }

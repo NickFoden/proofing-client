@@ -1,10 +1,11 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import FinalAlbumDisplay from './FinalAlbumDisplay';
+// import setCurrentAlbum from '../actions/index';
 
 class AlbumRender extends React.Component {
     componentDidMount(){
-    //    this.props.mountCurrentAlbum(this.props.photoAlbums, this.props.currentAlbum)
+    //    this.props.setCurrentAlbum(this.props.currentAlbum)
     }
 
 render(){
