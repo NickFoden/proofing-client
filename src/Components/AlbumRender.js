@@ -1,17 +1,14 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import FinalAlbumDisplay from './FinalAlbumDisplay';
-// import setCurrentAlbum from '../actions/index';
+import './Images.css';
 
 class AlbumRender extends React.Component {
-    componentDidMount(){
-    //    this.props.setCurrentAlbum(this.props.currentAlbum)
-    }
 
 render(){
     return (
         <div>
-            <h2>{this.props.currentAlbum.albumTitle}</h2>
+            <h2 className="final-album-title">{this.props.currentAlbum.albumTitle}</h2>
             <FinalAlbumDisplay />
         </div>    
         )

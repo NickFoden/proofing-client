@@ -1,7 +1,7 @@
 import React from 'react';
-import './Images.css';
 import { connect } from 'react-redux';
-import AlbumList from './AlbumList';
+import './Images.css';
+import InviteGuestForm from './InviteGuestForm';
 
 class FinalAlbumDisplay extends React.Component {
     render() {
@@ -14,7 +14,7 @@ class FinalAlbumDisplay extends React.Component {
                             src={image.image[0].secure_url} alt="final-album-images" />
                     </li>)}
                 </ul>
-                
+                <InviteGuestForm {...this.props} />
             </div>
         )       
     }
@@ -22,7 +22,10 @@ class FinalAlbumDisplay extends React.Component {
 
 function mapStateToProps(state) {
     return {
-        images: state.photoAlbumReducer.currentAlbum.albumArray
+        images: state.photoAlbumReducer.currentAlbum.albumArray,
+        albumName :state.photoAlbumReducer.currentAlbum,
+        authToken : state.userReducer.authToken,
+        currentUser: state.userReducer.currentUser,
     }
 }
 

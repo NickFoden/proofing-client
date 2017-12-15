@@ -72,39 +72,6 @@ export const loadPhotos = (username, authToken) => (dispatch) => {
     .catch(error => console.log(error));
 }
 
-export const loadAlbums = (username, authToken) => (dispatch) => {
-  axios.get(`${API_BASE_URL}/albums/${username}`, {
-    headers : {
-        "Authorization" : `Bearer ${authToken}` 
-    }
-  })
-    .then(result => {
-      dispatch(addAlbum(result.data));
-    })
-    .catch(error => console.log(error));
-}
-
-//Axios version returns unauthorized
-//TODO Look at more axios examples for post
-
-// export const saveAlbum = (username, authToken, images) => (dispatch) => { 
-//   axios.post(`${API_BASE_URL}/albums/${username}`, {
-//     headers : {
-//       // 'Content-Type' : 'application/json', 
-//       "Authorization" : `Bearer ${authToken}` 
-//     },
-//     data : {
-//       username,
-//       images
-//     }
-//   })
-//   .then(result => {
-//     console.log('result from api ' + result)
-//       // dispatch(mapAlbum(result)
-//     })
-//   .catch(error => console.log(error));
-// }
-
 export const savePhoto = (uploaded, currentUser, authToken) => {
   return dispatch => {
     fetch(`${API_BASE_URL}/photos/${currentUser}`, {
@@ -124,18 +91,17 @@ export const savePhoto = (uploaded, currentUser, authToken) => {
     .catch(err => console.log(err))
   }
 }
-
-// export const getAlbums = (username, authToken) => (dispatch) => {
-//   axios.get(`${API_BASE_URL}/albums/${username}`, {
-//     headers : {
-//         "Authorization" : `Bearer ${authToken}` 
-//     }
-//   })
-//     .then((result) => {
-//         dispatch(addAlbums(result.data));
-//     })
-//     .catch(error => console.log(error));
-//   }
+export const loadAlbums = (username, authToken) => (dispatch) => {
+  axios.get(`${API_BASE_URL}/albums/${username}`, {
+    headers : {
+        "Authorization" : `Bearer ${authToken}` 
+    }
+  })
+    .then(result => {
+      dispatch(addAlbum(result.data));
+    })
+    .catch(error => console.log(error));
+}
 
 export const saveAlbum = (title, username, authToken, images) => dispatch => { 
   fetch(`${API_BASE_URL}/albums/${title}/${username}`, {
@@ -168,6 +134,23 @@ export const removeApproved = (username, authToken, images) => dispatch => {
   })
   .then((response) => {
     dispatch(loadPhotos(username, authToken))
+  })
+  .catch(error => console.log(error));
+}
+
+export const inviteGuest = (guestEmail, albumId, username, authToken) => (dispatch) => {
+  fetch(`${API_BASE_URL}/albums/${username}/${albumId}`, {
+    method: 'POST',
+    headers : {
+        "Authorization" : `Bearer ${authToken}` 
+    },
+    body: JSON.stringify({
+      guestEmail
+    })
+  })
+  .then((response) => response.json())
+  .then((album) => {
+    dispatch(console.log('finished the action'));
   })
   .catch(error => console.log(error));
 }
