@@ -9,7 +9,7 @@ import './Form.css';
 export class InviteGuestForm extends React.Component {
     async onSubmit(values) {
         try {
-            await this.props.dispatch(inviteGuest(values.inviteGuest, this.props.albumName.albumId, this.props.currentUser.username, this.props.authToken))
+            await this.props.dispatch(inviteGuest(this.props.currentUser.username, this.props.albumName._id, this.props.authToken, values.inviteGuest,))
             // this.props.history.push('/albums')
         } catch (error) {
             throw new SubmissionError({ _error: 'Album add guest failed'})
