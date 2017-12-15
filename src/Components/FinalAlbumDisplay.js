@@ -7,7 +7,6 @@ class FinalAlbumDisplay extends React.Component {
     render() {
         return(
             <div>
-                <AlbumList />
                 <ul> 
                     {this.props.images.map((image, index) => 
                         <li key={index}> 

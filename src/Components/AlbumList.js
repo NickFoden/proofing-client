@@ -21,7 +21,7 @@ class AlbumList extends React.Component {
                 <h2 className="album-list-title">Album List</h2>
                 <ul>
                 {this.props.photoAlbums.map((album, index) => 
-                    <li key={index} onClick={() => this.setAlbum(`${album}`)}> 
+                    <li key={index} onClick={() => this.setAlbum(album)}> 
                         <PreviewCard album={album}/>    
                     </li>)}
 
