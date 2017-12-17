@@ -139,15 +139,14 @@ export const removeApproved = (username, authToken, images) => dispatch => {
 }
 
 export const inviteGuest = (username, albumId, authToken, guestEmail) => (dispatch) => {
-  console.log(username + ' username '  + albumId + ' albumId ' + guestEmail + ' guest email');
-  fetch(`${API_BASE_URL}/albums/${username}/${albumId}`, {
+  fetch(`${API_BASE_URL}/albums/${username}/${albumId}/${guestEmail}`, {
     method: 'PUT',
     headers : {
         "Authorization" : `Bearer ${authToken}` 
-    },
-    body: JSON.stringify({
-      guestEmail
-    })
+    }
+    // body: JSON.stringify({
+    //   guestEmail
+    // })
   })
   .then((album) => {
     dispatch(setCurrentAlbum(album));
