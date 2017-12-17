@@ -42,7 +42,7 @@ export class InviteGuestForm extends React.Component {
                     validate={[required, nonEmpty]}
                 />
                 <button className="form-button" disabled={this.props.pristine || this.props.submitting}>
-                   Invite Guest by Email
+                   Add a Guest to this album by their Email
                 </button>
             </form>
         );

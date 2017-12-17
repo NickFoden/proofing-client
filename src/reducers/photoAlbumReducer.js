@@ -1,6 +1,8 @@
 const initialState = {
     albumArray: [],
-    currentAlbum: []
+    currentAlbum: [],
+    guestAlbums: [],
+    currentGuestAlbum :[],
   }
 
 const photoAlbumReducer = (state = initialState, action) => {
@@ -14,7 +16,17 @@ switch(action.type) {
         return {
         ...state,
         currentAlbum: action.data
-        }   
+        }
+    case 'ADD_GUEST_ALBUM':
+        return {
+        ...state,
+        guestAlbums: action.data
+        } 
+    case 'SET_CURRENT_GUEST_ALBUM':
+        return {
+        ...state,
+        currentGuestAlbum: action.data
+        }  
     default:
         return state
         }

@@ -1,5 +1,6 @@
 import {API_BASE_URL} from '../config';
 import axios from 'axios';
+// import { loadavg } from 'os';
 
 const MAP_ALBUM = 'MAP_ALBUM';
 export function mapAlbum(data) {
@@ -17,10 +18,25 @@ export function addAlbum(data) {
   };
 }
 
+const ADD_GUEST_ALBUM = 'ADD_GUEST_ALBUM';
+export function addGuestAlbum(data) {
+  return {
+    type: ADD_GUEST_ALBUM,
+    data
+  };
+}
+
 const SET_CURRENT_ALBUM = 'SET_CURRENT_ALBUM';
 export function setCurrentAlbum(data) {
   return {
     type: SET_CURRENT_ALBUM,
+    data
+  };
+}
+const SET_CURRENT_GUEST_ALBUM = 'SET_CURRENT_GUEST_ALBUM';
+export function setCurrentGuestAlbum(data) {
+  return {
+    type: SET_CURRENT_GUEST_ALBUM,
     data
   };
 }
@@ -99,6 +115,7 @@ export const loadAlbums = (username, authToken) => (dispatch) => {
   })
     .then(result => {
       dispatch(addAlbum(result.data));
+      dispatch(loadGuestAlbums(username, authToken));
     })
     .catch(error => console.log(error));
 }
@@ -152,4 +169,16 @@ export const inviteGuest = (username, albumId, authToken, guestEmail) => (dispat
     dispatch(setCurrentAlbum(album));
   })
   .catch(error => console.log(error));
+}
+
+export const loadGuestAlbums = (username, authToken) => (dispatch) => {
+  axios.get(`${API_BASE_URL}/albums/guest/${username}`, {
+    headers : {
+        "Authorization" : `Bearer ${authToken}` 
+    }
+  })
+    .then(result => {
+      dispatch(addGuestAlbum(result.data));
+    })
+    .catch(error => console.log(error));
 }

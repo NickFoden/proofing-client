@@ -1,4 +1,5 @@
 import React from 'react';
+import { CSSTransitionGroup } from 'react-transition-group'
 import './PhotoUploadForm.css';
 import Dropzone from 'react-dropzone'
 import sha1 from 'sha1'
@@ -49,9 +50,15 @@ class PhotoUploadForm extends React.Component {
                    
         })
     }
+    //Todo Finish transition
     render() {
         return (
             <div>
+                <CSSTransitionGroup
+                    transitionName="fade"
+                    transitionLeaveTimeout={500}>
+                    <h2 id="welcome-message"> Hi {this.props.currentUser.username}, welcome to proofer. Upload some photos to get started </h2>
+                </CSSTransitionGroup>
                 <div className="drop">
                     <Dropzone onDrop={this.uploadFile.bind(this)} >
                         <div className="drop-text">Drop your photo or click to add a photo</div>

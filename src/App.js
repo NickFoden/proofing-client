@@ -12,6 +12,7 @@ import LoginForm from './Components/Login-form';
 import RegistrationPage from './Components/RegistrationPage';
 import AlbumRender from './Components/AlbumRender';
 import AlbumList from './Components/AlbumList';
+import AlbumGuestRender from './Components/AlbumGuestRender';
 
 class App extends Component {
 
@@ -25,6 +26,7 @@ class App extends Component {
             <Route exact path="/photos" component={PhotoUploadForm} />
             <Route exact path="/" component={Home} />
             <Route path={`/albums/${this.props.currentAlbum.albumTitle}`} component={AlbumRender} />
+            <Route path={`/albums/guest/${this.props.currentGuestAlbum.albumTitle}`} component={AlbumGuestRender} />
             <Route path="/albums" component={AlbumList} />
         </div>
       </Router>  
@@ -36,7 +38,8 @@ class App extends Component {
 function mapStateToProps(state) {
   return {
       currentUser: state.userReducer.currentUser,
-      currentAlbum: state.photoAlbumReducer.currentAlbum
+      currentAlbum: state.photoAlbumReducer.currentAlbum,
+      currentGuestAlbum: state.photoAlbumReducer.currentGuestAlbum
   }
 }
 
