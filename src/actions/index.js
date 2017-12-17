@@ -63,6 +63,17 @@ export function disprove(image) {
   };
 }
 
+const GUEST_APPROVE = 'GUEST_APPROVE';
+export function guestApprove(image, username) {
+  fetch(`${API_BASE_URL}/images/guest/${image._id}/${username}/approve`, {
+    method: 'PUT'
+  })
+  return {
+    type: GUEST_APPROVE,
+    image
+  };
+}
+
 export const sortApproved = (username, authToken) => (dispatch) => { 
   axios.get(`${API_BASE_URL}/photos/sort/${username}`, {
     headers : {
