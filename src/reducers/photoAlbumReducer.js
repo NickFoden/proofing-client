@@ -26,7 +26,20 @@ switch(action.type) {
         return {
         ...state,
         currentGuestAlbum: action.data
-        }  
+        } 
+    case 'GUEST_APPROVE':
+        return {
+          ...state,
+         currentGuestAlbum: state.currentGuestAlbum.albumArray.map((imageData) => {
+            if (action.image._id !== imageData._id) {
+              return imageData;
+            }
+            return {
+              ...imageData,
+              guests: action.data
+            }
+          })
+        }    
     default:
         return state
         }

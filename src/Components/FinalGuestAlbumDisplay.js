@@ -13,7 +13,7 @@ class FinalGuestAlbumDisplay extends React.Component {
                             <img className="final-album-images" 
                             src={image.image[0].secure_url} alt="final-album-images" />
                             <br />
-                            <button id="guestYes" onClick={(e) => this.props.guestApprove(image, this.props.currentUser.username)}>Ok</button>
+                            <button id="guestYes" onClick={(e) => this.props.guestApprove(image._id, this.props.currentUser.username)}>Ok</button>
                             {/* <button id="guestNo" onClick={(e) => this.props.guestDisprove(image)}>Nope</button> */}
                         </li>)}
                 </ul>
