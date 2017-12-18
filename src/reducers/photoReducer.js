@@ -40,19 +40,6 @@ const initialState = {
             }
           })
         }
-      case 'GUEST_APPROVE':
-        return {
-          ...state,
-          photosState: state.photosState.map((imageData) => {
-            if (action.image._id !== imageData._id) {
-              return imageData;
-            }
-            return {
-              ...imageData,
-              guests: action.data
-            }
-          })
-        }
       default:
         return state
     }
