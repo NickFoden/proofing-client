@@ -5,10 +5,10 @@ import './Images.css';
 
 class FinalGuestAlbumDisplay extends React.Component {
     approve(data, index){
+
         let image = data._id;
         let username = this.props.currentUser.username;
         let albumId =  this.props.albumId;
-        debugger;
         this.props.guestApprove(image, username, index, albumId)
     }
     render() {
@@ -32,7 +32,7 @@ class FinalGuestAlbumDisplay extends React.Component {
 function mapStateToProps(state) {
     return {
         images: state.photoAlbumReducer.currentGuestAlbum.albumArray,
-        albumId :state.photoAlbumReducer.currentGuestAlbum.albumId,
+        albumId :state.photoAlbumReducer.currentGuestAlbum._id,
         currentUser: state.userReducer.currentUser
     }
 }

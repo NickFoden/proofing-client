@@ -71,7 +71,7 @@ export function disprove(image) {
 }
 
 export const guestApprove = (image, username, index, albumId) => dispatch => {
-  fetch(`${API_BASE_URL}/albums/guest/${image._id}/approve`, {
+  fetch(`${API_BASE_URL}/albums/guest/${image}/approve`, {
     method: 'PUT',
     headers: {
       'Content-Type' : 'application/json'
@@ -84,7 +84,7 @@ export const guestApprove = (image, username, index, albumId) => dispatch => {
   })
   .then((response) => response.json())
   .then((album) => {
-    console.loga(album);
+    console.log(album);
     // dispatch(updateGuestAlbum(photo))
   })
   .catch(error => console.log(error));
