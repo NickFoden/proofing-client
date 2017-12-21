@@ -8,8 +8,9 @@ class FinalGuestAlbumDisplay extends React.Component {
 
         let image = data._id;
         let username = this.props.currentUser.username;
+        let authToken = this.props.authToken;
         let albumId =  this.props.albumId;
-        this.props.guestApprove(image, username, index, albumId)
+        this.props.guestApprove(image, username, index, albumId, authToken)
     }
     render() {
         return(
@@ -22,6 +23,7 @@ class FinalGuestAlbumDisplay extends React.Component {
                             <br />
                             <button id="guestYes" onClick={(e) => this.approve(image, index)}>Ok</button>
                             {/* <button id="guestNo" onClick={(e) => this.props.guestDisprove(image)}>Nope</button> */}
+                            <h5>Approved by {([...new Set(image.guestApproved)]).map(name => name)} </h5>
                         </li>)}
                 </ul>
             </div>
@@ -33,7 +35,8 @@ function mapStateToProps(state) {
     return {
         images: state.photoAlbumReducer.currentGuestAlbum.albumArray,
         albumId :state.photoAlbumReducer.currentGuestAlbum._id,
-        currentUser: state.userReducer.currentUser
+        currentUser: state.userReducer.currentUser,
+        authToken : state.userReducer.authToken
     }
 }
 

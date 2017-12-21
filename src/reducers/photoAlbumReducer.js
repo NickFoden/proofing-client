@@ -27,19 +27,19 @@ switch(action.type) {
         ...state,
         currentGuestAlbum: action.data
         } 
-    // case 'GUEST_APPROVE':
+    // case 'UPDATE_GUEST_ALBUM':
     //     return {
-    //       ...state,
-    //      currentGuestAlbum: state.currentGuestAlbum.albumArray.map((imageData) => {
-    //         if (action.image._id !== imageData._id) {
-    //           return imageData;
+    //     ...state,
+    //     guestAlbums: state.guestAlbums.map((albumData) => {
+    //         if (action.album._id !== albumData._id) {
+    //             return albumData
     //         }
     //         return {
-    //           ...imageData,
-    //           guests: action.data
+    //             ...albumData,
+    //             album : action.album.albumArray
     //         }
-    //       })
-    //     }    
+    //     })
+    // }
     default:
         return state
         }

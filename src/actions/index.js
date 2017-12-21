@@ -43,7 +43,7 @@ export function setCurrentGuestAlbum(data) {
 // const UPDATE_GUEST_ALBUM = 'UPDATE_GUEST_ALBUM';
 // export function updateGuestAlbum(data) {
 //   return {
-//     type: SET_CURRENT_GUEST_ALBUM,
+//     type: UPDATE_GUEST_ALBUM,
 //     data
 //   };
 // }
@@ -70,11 +70,12 @@ export function disprove(image) {
   };
 }
 
-export const guestApprove = (image, username, index, albumId) => dispatch => {
+export const guestApprove = (image, username, index, albumId, authToken) => dispatch => {
   fetch(`${API_BASE_URL}/albums/guest/${image}/approve`, {
     method: 'PUT',
     headers: {
-      'Content-Type' : 'application/json'
+      'Content-Type' : 'application/json',
+      "Authorization" : `Bearer ${authToken}` 
     },
     body: JSON.stringify({
       username,
@@ -85,25 +86,15 @@ export const guestApprove = (image, username, index, albumId) => dispatch => {
   .then((response) => response.json())
   .then((album) => {
     console.log(album);
-    // dispatch(updateGuestAlbum(photo))
+    dispatch(loadGuestAlbums(username, authToken));
+    // dispatch(updateGuestAlbum(album))
   })
   .catch(error => console.log(error));
 }
-// const GUEST_APPROVE = 'GUEST_APPROVE';
-// export function guestApprove(image, username) {
-//   fetch(`${API_BASE_URL}/images/guest/${image._id}/${username}/approve`, {
-//     method: 'PUT'
-//   })
-//   return {
-//     type: GUEST_APPROVE,
-//     image
-//   };
-// }
 
 export const sortApproved = (username, authToken) => (dispatch) => { 
   axios.get(`${API_BASE_URL}/photos/sort/${username}`, {
     headers : {
-      // 'Content-Type' : 'application/json', 
       "Authorization" : `Bearer ${authToken}` 
     }
   })
