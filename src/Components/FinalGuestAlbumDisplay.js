@@ -20,10 +20,12 @@ class FinalGuestAlbumDisplay extends React.Component {
                         <li key={index}> 
                             <img className="final-album-images" 
                             src={image.image[0].secure_url} alt="final-album-images" />
-                            <br />
+                            <div className='guest-album-caption'>
+                                <h4>Guest approving </h4>
+                                <p>{([...new Set(image.guestApproved)]).map(name => (name + " "))} </p>
+                            </div>
                             <button id="guestYes" onClick={(e) => this.approve(image, index)}>Ok</button>
                             {/* <button id="guestNo" onClick={(e) => this.props.guestDisprove(image)}>Nope</button> */}
-                            <h5>Approved by {([...new Set(image.guestApproved)]).map(name => name)} </h5>
                         </li>)}
                 </ul>
             </div>

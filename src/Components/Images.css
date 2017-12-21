@@ -58,6 +58,25 @@ button {
 #no {
     background-color: #E55345;
 }
+.guest-album-caption {
+    /* border-radius: 5px;
+    background-color: #98ADE8; */
+    color: black;
+    font-family: 'Roboto Slab', serif;
+    height: auto;
+    width: auto;
+    margin: 0px 0px 0px 0px;
+    font-size: 13px;
+}
+
+.guest-album-caption h4 {
+    margin: 5px 0px 0px 0px;
+    font-size: 16px;
+}
+
+.guest-album-caption p {
+    color: #EC934C;
+}
 @media only screen and (min-width: 640px) {
     li {
         display: inline-block;
@@ -105,5 +124,31 @@ button {
 
     #no {
         background-color: #ff4d4d;
+    }
+    .final-album-images {
+        width: auto;
+        height: 300px;
+        margin: 20 0 0 0;
+        padding: 0 0;
+        border: 2px solid #C2D5E8;
+    }
+    .final-album-title {
+        text-decoration: underline;
+    }
+    
+    .guest-album-caption {
+        color: black;
+        font-family: 'Roboto Slab', serif;
+        height: auto;
+        width: auto;
+        margin: 0px 0px 0px 0px;
+        font-size: 13px;
+    }
+    .guest-album-caption h4 {
+        margin: 5px 0px 0px 0px;
+        font-size: 16px;
+    }
+    .guest-album-caption p {
+        color: #EC934C;
     }
 }

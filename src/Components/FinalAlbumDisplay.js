@@ -12,6 +12,10 @@ class FinalAlbumDisplay extends React.Component {
                         <li key={index}> 
                             <img className="final-album-images" 
                             src={image.image[0].secure_url} alt="final-album-images" />
+                            <div className='guest-album-caption'>
+                                <h4>Guests Approving </h4>
+                                <p>{([...new Set(image.guestApproved)]).map(name => (name + " "))} </p>
+                            </div>
                     </li>)}
                 </ul>
                 <InviteGuestForm {...this.props} />
