@@ -21,7 +21,7 @@ class FinalGuestAlbumDisplay extends React.Component {
                             <img className="final-album-images" 
                             src={image.image[0].secure_url} alt="final-album-images" />
                             <div className='guest-album-caption'>
-                                <h4>Guest approving </h4>
+                                <h4>Approved by: </h4>
                                 <p>{([...new Set(image.guestApproved)]).map(name => (name + " "))} </p>
                             </div>
                             <button id="guestYes" onClick={(e) => this.approve(image, index)}>Ok</button>

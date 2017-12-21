@@ -13,7 +13,7 @@ class FinalAlbumDisplay extends React.Component {
                             <img className="final-album-images" 
                             src={image.image[0].secure_url} alt="final-album-images" />
                             <div className='guest-album-caption'>
-                                <h4>Guests Approving </h4>
+                                <h4>Approved by: </h4>
                                 <p>{([...new Set(image.guestApproved)]).map(name => (name + " "))} </p>
                             </div>
                     </li>)}
