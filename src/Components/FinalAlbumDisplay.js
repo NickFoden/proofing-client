@@ -8,7 +8,6 @@ import {loadGuestApprovers} from '../actions/users';
 class FinalAlbumDisplay extends React.Component {
     componentDidMount() {
         this.props.loadGuestApprovers();
-        debugger;
      }
     
     render() {

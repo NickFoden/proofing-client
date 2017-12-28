@@ -1,9 +1,13 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { guestApprove} from '../actions/index';
+import {loadGuestApprovers} from '../actions/users';
 import './Images.css';
 
 class FinalGuestAlbumDisplay extends React.Component {
+    componentDidMount() {
+        this.props.loadGuestApprovers();
+     }
     approve(data, index){
 
         let image = data._id;
@@ -38,8 +42,9 @@ function mapStateToProps(state) {
         images: state.photoAlbumReducer.currentGuestAlbum.albumArray,
         albumId :state.photoAlbumReducer.currentGuestAlbum._id,
         currentUser: state.userReducer.currentUser,
+        approvers : state.userReducer.guestApprovers,
         authToken : state.userReducer.authToken
     }
 }
 
-export default connect(mapStateToProps, {guestApprove})(FinalGuestAlbumDisplay);
+export default connect(mapStateToProps, {guestApprove, loadGuestApprovers})(FinalGuestAlbumDisplay);
