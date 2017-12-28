@@ -151,4 +151,10 @@ button {
     .guest-album-caption p {
         color: #EC934C;
     }
+
+    .preview-card {
+        background-color: white; 
+    }
+
+
 }
