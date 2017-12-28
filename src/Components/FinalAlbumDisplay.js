@@ -3,11 +3,12 @@ import { connect } from 'react-redux';
 import './Images.css';
 import InviteGuestForm from './InviteGuestForm';
 import {loadGuestApprovers} from '../actions/users';
-// import GuestAlbumCaption from './GuestAlbumCaption';
+import GuestAlbumCaption from './GuestAlbumCaption';
 
 class FinalAlbumDisplay extends React.Component {
     componentDidMount() {
         this.props.loadGuestApprovers();
+        debugger;
      }
     
     render() {
@@ -24,10 +25,12 @@ class FinalAlbumDisplay extends React.Component {
                         <li key={index}> 
                             <img className="final-album-images" 
                             src={image.image[0].secure_url} alt="final-album-images" />
-                                <div className='guest-album-caption'>
+
+                                <GuestAlbumCaption image={image} />
+                                {/* <div className='guest-album-caption'>
                                     <h4>Approved by: </h4>
                                     <p>{([...new Set(image.guestApproved)]).map(name => (name + " "))}</p>
-                                </div>
+                                </div> */}
                             
                             {/* <GuestAlbumCaption image={image} />
                                 <div className='guest-album-caption'>

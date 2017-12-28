@@ -2,4 +2,4 @@
     API_BASE_URL = "https://proofing-server.herokuapp.com"
 
 [context.production]
-  API_BASE_URL = "https://proofing-server.herokuapp.com"
+    API_BASE_URL = "https://proofing-server.herokuapp.com"
