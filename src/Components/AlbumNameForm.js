@@ -9,6 +9,9 @@ import './Form.css';
 export class AlbumNameForm extends React.Component {
     async onSubmit(values) {
         let newImageArray = (this.props.images.filter(photo => photo.approved))
+        if (newImageArray.length < 1) {
+            throw new SubmissionError({ _error: 'Album is empty'})
+        }
         try {
             await this.props.dispatch(saveAlbum(values.albumName, this.props.currentUser.username, this.props.authToken, newImageArray))
             this.props.history.push('/albums')
@@ -33,9 +36,10 @@ export class AlbumNameForm extends React.Component {
                     this.onSubmit(values)
                 )}>
                 {error}
-                <label className="form-label" htmlFor="albumName">Album Name</label>
+                <label className="form-label" htmlFor="albumName">Save approved images album with name:</label>
                 <Field
                     classNamer="form-field"
+                    placeholder="album title"
                     component={Input}
                     type="text"
                     name="albumName"
@@ -43,7 +47,7 @@ export class AlbumNameForm extends React.Component {
                     validate={[required, nonEmpty]}
                 />
                 <button className="form-button" disabled={this.props.pristine || this.props.submitting}>
-                   Save as Album
+                   Save new album
                 </button>
             </form>
         );

@@ -1,5 +1,5 @@
 import {SubmissionError} from 'redux-form';
-
+import axios from 'axios';
 import {API_BASE_URL} from '../config';
 import {normalizeResponseErrors} from './utils';
 
@@ -25,3 +25,21 @@ export const registerUser = user => dispatch => {
             }
         });
 };
+
+export const MAP_GUEST_USERS = 'MAP_GUEST_USERS';
+export function mapGuestUsers(data) {
+  return {
+    type: MAP_GUEST_USERS,
+    data
+  };
+}
+
+export const loadGuestApprovers = () => (dispatch) => {
+    axios.get(`${API_BASE_URL}/users`, {
+
+    })
+      .then(result => {
+          dispatch(mapGuestUsers(result.data));
+      })
+      .catch(error => console.log(error));
+  }

@@ -32,17 +32,18 @@ export class InviteGuestForm extends React.Component {
                     this.onSubmit(values)
                 )}>
                 {error}
-                <label className="form-label" htmlFor="inviteGuest">Guest Reviewer Email</label>
+                <label className="form-label" htmlFor="inviteGuest">Add a Guest to this album by their Email:</label>
                 <Field
-                    classNamer="form-field"
+                    className="form-field"
                     component={Input}
+                    placeholder="guests email"
                     type="text"
                     name="inviteGuest"
                     id="inviteGuest"
                     validate={[required, nonEmpty]}
                 />
                 <button className="form-button" disabled={this.props.pristine || this.props.submitting}>
-                   Add a Guest to this album by their Email
+                   Add this guest
                 </button>
             </form>
         );

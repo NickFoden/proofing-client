@@ -26,8 +26,9 @@ class AlbumDisplay extends React.Component {
             <div id="album">
                 <Images />
                 <button className="button-sort" onClick={() => this.sort()}> Sort </button>
+                {/*Todo -> remove these two unless there are approved images*/}
                 <AlbumNameForm {...this.props} />
-                <button className="button-remove-approved" onClick={() => this.remove()}> Remove Approved from Queue</button>
+                <button className="button-remove-approved" onClick={() => this.remove()}> Remove these Approved Photos from Queue</button>
             </div>
         );
     }

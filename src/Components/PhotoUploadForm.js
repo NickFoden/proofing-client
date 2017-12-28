@@ -57,7 +57,7 @@ class PhotoUploadForm extends React.Component {
                 {/* <CSSTransitionGroup
                     transitionName="fade"
                     transitionLeaveTimeout={500}> */}
-                    <h2 id="welcome-message"> Hi {this.props.currentUser.username}, welcome to proofer. Upload some photos to get started </h2>
+                    <h2 id="welcome-message"> Hi {this.props.currentUser.firstName}, welcome to proofer. Upload some photos to get started </h2>
                 {/* </CSSTransitionGroup> */}
                 <div className="drop">
                     <Dropzone onDrop={this.uploadFile.bind(this)} >
