@@ -9,7 +9,7 @@
   font-size: 15px;
 }
 
-h2 {
+.album-list-title h2 {
   border-radius: 5px;
   color: black;
   font-family: "Roboto Slab", serif;
@@ -19,12 +19,12 @@ h2 {
   font-size: 30x;
 }
 
-li {
+.album-list li {
   margin: 0;
   vertical-align: top;
 }
 
-ul {
+.album-list ul {
   margin: 0;
   padding: 0;
 }

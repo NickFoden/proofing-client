@@ -117,11 +117,9 @@ button {
     width: 80px;
     height: 20px;
   }
-
   #yes {
     background-color: #99ff99;
   }
-
   #no {
     background-color: #ff4d4d;
   }
@@ -135,7 +133,6 @@ button {
   .final-album-title {
     text-decoration: underline;
   }
-
   .guest-album-caption {
     color: black;
     font-family: "Roboto Slab", serif;

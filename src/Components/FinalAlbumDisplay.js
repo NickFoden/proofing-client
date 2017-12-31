@@ -3,22 +3,19 @@ import { connect } from "react-redux";
 import "./Images.css";
 import InviteGuestForm from "./InviteGuestForm";
 import { loadGuestApprovers } from "../actions/users";
+import { loadGuestAlbums } from "../actions/index";
 import GuestAlbumCaption from "./GuestAlbumCaption";
 import CurrentGuests from "./CurrentGuests";
 
 class FinalAlbumDisplay extends React.Component {
   componentDidMount() {
     this.props.loadGuestApprovers();
-    debugger;
   }
+  // componentDidUpdate() {
+  //   this.props.loadGuestAlbums(this.props.username, this.props.authToken);
+  // }
 
   render() {
-    // let GuestAlbumCaption = (image) => {
-    // <div className='guest-album-caption'>
-    //     <h4>Approved by: </h4>
-    //     <p>{([...new Set(image.guestApproved)]).map(name => (name + " "))} </p>
-    // </div>
-    // }
     return (
       <div>
         <ul>
@@ -65,6 +62,7 @@ function mapStateToProps(state) {
   };
 }
 
-export default connect(mapStateToProps, { loadGuestApprovers })(
-  FinalAlbumDisplay
-);
+export default connect(mapStateToProps, {
+  loadGuestAlbums,
+  loadGuestApprovers
+})(FinalAlbumDisplay);
