@@ -1,0 +1,42 @@
+.album-links-preview {
+  border-radius: 5px;
+  background-color: #98ade8;
+  color: black;
+  font-family: "Roboto Slab", serif;
+  font-size: 15px;
+}
+
+.preview-thumbnails {
+  width: auto;
+  height: 60px;
+  margin: 0 0 0 0;
+  padding: 0 0;
+}
+
+.preview-card {
+  background-color: white;
+  width: 200px;
+  height: auto;
+  border: solid black 1px;
+}
+
+.preview-card ul {
+  margin: 0;
+  padding: 0;
+}
+
+.preview-card li {
+  margin: 0;
+  padding: 0 5px;
+}
+
+.preview-card h3 {
+  margin: 0 0 0 0;
+  padding: 5px;
+}
+
+.preview-card h5 {
+  font-size: 11px;
+  margin: 0 0 5px 0;
+  padding: 5px;
+}

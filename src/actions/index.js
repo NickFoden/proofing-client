@@ -93,7 +93,6 @@ export const guestApprove = (
   })
     .then(response => response.json())
     .then(album => {
-      console.log(album);
       dispatch(loadGuestAlbums(username, authToken));
       // dispatch(updateGuestAlbum(album))
     })

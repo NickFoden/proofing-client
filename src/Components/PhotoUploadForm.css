@@ -8,3 +8,7 @@
   text-align: center;
   vertical-align: center;
 }
+
+#welcome-message::first-letter {
+  text-transform: capitalize;
+}
