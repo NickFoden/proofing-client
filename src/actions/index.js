@@ -75,7 +75,8 @@ export const guestApprove = (
   username,
   index,
   albumId,
-  authToken
+  authToken,
+  realName
 ) => dispatch => {
   fetch(`${API_BASE_URL}/albums/guest/${image}/approve`, {
     method: "PUT",
@@ -86,7 +87,8 @@ export const guestApprove = (
     body: JSON.stringify({
       username,
       index,
-      albumId
+      albumId,
+      realName
     })
   })
     .then(response => response.json())

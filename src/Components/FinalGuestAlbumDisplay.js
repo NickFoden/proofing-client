@@ -11,9 +11,18 @@ class FinalGuestAlbumDisplay extends React.Component {
   approve(data, index) {
     let image = data._id;
     let username = this.props.currentUser.username;
+    let realName =
+      this.props.currentUser.firstName + " " + this.props.currentUser.lastName;
     let authToken = this.props.authToken;
     let albumId = this.props.albumId;
-    this.props.guestApprove(image, username, index, albumId, authToken);
+    this.props.guestApprove(
+      image,
+      username,
+      index,
+      albumId,
+      authToken,
+      realName
+    );
   }
   render() {
     return (
