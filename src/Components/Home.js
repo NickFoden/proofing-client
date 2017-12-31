@@ -1,13 +1,15 @@
-import React from 'react';
-import './Form.css';
+import React from "react";
+import "./Form.css";
 
-const Home = (props) => {
-    return  (
-        <div className="welcome-div">
-            <h2>Welcome to Proofing</h2>
-            <p>Upload photos and invite guests to vote which photos can be published.</p>
-        </div>    
-    );
+const Home = props => {
+  return (
+    <div className="welcome-div">
+      <h2>Welcome to Proofing</h2>
+      <p>
+        Upload photos and invite guests to vote which photos can be published.
+      </p>
+    </div>
+  );
 };
 
 export default Home;

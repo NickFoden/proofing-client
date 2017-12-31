@@ -1,32 +1,32 @@
 const initialState = {
-    albumArray: [],
-    currentAlbum: [],
-    guestAlbums: [],
-    currentGuestAlbum :[],
-  }
+  albumArray: [],
+  currentAlbum: [],
+  guestAlbums: [],
+  currentGuestAlbum: []
+};
 
 const photoAlbumReducer = (state = initialState, action) => {
-switch(action.type) {
-    case 'ADD_ALBUM':
-        return {
+  switch (action.type) {
+    case "ADD_ALBUM":
+      return {
         ...state,
         albumArray: action.data
-        }
-    case 'SET_CURRENT_ALBUM':
-        return {
+      };
+    case "SET_CURRENT_ALBUM":
+      return {
         ...state,
         currentAlbum: action.data
-        }
-    case 'ADD_GUEST_ALBUM':
-        return {
+      };
+    case "ADD_GUEST_ALBUM":
+      return {
         ...state,
         guestAlbums: action.data
-        } 
-    case 'SET_CURRENT_GUEST_ALBUM':
-        return {
+      };
+    case "SET_CURRENT_GUEST_ALBUM":
+      return {
         ...state,
         currentGuestAlbum: action.data
-        } 
+      };
     // case 'UPDATE_GUEST_ALBUM':
     //     return {
     //     ...state,
@@ -41,9 +41,8 @@ switch(action.type) {
     //     })
     // }
     default:
-        return state
-        }
-    }
+      return state;
+  }
+};
 
-  export default photoAlbumReducer;
-
+export default photoAlbumReducer;

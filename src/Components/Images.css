@@ -1,160 +1,158 @@
 li {
-    display: inline-block;
-    margin-top: 10px;
-    margin-bottom: 10px;
+  display: inline-block;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 
 .rawImage {
-    width: auto;
-    height: 150px;
-    margin: 0 0 0 0;
-    padding: 0 0;
+  width: auto;
+  height: 150px;
+  margin: 0 0 0 0;
+  padding: 0 0;
 }
 
 .rawImageNo {
-    width: auto;
-    height: 150px;
-    margin: 20 0 0 0;
-    padding: 0 0;
-    border: 2px solid #E55345;
+  width: auto;
+  height: 150px;
+  margin: 20 0 0 0;
+  padding: 0 0;
+  border: 2px solid #e55345;
 }
 
 .rawImageYes {
-    width: auto;
-    height: 150px;
-    margin: 20 0 0 0;
-    padding: 0 0;
-    border: 2px solid #5EE83C;
+  width: auto;
+  height: 150px;
+  margin: 20 0 0 0;
+  padding: 0 0;
+  border: 2px solid #5ee83c;
 }
 
 .final-album-images {
-    width: auto;
-    height: 150px;
-    margin: 20 0 0 0;
-    padding: 0 0;
-    border: 2px solid #C2D5E8;
+  width: auto;
+  height: 150px;
+  margin: 20 0 0 0;
+  padding: 0 0;
+  border: 2px solid #c2d5e8;
 }
 .final-album-title {
-    text-decoration: underline;
+  text-decoration: underline;
 }
 
 #photoCard {
-    width: 150px;
-    height: auto;
-    margin: 0 0;
-    padding: 0 0 20px 0;
+  width: 150px;
+  height: auto;
+  margin: 0 0;
+  padding: 0 0 20px 0;
 }
 
 button {
-    width: 40px;
-    height: 20px;
-    font-family: 'Roboto Slab', serif;
+  width: 40px;
+  height: 20px;
+  font-family: "Roboto Slab", serif;
 }
 
 #yes {
-    background-color: #5EE83C;
+  background-color: #5ee83c;
 }
 
 #no {
-    background-color: #E55345;
+  background-color: #e55345;
 }
 .guest-album-caption {
-    /* border-radius: 5px;
+  /* border-radius: 5px;
     background-color: #98ADE8; */
+  color: black;
+  font-family: "Roboto Slab", serif;
+  height: auto;
+  width: auto;
+  margin: 0px 0px 0px 0px;
+  font-size: 13px;
+}
+
+.guest-album-caption h4 {
+  margin: 5px 0px 0px 0px;
+  font-size: 16px;
+}
+
+.guest-album-caption p {
+  color: #ec934c;
+}
+@media only screen and (min-width: 640px) {
+  li {
+    display: inline-block;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+
+  .rawImage {
+    width: auto;
+    height: 300px;
+    margin: 0 0 0 0;
+    padding: 0 0;
+  }
+
+  .rawImageNo {
+    width: auto;
+    height: 300px;
+    margin: 20 0 0 0;
+    padding: 0 0;
+    border: 2px solid #ff4d4d;
+  }
+
+  .rawImageYes {
+    width: auto;
+    height: 300px;
+    margin: 20 0 0 0;
+    padding: 0 0;
+    border: 2px solid #99ff99;
+  }
+  #photoCard {
+    width: 300px;
+    height: auto;
+    margin: 0 0;
+    padding: 0 0 20px 0;
+  }
+
+  button {
+    width: 80px;
+    height: 20px;
+  }
+
+  #yes {
+    background-color: #99ff99;
+  }
+
+  #no {
+    background-color: #ff4d4d;
+  }
+  .final-album-images {
+    width: auto;
+    height: 300px;
+    margin: 20 0 0 0;
+    padding: 0 0;
+    border: 2px solid #c2d5e8;
+  }
+  .final-album-title {
+    text-decoration: underline;
+  }
+
+  .guest-album-caption {
     color: black;
-    font-family: 'Roboto Slab', serif;
+    font-family: "Roboto Slab", serif;
     height: auto;
     width: auto;
     margin: 0px 0px 0px 0px;
     font-size: 13px;
-}
-
-.guest-album-caption h4 {
+  }
+  .guest-album-caption h4 {
     margin: 5px 0px 0px 0px;
     font-size: 16px;
-}
+  }
+  .guest-album-caption p {
+    color: #ec934c;
+  }
 
-.guest-album-caption p {
-    color: #EC934C;
-}
-@media only screen and (min-width: 640px) {
-    li {
-        display: inline-block;
-        margin-top: 10px;
-        margin-bottom: 10px;
-    }
-
-    .rawImage {
-        width: auto;
-        height: 300px;
-        margin: 0 0 0 0;
-        padding: 0 0;
-    }
-
-    .rawImageNo {
-        width: auto;
-        height: 300px;
-        margin: 20 0 0 0;
-        padding: 0 0;
-        border: 2px solid #ff4d4d;
-    }
-
-    .rawImageYes {
-        width: auto;
-        height: 300px;
-        margin: 20 0 0 0;
-        padding: 0 0;
-        border: 2px solid #99ff99;
-    }
-    #photoCard {
-        width: 300px;
-        height: auto;
-        margin: 0 0;
-        padding: 0 0 20px 0;
-    }
-
-    button {
-        width: 80px;
-        height: 20px;
-    }
-
-    #yes {
-        background-color: #99ff99;
-    }
-
-    #no {
-        background-color: #ff4d4d;
-    }
-    .final-album-images {
-        width: auto;
-        height: 300px;
-        margin: 20 0 0 0;
-        padding: 0 0;
-        border: 2px solid #C2D5E8;
-    }
-    .final-album-title {
-        text-decoration: underline;
-    }
-    
-    .guest-album-caption {
-        color: black;
-        font-family: 'Roboto Slab', serif;
-        height: auto;
-        width: auto;
-        margin: 0px 0px 0px 0px;
-        font-size: 13px;
-    }
-    .guest-album-caption h4 {
-        margin: 5px 0px 0px 0px;
-        font-size: 16px;
-    }
-    .guest-album-caption p {
-        color: #EC934C;
-    }
-
-    .preview-card {
-        background-color: white; 
-    }
-
-
+  .preview-card {
+    background-color: white;
+  }
 }
