@@ -146,6 +146,7 @@ export const savePhoto = (uploaded, currentUser, authToken) => {
       .catch(err => console.log(err));
   };
 };
+
 export const loadAlbums = (username, authToken) => dispatch => {
   axios
     .get(`${API_BASE_URL}/albums/${username}`, {
