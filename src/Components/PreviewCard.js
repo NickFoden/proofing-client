@@ -11,10 +11,10 @@ class PreviewCard extends React.Component {
           to={`/albums/${this.props.album.albumTitle}`}
         >
           <h3> {this.props.album.albumTitle} </h3>
-          <h5> (contains {this.props.album.albumArray.length} photos)</h5>
+          <h5> ({this.props.album.albumArray.length} photos)</h5>
 
           <ul>
-            {this.props.album.albumArray.slice(0, 4).map((image, index) => (
+            {this.props.album.albumArray.slice(0, 2).map((image, index) => (
               <li key={index}>
                 <img
                   className="preview-thumbnails"

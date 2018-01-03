@@ -1,20 +1,27 @@
 import React from "react";
+import { connect } from "react-redux";
 import "./Images.css";
 
-const CurrentGuests = props => {
-  debugger;
-  //   let CurrentGuests = (
-  //     <div>
-  //       <ul>{guests.map(name => <li key="name">name + " "</li>)}</ul>{" "}
-  //     </div>
-  //   );
+class CurrentGuests extends React.Component {
+  render() {
+    return (
+      <div className="list-of-guests">
+        <h4>Current Guests: </h4>
+        <ul>
+          {this.props.people.map((name, index) => (
+            <li key={index}>
+              <p>{name} </p>{" "}
+            </li>
+          ))}
+        </ul>
+      </div>
+    );
+  }
+}
 
-  return (
-    <div className="list-of-guests">
-      <h4>Current Guests: </h4>
-      <p>This will be a list of guests invited to this album.</p>
-    </div>
-  );
-};
-
-export default CurrentGuests;
+function mapStateToProps(state) {
+  return {
+    people: state.photoAlbumReducer.currentAlbum.guests
+  };
+}
+export default connect(mapStateToProps)(CurrentGuests);
