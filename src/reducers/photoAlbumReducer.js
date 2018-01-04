@@ -36,7 +36,7 @@ const photoAlbumReducer = (state = initialState, action) => {
           }
           return {
             ...albumData,
-            album: action.album
+            guestAlbums: action.album
           };
         })
       };

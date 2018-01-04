@@ -4,7 +4,7 @@ import "./Images.css";
 import InviteGuestForm from "./InviteGuestForm";
 import { loadGuestApprovers } from "../actions/users";
 import { loadGuestAlbums } from "../actions/index";
-import GuestAlbumCaption from "./GuestAlbumCaption";
+// import GuestAlbumCaption from "./GuestAlbumCaption";
 import CurrentGuests from "./CurrentGuests";
 
 class FinalAlbumDisplay extends React.Component {
@@ -24,15 +24,17 @@ class FinalAlbumDisplay extends React.Component {
                 alt="final-album-images"
               />
 
-              {image.guestApproved == null ? (
+              {/* {image.guestApproved == null ? (
                 false
               ) : (
                 <GuestAlbumCaption image={image} />
-              )}
-              {/* <div className='guest-album-caption'>
-                                    <h4>Approved by: </h4>
-                                    <p>{([...new Set(image.guestApproved)]).map(name => (name + " "))}</p>
-                                </div> */}
+              )} */}
+              <div className="guest-album-caption">
+                <h4>Approved by: </h4>
+                <p>
+                  {[...new Set(image.guestApproved)].map(name => name + " ")}
+                </p>
+              </div>
 
               {/* <GuestAlbumCaption image={image} />
                                 <div className='guest-album-caption'>

@@ -41,10 +41,10 @@ export function setCurrentGuestAlbum(data) {
   };
 }
 const UPDATE_GUEST_ALBUM = "UPDATE_GUEST_ALBUM";
-export function updateGuestAlbum(data) {
+export function updateGuestAlbum(album) {
   return {
     type: UPDATE_GUEST_ALBUM,
-    data
+    album
   };
 }
 
@@ -96,6 +96,7 @@ export const guestApprove = (
       // dispatch(loadGuestAlbums(username, authToken));
       // dispatch(setCurrentGuestAlbum(album));
       // dispatch(addGuestAlbum(result.data))
+      console.log(album);
       dispatch(updateGuestAlbum(album));
     })
     .catch(error => console.log(error));

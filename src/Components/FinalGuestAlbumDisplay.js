@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 import { guestApprove } from "../actions/index";
 import { loadGuestApprovers } from "../actions/users";
 import CurrentOwner from "./CurrentOwner";
+import CurrentGuests from "./CurrentGuests";
 import "./Images.css";
 
 class FinalGuestAlbumDisplay extends React.Component {
@@ -49,6 +50,8 @@ class FinalGuestAlbumDisplay extends React.Component {
             </li>
           ))}
         </ul>
+        {/* <CurrentGuests {...this.props} /> */}
+        {/* has to be guest current guests component */}
       </div>
     );
   }
