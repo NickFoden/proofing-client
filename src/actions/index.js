@@ -40,13 +40,13 @@ export function setCurrentGuestAlbum(data) {
     data
   };
 }
-// const UPDATE_GUEST_ALBUM = 'UPDATE_GUEST_ALBUM';
-// export function updateGuestAlbum(data) {
-//   return {
-//     type: UPDATE_GUEST_ALBUM,
-//     data
-//   };
-// }
+const UPDATE_GUEST_ALBUM = "UPDATE_GUEST_ALBUM";
+export function updateGuestAlbum(data) {
+  return {
+    type: UPDATE_GUEST_ALBUM,
+    data
+  };
+}
 
 const APPROVE = "APPROVE";
 export function approve(image) {
@@ -93,10 +93,10 @@ export const guestApprove = (
   })
     .then(response => response.json())
     .then(album => {
-      dispatch(loadGuestAlbums(username, authToken));
+      // dispatch(loadGuestAlbums(username, authToken));
       // dispatch(setCurrentGuestAlbum(album));
       // dispatch(addGuestAlbum(result.data))
-      // dispatch(updateGuestAlbum(album))
+      dispatch(updateGuestAlbum(album));
     })
     .catch(error => console.log(error));
 };

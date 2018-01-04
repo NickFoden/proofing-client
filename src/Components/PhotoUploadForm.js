@@ -59,7 +59,7 @@ class PhotoUploadForm extends React.Component {
       );
     });
   }
-  //Todo Finish transition
+  //Todo Finish transition to remove hello message after 6 seconds
   render() {
     return (
       <div>

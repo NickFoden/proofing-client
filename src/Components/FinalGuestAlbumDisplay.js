@@ -46,7 +46,6 @@ class FinalGuestAlbumDisplay extends React.Component {
               <button id="guestYes" onClick={e => this.approve(image, index)}>
                 Ok
               </button>
-              {/* <button id="guestNo" onClick={(e) => this.props.guestDisprove(image)}>Nope</button> */}
             </li>
           ))}
         </ul>

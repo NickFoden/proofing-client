@@ -15,7 +15,7 @@
 
 .preview-card {
   background-color: white;
-  width: 200px;
+  width: 220px;
   height: auto;
   border: solid black 1px;
 }
@@ -33,10 +33,11 @@
 .preview-card h3 {
   margin: 0 0 0 0;
   padding: 5px;
+  font-family: "Roboto Slab", serif;
 }
 
 .preview-card h5 {
   font-size: 11px;
-  margin: 0 0 5px 0;
-  padding: 5px;
+  margin: -4px 0 4px 0;
+  padding: 1px;
 }

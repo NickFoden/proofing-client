@@ -1,6 +1,7 @@
 .form-label {
   font-size: 20px;
   font-family: "Roboto Slab", serif;
+  /* margin: 0 auto; */
 }
 .form-button {
   font-size: 18px;
@@ -23,4 +24,9 @@
 
 .login-form {
   text-align: center;
+  /* margin: 0 auto; */
 }
+
+/* #email-label {
+  margin: auto;
+} */

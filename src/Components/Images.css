@@ -35,6 +35,8 @@ li {
   border: 2px solid #c2d5e8;
 }
 .final-album-title {
+  font-family: "Roboto Slab", serif;
+  font-size: 26px;
   text-decoration: underline;
 }
 
@@ -131,6 +133,8 @@ button {
     border: 2px solid #c2d5e8;
   }
   .final-album-title {
+    font-family: "Roboto Slab", serif;
+    font-size: 26px;
     text-decoration: underline;
   }
   .guest-album-caption {

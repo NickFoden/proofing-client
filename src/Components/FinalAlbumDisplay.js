@@ -11,9 +11,6 @@ class FinalAlbumDisplay extends React.Component {
   componentDidMount() {
     this.props.loadGuestApprovers();
   }
-  // componentDidUpdate() {
-  //   this.props.loadGuestAlbums(this.props.username, this.props.authToken);
-  // }
 
   render() {
     return (

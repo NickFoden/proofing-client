@@ -4,6 +4,8 @@
 }
 
 .drop-text {
+  font-family: "Roboto Slab", serif;
+  font-size: 14px;
   margin-top: 75px;
   text-align: center;
   vertical-align: center;
@@ -11,4 +13,8 @@
 
 #welcome-message::first-letter {
   text-transform: capitalize;
+}
+
+#welcome-message {
+  font-family: "Roboto Slab", serif;
 }

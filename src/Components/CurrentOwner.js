@@ -6,7 +6,7 @@ class CurrentOwner extends React.Component {
   render() {
     return (
       <div>
-        <h4>({this.props.owner}'s Album)</h4>
+        <h4 className="album-owner">({this.props.owner}'s Album)</h4>
       </div>
     );
   }

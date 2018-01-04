@@ -1,16 +1,16 @@
 import React from "react";
 import { connect } from "react-redux";
-import "./Images.css";
+import "./CurrentGuests.css";
 
 class CurrentGuests extends React.Component {
   render() {
     return (
       <div className="list-of-guests">
-        <h4>Current Guests: </h4>
-        <ul>
+        <h4 className="current-guests-list-title">Current Guests: </h4>
+        <ul className="current-guests-list">
           {this.props.people.map((name, index) => (
-            <li key={index}>
-              <p>{name} </p>{" "}
+            <li key={index} className="current-guests-list-items">
+              <h4>{name}</h4>{" "}
             </li>
           ))}
         </ul>

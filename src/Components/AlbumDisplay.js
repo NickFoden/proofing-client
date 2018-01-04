@@ -51,7 +51,7 @@ class AlbumDisplay extends React.Component {
           onClick={() => this.remove()}
         >
           {" "}
-          Remove these Approved Photos from Queue
+          Remove Approved Photos from Queue
         </button>
       </div>
     );

@@ -60,7 +60,7 @@ class HeaderNav extends React.Component {
           ) : (
             <li>
               <Link className="header-links" to="/photos">
-                Photos
+                Photos In Queue
               </Link>
             </li>
           )}

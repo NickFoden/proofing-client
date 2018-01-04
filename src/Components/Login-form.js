@@ -31,7 +31,7 @@ export class LoginForm extends React.Component {
         onSubmit={this.props.handleSubmit(values => this.onSubmit(values))}
       >
         {error}
-        <label className="form-label" htmlFor="username">
+        <label className="form-label" htmlFor="username" id="email-label">
           Email
         </label>
         <Field
