@@ -2,6 +2,7 @@ import React from "react";
 import { connect } from "react-redux";
 import { guestApprove } from "../actions/index";
 import { loadGuestApprovers } from "../actions/users";
+import CurrentOwner from "./CurrentOwner";
 import "./Images.css";
 
 class FinalGuestAlbumDisplay extends React.Component {
@@ -27,6 +28,7 @@ class FinalGuestAlbumDisplay extends React.Component {
   render() {
     return (
       <div>
+        <CurrentOwner {...this.props} />
         <ul>
           {this.props.images.map((image, index) => (
             <li key={index}>
