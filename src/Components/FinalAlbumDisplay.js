@@ -1,11 +1,11 @@
-import React from "react";
-import { connect } from "react-redux";
-import "./Images.css";
-import InviteGuestForm from "./InviteGuestForm";
-import { loadGuestApprovers } from "../actions/users";
-import { loadGuestAlbums } from "../actions/index";
+import React from 'react';
+import { connect } from 'react-redux';
+import './Images.css';
+import InviteGuestForm from './InviteGuestForm';
+import { loadGuestApprovers } from '../actions/users';
+import { loadGuestAlbums } from '../actions/index';
 // import GuestAlbumCaption from "./GuestAlbumCaption";
-import CurrentGuests from "./CurrentGuests";
+import CurrentGuests from './CurrentGuests';
 
 class FinalAlbumDisplay extends React.Component {
   componentDidMount() {
@@ -31,9 +31,7 @@ class FinalAlbumDisplay extends React.Component {
               )} */}
               <div className="guest-album-caption">
                 <h4>Approved by: </h4>
-                <p>
-                  {[...new Set(image.guestApproved)].map(name => name + " ")}
-                </p>
+                <p>{[...new Set(image.guestApproved)].map(name => `${name} `)}</p>
               </div>
 
               {/* <GuestAlbumCaption image={image} />
@@ -57,11 +55,11 @@ function mapStateToProps(state) {
     albumName: state.photoAlbumReducer.currentAlbum,
     approvers: state.userReducer.guestApprovers,
     authToken: state.userReducer.authToken,
-    currentUser: state.userReducer.currentUser
+    currentUser: state.userReducer.currentUser,
   };
 }
 
 export default connect(mapStateToProps, {
   loadGuestAlbums,
-  loadGuestApprovers
+  loadGuestApprovers,
 })(FinalAlbumDisplay);
