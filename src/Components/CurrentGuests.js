@@ -1,6 +1,6 @@
-import React from "react";
-import { connect } from "react-redux";
-import "./CurrentGuests.css";
+import React from 'react';
+import { connect } from 'react-redux';
+import './CurrentGuests.css';
 
 class CurrentGuests extends React.Component {
   render() {
@@ -10,7 +10,7 @@ class CurrentGuests extends React.Component {
         <ul className="current-guests-list">
           {this.props.people.map((name, index) => (
             <li key={index} className="current-guests-list-items">
-              <h4>{name}</h4>{" "}
+              <h4>{name}</h4>{' '}
             </li>
           ))}
         </ul>
@@ -21,7 +21,7 @@ class CurrentGuests extends React.Component {
 
 function mapStateToProps(state) {
   return {
-    people: state.photoAlbumReducer.currentAlbum.guests
+    people: state.photoAlbumReducer.currentAlbum.guests,
   };
 }
 export default connect(mapStateToProps)(CurrentGuests);
