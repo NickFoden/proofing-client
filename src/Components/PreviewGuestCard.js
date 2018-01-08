@@ -1,15 +1,12 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import "./Preview.css";
+import React from 'react';
+import { Link } from 'react-router-dom';
+import './Preview.css';
 
 class PreviewCard extends React.Component {
   render() {
     return (
       <div className="preview-card">
-        <Link
-          className="album-links-preview"
-          to={`/albums/guest/${this.props.album.albumTitle}`}
-        >
+        <Link className="album-links-preview" to={`/albums/guest/${this.props.album.albumTitle}`}>
           <h3>{this.props.album.albumTitle}</h3>
           <h5> ({this.props.album.albumArray.length} photos)</h5>
           <ul>

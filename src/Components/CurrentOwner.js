@@ -1,6 +1,6 @@
-import React from "react";
-import { connect } from "react-redux";
-import "./Images.css";
+import React from 'react';
+import { connect } from 'react-redux';
+import './Images.css';
 
 class CurrentOwner extends React.Component {
   render() {
@@ -14,7 +14,7 @@ class CurrentOwner extends React.Component {
 
 function mapStateToProps(state) {
   return {
-    owner: state.photoAlbumReducer.currentAlbum.owner
+    owner: state.photoAlbumReducer.currentAlbum.owner,
   };
 }
 export default connect(mapStateToProps)(CurrentOwner);

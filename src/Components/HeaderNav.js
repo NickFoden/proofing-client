@@ -1,17 +1,17 @@
-import React from "react";
-import { connect } from "react-redux";
-import { Link, withRouter } from "react-router-dom";
-import { logOutCurrentUser, setAuthToken } from "../actions/auth";
-import { clearAuthToken } from "../local-storage";
+import React from 'react';
+import { connect } from 'react-redux';
+import { Link, withRouter } from 'react-router-dom';
+import { logOutCurrentUser, setAuthToken } from '../actions/auth';
+import { clearAuthToken } from '../local-storage';
 
-import "./HeaderNav.css";
+import './HeaderNav.css';
 
 class HeaderNav extends React.Component {
   logOut() {
     this.props.dispatch(logOutCurrentUser());
     this.props.dispatch(setAuthToken(null));
     clearAuthToken();
-    this.props.history.push("/");
+    this.props.history.push('/');
   }
 
   render() {
@@ -20,7 +20,7 @@ class HeaderNav extends React.Component {
       logButton = (
         <li>
           <Link className="log-button" to="/LogIn">
-            {" "}
+            {' '}
             Log In
           </Link>
         </li>
@@ -39,7 +39,7 @@ class HeaderNav extends React.Component {
       registerLink = (
         <li>
           <Link className="header-links" to="/register">
-            {" "}
+            {' '}
             Register
           </Link>
         </li>
@@ -51,8 +51,8 @@ class HeaderNav extends React.Component {
         <ul>
           <li id="home-link">
             <Link className="header-links-home" to="/">
-              {" "}
-              Home{" "}
+              {' '}
+              Home{' '}
             </Link>
           </li>
           {this.props.currentUser.username == null ? (
@@ -83,7 +83,7 @@ class HeaderNav extends React.Component {
 
 const mapStateToProps = state => ({
   loggedIn: state.auth.currentUser !== null,
-  currentUser: state.userReducer.currentUser
+  currentUser: state.userReducer.currentUser,
 });
 
 export default withRouter(connect(mapStateToProps)(HeaderNav));

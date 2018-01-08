@@ -1,7 +1,7 @@
-import React from "react";
-import "./Images.css";
-import { connect } from "react-redux";
-import { approve, disprove } from "../actions/index";
+import React from 'react';
+import './Images.css';
+import { connect } from 'react-redux';
+import { approve, disprove } from '../actions/index';
 
 class Images extends React.Component {
   render() {
@@ -14,7 +14,7 @@ class Images extends React.Component {
             .map((image, index) => (
               <li key={index}>
                 <img
-                  className={image.approved ? "rawImageYes " : "rawImageNo"}
+                  className={image.approved ? 'rawImageYes ' : 'rawImageNo'}
                   src={image.image[0].secure_url}
                   alt="imageToBeApproved"
                 />
@@ -35,7 +35,7 @@ class Images extends React.Component {
 
 function mapStateToProps(state) {
   return {
-    images: state.photoReducer.photosState
+    images: state.photoReducer.photosState,
   };
 }
 

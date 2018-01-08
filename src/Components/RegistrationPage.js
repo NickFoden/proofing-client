@@ -1,8 +1,8 @@
-import React from "react";
-import { connect } from "react-redux";
-import { Redirect } from "react-router-dom";
+import React from 'react';
+import { connect } from 'react-redux';
+import { Redirect } from 'react-router-dom';
 
-import RegistrationForm from "./Registration-form";
+import RegistrationForm from './Registration-form';
 
 export function RegistrationPage(props) {
   if (props.loggedIn) {
@@ -17,7 +17,7 @@ export function RegistrationPage(props) {
 }
 
 const mapStateToProps = state => ({
-  loggedIn: state.auth.currentUser.username
+  loggedIn: state.auth.currentUser.username,
 });
 
 export default connect(mapStateToProps)(RegistrationPage);

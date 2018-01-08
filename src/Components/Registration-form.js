@@ -1,18 +1,22 @@
-import React from "react";
-import { Field, focus, reduxForm } from "redux-form";
-import { registerUser } from "../actions/users";
-import { login } from "../actions/auth";
-import Input from "./input";
-import { required, nonEmpty, matches, length, isTrimmed } from "../validators";
-import "./Form.css";
+import React from 'react';
+import { Field, focus, reduxForm } from 'redux-form';
+import { registerUser } from '../actions/users';
+import { login } from '../actions/auth';
+import Input from './input';
+import { required, nonEmpty, matches, length, isTrimmed } from '../validators';
+import './Form.css';
 
-//Now exports to RegistrationPage to handle redirect
-//if sign up succesful and user gets logged in right away
+// Now exports to RegistrationPage to handle redirect
+// if sign up succesful and user gets logged in right away
 
 export class RegistrationForm extends React.Component {
   onSubmit(values) {
-    const { username, password, firstName, lastName } = values;
-    const user = { username, password, firstName, lastName };
+    const {
+      username, password, firstName, lastName,
+    } = values;
+    const user = {
+      username, password, firstName, lastName,
+    };
     return this.props
       .dispatch(registerUser(user))
       .then(() => this.props.dispatch(login(username, password)));
@@ -58,7 +62,7 @@ export class RegistrationForm extends React.Component {
           component={Input}
           type="password"
           name="passwordConfirm"
-          validate={[required, nonEmpty, matches("password")]}
+          validate={[required, nonEmpty, matches('password')]}
         />
         <button
           className="form-button"
@@ -73,7 +77,6 @@ export class RegistrationForm extends React.Component {
 }
 
 export default reduxForm({
-  form: "registration",
-  onSubmitFail: (errors, dispatch) =>
-    dispatch(focus("registration", Object.keys(errors)[0]))
+  form: 'registration',
+  onSubmitFail: (errors, dispatch) => dispatch(focus('registration', Object.keys(errors)[0])),
 })(RegistrationForm);
