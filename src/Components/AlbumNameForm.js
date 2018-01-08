@@ -1,29 +1,27 @@
-import React from "react";
-import { withRouter } from "react-router";
-import { Field, focus, reduxForm, SubmissionError } from "redux-form";
-import Input from "./input";
-import { required, nonEmpty } from "../validators";
-import { saveAlbum } from "../actions/index";
-import "./Form.css";
+import React from 'react';
+import { withRouter } from 'react-router';
+import { Field, focus, reduxForm, SubmissionError } from 'redux-form';
+import Input from './input';
+import { required, nonEmpty } from '../validators';
+import { saveAlbum } from '../actions/index';
+import './Form.css';
 
 export class AlbumNameForm extends React.Component {
   async onSubmit(values) {
-    let newImageArray = this.props.images.filter(photo => photo.approved);
+    const newImageArray = this.props.images.filter(photo => photo.approved);
     if (newImageArray.length < 1) {
-      throw new SubmissionError({ _error: "Album is empty" });
+      throw new SubmissionError({ _error: 'Album is empty' });
     }
     try {
-      await this.props.dispatch(
-        saveAlbum(
-          values.albumName,
-          this.props.currentUser.username,
-          this.props.authToken,
-          newImageArray
-        )
-      );
-      this.props.history.push("/albums");
+      await this.props.dispatch(saveAlbum(
+        values.albumName,
+        this.props.currentUser.username,
+        this.props.authToken,
+        newImageArray,
+      ));
+      this.props.history.push('/albums');
     } catch (error) {
-      throw new SubmissionError({ _error: "Album Name Already in Use" });
+      throw new SubmissionError({ _error: 'Album Name Already in Use' });
     }
   }
 
@@ -54,10 +52,7 @@ export class AlbumNameForm extends React.Component {
           id="albumName"
           validate={[required, nonEmpty]}
         />
-        <button
-          className="form-button"
-          disabled={this.props.pristine || this.props.submitting}
-        >
+        <button className="form-button" disabled={this.props.pristine || this.props.submitting}>
           Save new album
         </button>
       </form>
@@ -65,12 +60,10 @@ export class AlbumNameForm extends React.Component {
   }
 }
 
-export default withRouter(
-  reduxForm({
-    form: "albumName",
-    onSubmitFail: (errors, dispatch) => dispatch(focus("albumName"))
-  })(AlbumNameForm)
-);
+export default withRouter(reduxForm({
+  form: 'albumName',
+  onSubmitFail: (errors, dispatch) => dispatch(focus('albumName')),
+})(AlbumNameForm));
 
 // END
 

@@ -1,21 +1,14 @@
-import React from "react";
-import { connect } from "react-redux";
-import { Link, withRouter } from "react-router-dom";
-import {
-  loadAlbums,
-  setCurrentAlbum,
-  setCurrentGuestAlbum
-} from "../actions/index";
-import PreviewCard from "./PreviewCard";
-import PreviewGuestCard from "./PreviewGuestCard";
-import "./AlbumList.css";
+import React from 'react';
+import { connect } from 'react-redux';
+import { Link, withRouter } from 'react-router-dom';
+import { loadAlbums, setCurrentAlbum, setCurrentGuestAlbum } from '../actions/index';
+import PreviewCard from './PreviewCard';
+import PreviewGuestCard from './PreviewGuestCard';
+import './AlbumList.css';
 
 class AlbumList extends React.Component {
   componentDidMount() {
-    this.props.loadAlbums(
-      this.props.currentUser.username,
-      this.props.authToken
-    );
+    this.props.loadAlbums(this.props.currentUser.username, this.props.authToken);
   }
   setAlbum(data) {
     this.props.setCurrentAlbum(data);
@@ -27,7 +20,7 @@ class AlbumList extends React.Component {
     return (
       <div>
         <div id="album-list">
-          <Link className="album-list-title" to={`/albums`}>
+          <Link className="album-list-title" to="/albums">
             <h2 className="album-list-title">Albums</h2>
           </Link>
           <ul>
@@ -59,14 +52,12 @@ function mapStateToProps(state) {
     currentUser: state.userReducer.currentUser,
     photoAlbums: state.photoAlbumReducer.albumArray,
     images: state.photoAlbumReducer.currentAlbum.albumArray,
-    guestAlbums: state.photoAlbumReducer.guestAlbums
+    guestAlbums: state.photoAlbumReducer.guestAlbums,
   };
 }
 
-export default withRouter(
-  connect(mapStateToProps, {
-    loadAlbums,
-    setCurrentAlbum,
-    setCurrentGuestAlbum
-  })(AlbumList)
-);
+export default withRouter(connect(mapStateToProps, {
+  loadAlbums,
+  setCurrentAlbum,
+  setCurrentGuestAlbum,
+})(AlbumList));
