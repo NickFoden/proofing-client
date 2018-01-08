@@ -1,18 +1,18 @@
-import React from "react";
-import { Field, focus, reduxForm, SubmissionError } from "redux-form";
-import Input from "./input";
-import { login } from "../actions/auth";
-import { required, nonEmpty } from "../validators";
-import "./Form.css";
+import React from 'react';
+import { Field, focus, reduxForm, SubmissionError } from 'redux-form';
+import Input from './input';
+import { login } from '../actions/auth';
+import { required, nonEmpty } from '../validators';
+import './Form.css';
 
 export class LoginForm extends React.Component {
   async onSubmit(values) {
     try {
       await this.props.dispatch(login(values.username, values.password));
 
-      this.props.history.push("/photos");
+      this.props.history.push('/photos');
     } catch (error) {
-      throw new SubmissionError({ _error: "Incorrect username or password" });
+      throw new SubmissionError({ _error: 'Incorrect username or password' });
     }
   }
 
@@ -53,10 +53,7 @@ export class LoginForm extends React.Component {
           id="password"
           validate={[required, nonEmpty]}
         />
-        <button
-          className="form-button"
-          disabled={this.props.pristine || this.props.submitting}
-        >
+        <button className="form-button" disabled={this.props.pristine || this.props.submitting}>
           Log in
         </button>
       </form>
@@ -65,8 +62,8 @@ export class LoginForm extends React.Component {
 }
 
 export default reduxForm({
-  form: "login",
-  onSubmitFail: (errors, dispatch) => dispatch(focus("login", "username"))
+  form: 'login',
+  onSubmitFail: (errors, dispatch) => dispatch(focus('login', 'username')),
 })(LoginForm);
 
 // END
