@@ -1,9 +1,9 @@
 .list-of-guests {
   margin: 20px auto;
-  width: 400px;
+  width: 250px;
   background-color: #4ddbff;
   border: solid black 1px;
-  /* padding: 0; */
+  padding-bottom: 20px;
 }
 
 .current-guests-list-title {

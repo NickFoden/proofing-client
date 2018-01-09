@@ -1,11 +1,12 @@
 import React from 'react';
-// import { CSSTransitionGroup } from 'react-transition-group';
-import './PhotoUploadForm.css';
+import { connect } from 'react-redux';
 import Dropzone from 'react-dropzone';
 import sha1 from 'sha1';
 import superagent from 'superagent';
+// import { CSSTransitionGroup } from 'react-transition-group';
+import './PhotoUploadForm.css';
 import AlbumDisplay from './AlbumDisplay';
-import { connect } from 'react-redux';
+
 import { savePhoto } from '../actions/index';
 
 class PhotoUploadForm extends React.Component {
@@ -18,8 +19,7 @@ class PhotoUploadForm extends React.Component {
     const timestamp = Date.now() / 1000;
     const uploadPreset = 'on6jfv7m';
 
-    const paramStr =
-      `timestamp=${timestamp}&upload_preset=${uploadPreset}dW9zgguPfWSrOwP8mQ2AyCMYu30`;
+    const paramStr = `timestamp=${timestamp}&upload_preset=${uploadPreset}dW9zgguPfWSrOwP8mQ2AyCMYu30`;
     const signature = sha1(paramStr);
 
     const params = {

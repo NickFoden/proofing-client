@@ -1,231 +1,218 @@
-import { API_BASE_URL } from "../config";
-import axios from "axios";
+import axios from 'axios';
+import { API_BASE_URL } from '../config';
 // import { loadavg } from 'os';
 
-const MAP_ALBUM = "MAP_ALBUM";
+const MAP_ALBUM = 'MAP_ALBUM';
 export function mapAlbum(data) {
   return {
     type: MAP_ALBUM,
-    data
+    data,
   };
 }
 
-const ADD_ALBUM = "ADD_ALBUM";
+const ADD_ALBUM = 'ADD_ALBUM';
 export function addAlbum(data) {
   return {
     type: ADD_ALBUM,
-    data
+    data,
   };
 }
 
-const ADD_GUEST_ALBUM = "ADD_GUEST_ALBUM";
+const ADD_GUEST_ALBUM = 'ADD_GUEST_ALBUM';
 export function addGuestAlbum(data) {
   return {
     type: ADD_GUEST_ALBUM,
-    data
+    data,
   };
 }
 
-const SET_CURRENT_ALBUM = "SET_CURRENT_ALBUM";
+const SET_CURRENT_ALBUM = 'SET_CURRENT_ALBUM';
 export function setCurrentAlbum(data) {
   return {
     type: SET_CURRENT_ALBUM,
-    data
+    data,
   };
 }
-const SET_CURRENT_GUEST_ALBUM = "SET_CURRENT_GUEST_ALBUM";
+const SET_CURRENT_GUEST_ALBUM = 'SET_CURRENT_GUEST_ALBUM';
 export function setCurrentGuestAlbum(data) {
   return {
     type: SET_CURRENT_GUEST_ALBUM,
-    data
+    data,
   };
 }
-const UPDATE_GUEST_ALBUM = "UPDATE_GUEST_ALBUM";
+const UPDATE_GUEST_ALBUM = 'UPDATE_GUEST_ALBUM';
 export function updateGuestAlbum(album) {
   return {
     type: UPDATE_GUEST_ALBUM,
-    album
+    album,
   };
 }
 
-const APPROVE = "APPROVE";
+const APPROVE = 'APPROVE';
 export function approve(image) {
   fetch(`${API_BASE_URL}/images/${image._id}/approve`, {
-    method: "PUT"
+    method: 'PUT',
   });
   return {
     type: APPROVE,
-    image
+    image,
   };
 }
 
-const DISPROVE = "DISPROVE";
+const DISPROVE = 'DISPROVE';
 export function disprove(image) {
   fetch(`${API_BASE_URL}/images/${image._id}/disprove`, {
-    method: "PUT"
+    method: 'PUT',
   });
   return {
     type: DISPROVE,
-    image
+    image,
   };
 }
 
-export const guestApprove = (
-  image,
-  username,
-  index,
-  albumId,
-  authToken,
-  realName
-) => dispatch => {
+export const guestApprove = (image, username, index, albumId, authToken, realName) => (dispatch) => {
   fetch(`${API_BASE_URL}/albums/guest/${image}/approve`, {
-    method: "PUT",
+    method: 'PUT',
     headers: {
-      "Content-Type": "application/json",
-      Authorization: `Bearer ${authToken}`
+      'Content-Type': 'application/json',
+      Authorization: `Bearer ${authToken}`,
     },
     body: JSON.stringify({
       username,
       index,
       albumId,
-      realName
-    })
+      realName,
+    }),
   })
     .then(response => response.json())
-    .then(album => {
+    .then((album) => {
       // dispatch(loadGuestAlbums(username, authToken));
       // dispatch(setCurrentGuestAlbum(album));
       // dispatch(addGuestAlbum(result.data))
       console.log(album);
+      debugger;
       dispatch(updateGuestAlbum(album));
     })
     .catch(error => console.log(error));
 };
 
-export const sortApproved = (username, authToken) => dispatch => {
+export const sortApproved = (username, authToken) => (dispatch) => {
   axios
     .get(`${API_BASE_URL}/photos/sort/${username}`, {
       headers: {
-        Authorization: `Bearer ${authToken}`
-      }
+        Authorization: `Bearer ${authToken}`,
+      },
     })
-    .then(result => {
+    .then((result) => {
       dispatch(mapAlbum(result.data));
     })
     .catch(error => console.log(error));
 };
 
-export const loadPhotos = (username, authToken) => dispatch => {
+export const loadPhotos = (username, authToken) => (dispatch) => {
   axios
     .get(`${API_BASE_URL}/photos/${username}`, {
       headers: {
-        Authorization: `Bearer ${authToken}`
-      }
+        Authorization: `Bearer ${authToken}`,
+      },
     })
-    .then(result => {
+    .then((result) => {
       dispatch(mapAlbum(result.data));
     })
     .catch(error => console.log(error));
 };
 
-export const savePhoto = (uploaded, currentUser, authToken) => {
-  return dispatch => {
-    fetch(`${API_BASE_URL}/photos/${currentUser}`, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        Authorization: `Bearer ${authToken}`
-      },
-      body: JSON.stringify({
-        uploaded
-      })
+export const savePhoto = (uploaded, currentUser, authToken) => (dispatch) => {
+  fetch(`${API_BASE_URL}/photos/${currentUser}`, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      Authorization: `Bearer ${authToken}`,
+    },
+    body: JSON.stringify({
+      uploaded,
+    }),
+  })
+    .then(response => response.json())
+    .then((photos) => {
+      dispatch(mapAlbum(photos));
     })
-      .then(response => response.json())
-      .then(photos => {
-        dispatch(mapAlbum(photos));
-      })
-      .catch(err => console.log(err));
-  };
+    .catch(err => console.log(err));
 };
 
-export const loadAlbums = (username, authToken) => dispatch => {
+export const loadAlbums = (username, authToken) => (dispatch) => {
   axios
     .get(`${API_BASE_URL}/albums/${username}`, {
       headers: {
-        Authorization: `Bearer ${authToken}`
-      }
+        Authorization: `Bearer ${authToken}`,
+      },
     })
-    .then(result => {
+    .then((result) => {
       dispatch(addAlbum(result.data));
       dispatch(loadGuestAlbums(username, authToken));
     })
     .catch(error => console.log(error));
 };
 
-export const saveAlbum = (title, username, authToken, images) => dispatch => {
+export const saveAlbum = (title, username, authToken, images) => (dispatch) => {
   fetch(`${API_BASE_URL}/albums/${title}/${username}`, {
-    method: "POST",
+    method: 'POST',
     headers: {
-      "Content-Type": "application/json",
-      Authorization: `Bearer ${authToken}`
+      'Content-Type': 'application/json',
+      Authorization: `Bearer ${authToken}`,
     },
     body: JSON.stringify({
-      images
-    })
+      images,
+    }),
   })
     .then(response => response.json())
-    .then(album => {
+    .then((album) => {
       dispatch(addAlbum(album));
     })
     .catch(error => console.log(error));
 };
 
-export const removeApproved = (username, authToken, images) => dispatch => {
+export const removeApproved = (username, authToken, images) => (dispatch) => {
   fetch(`${API_BASE_URL}/images/remove/${username}`, {
-    method: "DELETE",
+    method: 'DELETE',
     headers: {
-      "Content-Type": "application/json",
-      Authorization: `Bearer ${authToken}`
+      'Content-Type': 'application/json',
+      Authorization: `Bearer ${authToken}`,
     },
     body: JSON.stringify({
-      images
-    })
+      images,
+    }),
   })
-    .then(response => {
+    .then((response) => {
       dispatch(loadPhotos(username, authToken));
     })
     .catch(error => console.log(error));
 };
 
-export const inviteGuest = (
-  username,
-  albumId,
-  authToken,
-  guestEmail
-) => dispatch => {
+export const inviteGuest = (username, albumId, authToken, guestEmail) => (dispatch) => {
   fetch(`${API_BASE_URL}/albums/${username}/${albumId}/${guestEmail}`, {
-    method: "PUT",
+    method: 'PUT',
     headers: {
-      Authorization: `Bearer ${authToken}`
-    }
+      Authorization: `Bearer ${authToken}`,
+    },
     // body: JSON.stringify({
     //   guestEmail
     // })
   })
-    .then(album => {
+    .then((album) => {
       dispatch(setCurrentAlbum(album));
     })
     .catch(error => console.log(error));
 };
 
-export const loadGuestAlbums = (username, authToken) => dispatch => {
+export const loadGuestAlbums = (username, authToken) => (dispatch) => {
   axios
     .get(`${API_BASE_URL}/albums/guest/${username}`, {
       headers: {
-        Authorization: `Bearer ${authToken}`
-      }
+        Authorization: `Bearer ${authToken}`,
+      },
     })
-    .then(result => {
+    .then((result) => {
       dispatch(addGuestAlbum(result.data));
     })
     .catch(error => console.log(error));
