@@ -30,13 +30,13 @@ const photoAlbumReducer = (state = initialState, action) => {
     case 'UPDATE_GUEST_ALBUM':
       return {
         ...state,
-        guestAlbums: state.guestAlbums.map((albumData) => {
+        currentGuestAlbum: state.currentGuestAlbum((albumData) => {
           if (action.album._id !== albumData._id) {
             return albumData;
           }
           return {
             ...albumData,
-            guestAlbums: action.album,
+            currentGuestAlbum: action.album,
           };
         }),
       };
