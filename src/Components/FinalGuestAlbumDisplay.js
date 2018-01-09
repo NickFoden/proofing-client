@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { guestApprove } from '../actions/index';
 import { loadGuestApprovers } from '../actions/users';
 import CurrentOwner from './CurrentOwner';
-import CurrentGuestsGuestAlbum from './CurrentGuests';
+import CurrentGuestsGuestAlbum from './CurrentGuestsGuestAlbum';
 import './Images.css';
 
 class FinalGuestAlbumDisplay extends React.Component {

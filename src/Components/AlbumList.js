@@ -15,6 +15,7 @@ class AlbumList extends React.Component {
   }
   setGuests(data) {
     this.props.setCurrentGuestAlbum(data);
+    debugger;
   }
   render() {
     return (

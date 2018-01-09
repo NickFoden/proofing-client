@@ -1,37 +1,21 @@
-import React from "react";
-import Images from "./Images";
-import { connect } from "react-redux";
-import AlbumNameForm from "./AlbumNameForm";
-import "./AlbumDisplay.css";
-import {
-  loadPhotos,
-  addAlbum,
-  removeApproved,
-  saveAlbum,
-  sortApproved
-} from "../actions/index";
+import React from 'react';
+import Images from './Images';
+import { connect } from 'react-redux';
+import AlbumNameForm from './AlbumNameForm';
+import './AlbumDisplay.css';
+import { loadPhotos, addAlbum, removeApproved, saveAlbum, sortApproved } from '../actions/index';
 
 class AlbumDisplay extends React.Component {
   componentDidMount() {
-    this.props.loadPhotos(
-      this.props.currentUser.username,
-      this.props.authToken
-    );
+    this.props.loadPhotos(this.props.currentUser.username, this.props.authToken);
   }
   sort() {
-    this.props.sortApproved(
-      this.props.currentUser.username,
-      this.props.authToken
-    );
+    this.props.sortApproved(this.props.currentUser.username, this.props.authToken);
   }
 
   remove() {
-    let newImageArray = this.props.images.filter(photo => photo.approved);
-    this.props.removeApproved(
-      this.props.currentUser.username,
-      this.props.authToken,
-      newImageArray
-    );
+    const newImageArray = this.props.images.filter(photo => photo.approved);
+    this.props.removeApproved(this.props.currentUser.username, this.props.authToken, newImageArray);
   }
 
   //  https://github.com/KanoComputing/nodejs-profanity-util
@@ -41,16 +25,13 @@ class AlbumDisplay extends React.Component {
       <div id="album">
         <Images />
         <button className="button-sort" onClick={() => this.sort()}>
-          {" "}
-          Sort{" "}
+          {' '}
+          Sort{' '}
         </button>
-        {/*Todo -> remove these two unless there are approved images*/}
+        {/* Todo -> remove these two unless there are approved images */}
         <AlbumNameForm {...this.props} />
-        <button
-          className="button-remove-approved"
-          onClick={() => this.remove()}
-        >
-          {" "}
+        <button className="button-remove-approved" onClick={() => this.remove()}>
+          {' '}
           Remove Approved Photos from Queue
         </button>
       </div>
@@ -62,7 +43,7 @@ function mapStateToProps(state) {
   return {
     currentUser: state.userReducer.currentUser,
     authToken: state.userReducer.authToken,
-    images: state.photoReducer.photosState
+    images: state.photoReducer.photosState,
   };
 }
 
@@ -71,5 +52,5 @@ export default connect(mapStateToProps, {
   addAlbum,
   removeApproved,
   saveAlbum,
-  sortApproved
+  sortApproved,
 })(AlbumDisplay);
