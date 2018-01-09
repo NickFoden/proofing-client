@@ -27,19 +27,23 @@ const photoAlbumReducer = (state = initialState, action) => {
         ...state,
         currentGuestAlbum: action.data,
       };
-    case 'UPDATE_GUEST_ALBUM':
-      return {
-        ...state,
-        currentGuestAlbum: state.currentGuestAlbum((albumData) => {
-          if (action.album._id !== albumData._id) {
-            return albumData;
-          }
-          return {
-            ...albumData,
-            currentGuestAlbum: action.album,
-          };
-        }),
-      };
+    // case 'UPDATE_GUEST_ALBUM':
+    //   return {
+    //     ...state,
+    //     currentGuestAlbum: action.data,
+    //   };
+    // return {
+    //   ...state,
+    //   currentGuestAlbum: state.currentGuestAlbum((albumData) => {
+    //     if (action.album._id !== albumData._id) {
+    //       return albumData;
+    //     }
+    //     return {
+    //       ...albumData,
+    //       currentGuestAlbum: action.album,
+    //     };
+    //   }),
+    // };
     default:
       return state;
   }

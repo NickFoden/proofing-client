@@ -3,10 +3,7 @@ import { connect } from 'react-redux';
 import './CurrentGuests.css';
 
 class CurrentGuests extends React.Component {
-  componentDidMount() {
-    debugger;
-  }
-
+  componentDidMount() {}
   render() {
     return (
       <div className="list-of-guests">
@@ -14,7 +11,7 @@ class CurrentGuests extends React.Component {
         <ul className="current-guests-list">
           {/* {this.props.people.map(name => (
             <li key={name} className="current-guests-list-items">
-              <h4>{name}</h4>{' '}
+              <h4>{name}</h4>
             </li>
           ))} */}
         </ul>
