@@ -23,15 +23,21 @@ class FinalAlbumDisplay extends React.Component {
                 src={image.image[0].secure_url}
                 alt="final-album-images"
               />
-
-              {/* {image.guestApproved == null ? (
-                false
-              ) : (
-                <GuestAlbumCaption image={image} />
-              )} */}
-              <div className="guest-album-caption">
+              {/* <div className="guest-album-caption">
                 <h4>Approved by: </h4>
                 <p>{[...new Set(image.guestApproved)].map(name => `${name} `)}</p>
+              </div> */}
+
+              {/* //Ternary not working need to fix */}
+              <div className="guest-album-caption">
+                {image.guestApproved ? (
+                  <div>
+                    <h4>Approved by: </h4>
+                    <p>{[...new Set(image.guestApproved)].map(name => `${name} `)}</p>
+                  </div>
+                ) : (
+                  <div />
+                )}
               </div>
 
               {/* <GuestAlbumCaption image={image} />
