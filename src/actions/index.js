@@ -48,6 +48,18 @@ export function updateGuestAlbum(album) {
   };
 }
 
+// THIS ONE
+// THIS ONE
+// THIS ONE
+
+const ADD_GUEST = 'ADD_GUEST';
+export function addGuest(data) {
+  return {
+    type: ADD_GUEST,
+    data,
+  };
+}
+
 const APPROVE = 'APPROVE';
 export function approve(image) {
   fetch(`${API_BASE_URL}/images/${image._id}/approve`, {
@@ -199,6 +211,7 @@ export const inviteGuest = (username, albumId, authToken, guestEmail) => (dispat
   })
     .then((album) => {
       dispatch(setCurrentAlbum(album));
+      dispatch(addGuest(guestEmail));
     })
     .catch(error => console.log(error));
 };

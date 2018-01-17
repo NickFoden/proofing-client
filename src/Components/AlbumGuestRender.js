@@ -14,6 +14,13 @@ class AlbumGuestRender extends React.Component {
   }
 }
 
+// const AlbumGuestRender = props => (
+//   <div>
+//     <h2 className="final-album-title">{this.props.currentGuestAlbum.albumTitle}</h2>
+//     <FinalGuestAlbumDisplay />
+//   </div>
+// );
+
 function mapStateToProps(state) {
   return {
     currentGuestAlbum: state.photoAlbumReducer.currentGuestAlbum,
