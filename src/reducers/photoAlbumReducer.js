@@ -27,12 +27,12 @@ const photoAlbumReducer = (state = initialState, action) => {
         ...state,
         currentGuestAlbum: action.data,
       };
-    case 'ADD_GUEST':
-      return {
-        ...state,
-        currentAlbum: action.data,
-        // currentAlbum.guests: action.data,
-      };
+    // case 'ADD_GUEST':
+    //   return {
+    //     ...state,
+    //     currentAlbum: action.data,
+    //     // currentAlbum.guests: action.data,
+    //   };
     // case 'UPDATE_GUEST_ALBUM':
     //   return {
     //     ...state,

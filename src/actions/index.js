@@ -209,9 +209,9 @@ export const inviteGuest = (username, albumId, authToken, guestEmail) => (dispat
     //   guestEmail
     // })
   })
+    .then(response => response.json())
     .then((album) => {
       dispatch(setCurrentAlbum(album));
-      dispatch(addGuest(guestEmail));
     })
     .catch(error => console.log(error));
 };
