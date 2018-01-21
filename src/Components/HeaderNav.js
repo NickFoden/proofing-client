@@ -18,7 +18,7 @@ class HeaderNav extends React.Component {
     let logButton;
     if (this.props.currentUser.username === null) {
       logButton = (
-        <li>
+        <li className="header-li">
           <Link className="log-button" to="/LogIn">
             {' '}
             Log In
@@ -27,7 +27,7 @@ class HeaderNav extends React.Component {
       );
     } else {
       logButton = (
-        <li>
+        <li className="header-li">
           <button className="log-button" onClick={() => this.logOut()}>
             Log out
           </button>
@@ -37,7 +37,7 @@ class HeaderNav extends React.Component {
     let registerLink;
     if (this.props.currentUser.username === null) {
       registerLink = (
-        <li>
+        <li className="header-li">
           <Link className="header-links" to="/register">
             {' '}
             Register
@@ -49,7 +49,7 @@ class HeaderNav extends React.Component {
     return (
       <div id="header-nav">
         <ul>
-          <li id="home-link">
+          <li id="home-link" className="header-li">
             <Link className="header-links-home" to="/">
               {' '}
               Home{' '}
@@ -58,7 +58,7 @@ class HeaderNav extends React.Component {
           {this.props.currentUser.username == null ? (
             false
           ) : (
-            <li>
+            <li className="header-li">
               <Link className="header-links" to="/photos">
                 Photos In Queue
               </Link>
@@ -67,7 +67,7 @@ class HeaderNav extends React.Component {
           {this.props.currentUser.username == null ? (
             false
           ) : (
-            <li>
+            <li className="header-li">
               <Link className="header-links" to="/albums">
                 Albums
               </Link>

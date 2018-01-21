@@ -25,6 +25,12 @@ const Home = props => (
         <h4>or nay</h4>
       </div>
     </div>
+    <div className="footer">
+      <p>
+        {' '}
+        This fun project by <a href="https://www.twitter.com/nickfoden">@nickfoden</a>{' '}
+      </p>
+    </div>
   </div>
 );
 

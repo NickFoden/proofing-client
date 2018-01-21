@@ -1,4 +1,4 @@
-li {
+.header-li {
   display: inline-block;
   padding: 0 25px;
   margin-top: 14px;
@@ -62,7 +62,7 @@ a {
 }
 
 @media only screen and (min-width: 640px) {
-  li {
+  .header-li {
     display: inline-block;
     padding: 0 25px;
     margin-top: 14px;
