@@ -11,44 +11,45 @@ import { savePhoto } from '../actions/index';
 
 class PhotoUploadForm extends React.Component {
   uploadFile(files) {
-    const image = files[0];
+    for (let i = 0; i < files.length; i++) {
+      const image = files[i];
 
-    const cloudName = 'proofer';
-    const url = `https://api.cloudinary.com/v1_1/${cloudName}/image/upload`;
+      const cloudName = 'proofer';
+      const url = `https://api.cloudinary.com/v1_1/${cloudName}/image/upload`;
 
-    const timestamp = Date.now() / 1000;
-    const uploadPreset = 'on6jfv7m';
+      const timestamp = Date.now() / 1000;
+      const uploadPreset = 'on6jfv7m';
 
-    const paramStr = `timestamp=${timestamp}&upload_preset=${uploadPreset}dW9zgguPfWSrOwP8mQ2AyCMYu30`;
-    const signature = sha1(paramStr);
+      const paramStr = `timestamp=${timestamp}&upload_preset=${uploadPreset}dW9zgguPfWSrOwP8mQ2AyCMYu30`;
+      const signature = sha1(paramStr);
 
-    const params = {
-      api_key: '821318977471469',
-      timestamp,
-      upload_preset: uploadPreset,
-      signature,
-    };
+      const params = {
+        api_key: '821318977471469',
+        timestamp,
+        upload_preset: uploadPreset,
+        signature,
+      };
 
-    const uploadRequest = superagent.post(url);
-    uploadRequest.attach('file', image);
+      const uploadRequest = superagent.post(url);
+      uploadRequest.attach('file', image);
 
-    Object.keys(params).forEach((key) => {
-      uploadRequest.field(key, params[key]);
-    });
+      Object.keys(params).forEach((key) => {
+        uploadRequest.field(key, params[key]);
+      });
 
-    uploadRequest.end((err, resp) => {
-      if (err) {
-        alert(err);
-        return;
-      }
-      resp.body.userName = this.props.currentUser;
-      const uploaded = resp.body;
-      console.log(`UPLOAD COMPLETE: ${JSON.stringify(uploaded)}`);
-      console.log('Current User user name', this.props.currentUser.username);
-      this.props.dispatch(savePhoto(uploaded, this.props.currentUser.username, this.props.authToken));
-    });
+      uploadRequest.end((err, resp) => {
+        if (err) {
+          alert(err);
+          return;
+        }
+        resp.body.userName = this.props.currentUser;
+        const uploaded = resp.body;
+        console.log(`UPLOAD COMPLETE: ${JSON.stringify(uploaded)}`);
+        console.log('Current User user name', this.props.currentUser.username);
+        this.props.dispatch(savePhoto(uploaded, this.props.currentUser.username, this.props.authToken));
+      });
+    }
   }
-  // Todo Finish transition to remove hello message after 6 seconds
   render() {
     return (
       <div>
