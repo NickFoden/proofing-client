@@ -4,6 +4,23 @@ li {
   margin-bottom: 10px;
 }
 
+.guest-caption {
+  font-family: "Roboto Slab", serif;
+}
+.guest-caption p {
+  margin: 0;
+  padding: 0px;
+}
+.guest-caption h4 {
+  margin: 2px;
+  padding: 2px;
+}
+
+.final-album-images-ul {
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
 .rawImage {
   width: auto;
   height: 150px;
@@ -84,6 +101,10 @@ button {
     display: inline-block;
     margin-top: 10px;
     margin-bottom: 10px;
+  }
+  .final-album-images-ul {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
   }
 
   .rawImage {

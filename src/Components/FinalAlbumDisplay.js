@@ -15,7 +15,7 @@ class FinalAlbumDisplay extends React.Component {
   render() {
     return (
       <div>
-        <ul>
+        <ul className="final-album-images-ul">
           {this.props.images.map((image, index) => (
             <li key={index}>
               <img
@@ -24,7 +24,7 @@ class FinalAlbumDisplay extends React.Component {
                 alt="final-album-images"
               />
               {image.guestApproved.length > 0 && (
-                <div>
+                <div className="guest-caption">
                   <h4>Approved by: </h4>
                   <p>{[...new Set(image.guestApproved)].map(name => `${name} `)}</p>
                 </div>
