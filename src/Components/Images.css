@@ -6,6 +6,7 @@
   display: grid;
   grid-template-columns: 1fr;
   grid-gap: 10px;
+  list-style-type: none;
 }
 .guest-caption {
   font-family: "Roboto Slab", serif;
@@ -100,6 +101,7 @@ button {
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-gap: 10px;
+    list-style-type: none;
   }
 
   .final-album-images-ul {
