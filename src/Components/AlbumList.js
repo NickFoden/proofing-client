@@ -19,27 +19,31 @@ class AlbumList extends React.Component {
   render() {
     return (
       <div>
-        <div id="album-list">
+        <div>
           <Link className="album-list-title" to="/albums">
             <h2 className="album-list-title">Albums</h2>
           </Link>
-          <ul>
-            {this.props.photoAlbums.map((album, index) => (
-              <li key={index} onClick={() => this.setAlbum(album)}>
-                <PreviewCard album={album} />
-              </li>
-            ))}
-          </ul>
+          <div className="album-list">
+            <ul className="album-list-ul">
+              {this.props.photoAlbums.map((album, index) => (
+                <li key={index} onClick={() => this.setAlbum(album)}>
+                  <PreviewCard album={album} />
+                </li>
+              ))}
+            </ul>
+          </div>
         </div>
-        <div id="guest-albums">
+        <div className="album-list" id="guest-albums">
           <h2 className="album-list-title">Guest Albums</h2>
-          <ul>
-            {this.props.guestAlbums.map((album, index) => (
-              <li key={index} onClick={() => this.setGuests(album)}>
-                <PreviewGuestCard album={album} />
-              </li>
-            ))}
-          </ul>
+          <div className="album-list">
+            <ul className="album-list-ul">
+              {this.props.guestAlbums.map((album, index) => (
+                <li key={index} onClick={() => this.setGuests(album)}>
+                  <PreviewGuestCard album={album} />
+                </li>
+              ))}
+            </ul>
+          </div>
         </div>
       </div>
     );

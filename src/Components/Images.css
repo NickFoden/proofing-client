@@ -23,6 +23,7 @@
 .final-album-images-ul {
   display: grid;
   grid-template-columns: 1fr;
+  list-style-type: none;
 }
 
 .rawImage {
@@ -107,6 +108,7 @@ button {
   .final-album-images-ul {
     display: grid;
     grid-template-columns: 1fr 1fr;
+    list-style-type: none;
   }
 
   .rawImage {

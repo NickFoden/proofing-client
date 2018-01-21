@@ -23,11 +23,14 @@
 .preview-card ul {
   margin: 0;
   padding: 0;
+  list-style-type: none;
 }
 
-.preview-card li {
+.preview-card-li {
   margin: 0;
   padding: 0 5px;
+  list-style-type: none;
+  display: inline-block;
 }
 
 .preview-card h3 {

@@ -37,9 +37,9 @@ class PreviewCard extends React.Component {
           <h3> {this.props.album.albumTitle} </h3>
           <h5> ({this.props.album.albumArray.length} photos)</h5>
 
-          <ul>
+          <ul className="preview-card-ul">
             {this.props.album.albumArray.slice(0, 2).map((image, index) => (
-              <li key={index}>
+              <li className="preview-card-li" key={index}>
                 <img
                   className="preview-thumbnails"
                   src={image.image[0].secure_url}

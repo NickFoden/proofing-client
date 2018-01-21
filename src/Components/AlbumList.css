@@ -24,11 +24,20 @@
   vertical-align: top;
 }
 
-.album-list ul {
-  margin: 0;
+.album-list-ul {
+  margin: auto;
   padding: 0;
+  list-style-type: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 20px;
+  width: 500px;
 }
 
 .album-list-title {
   font-family: "Roboto Slab", serif;
+}
+
+.album-list {
+  margin: auto;
 }
