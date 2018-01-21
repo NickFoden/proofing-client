@@ -23,28 +23,12 @@ class FinalAlbumDisplay extends React.Component {
                 src={image.image[0].secure_url}
                 alt="final-album-images"
               />
-              {/* <div className="guest-album-caption">
-                <h4>Approved by: </h4>
-                <p>{[...new Set(image.guestApproved)].map(name => `${name} `)}</p>
-              </div> */}
-
-              {/* //Ternary not working need to fix */}
-              <div className="guest-album-caption">
-                {image.guestApproved ? (
-                  <div>
-                    <h4>Approved by: </h4>
-                    <p>{[...new Set(image.guestApproved)].map(name => `${name} `)}</p>
-                  </div>
-                ) : (
-                  <div />
-                )}
-              </div>
-
-              {/* <GuestAlbumCaption image={image} />
-                                <div className='guest-album-caption'>
-                                    <h4>Approved by: </h4>
-                                    <p>{([...new Set(image.guestApproved)]).map(name => (name + " "))} </p>
-                                </div> */}
+              {image.guestApproved.length > 0 && (
+                <div>
+                  <h4>Approved by: </h4>
+                  <p>{[...new Set(image.guestApproved)].map(name => `${name} `)}</p>
+                </div>
+              )}
             </li>
           ))}
         </ul>
@@ -69,3 +53,25 @@ export default connect(mapStateToProps, {
   loadGuestAlbums,
   loadGuestApprovers,
 })(FinalAlbumDisplay);
+
+/* <div className="guest-album-caption">
+                <h4>Approved by: </h4>
+                <p>{[...new Set(image.guestApproved)].map(name => `${name} `)}</p>
+              </div> */
+
+/* <div className="guest-album-caption">
+                {image.guestApproved ? (
+                  <div>
+                    <h4>Approved by: </h4>
+                    <p>{[...new Set(image.guestApproved)].map(name => `${name} `)}</p>
+                  </div>
+                ) : (
+                  <div></div>
+                )}
+              </div> */
+
+/* <GuestAlbumCaption image={image} />
+                                <div className='guest-album-caption'>
+                                    <h4>Approved by: </h4>
+                                    <p>{([...new Set(image.guestApproved)]).map(name => (name + " "))} </p>
+                                </div> */

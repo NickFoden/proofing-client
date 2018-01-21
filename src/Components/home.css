@@ -1,17 +1,35 @@
 .home-photos {
   display: grid;
-  grid-gap: 15px;
-  grid-template-columns: 1fr 1fr;
-  width: 60%;
+  grid-gap: 0px;
+  grid-template-columns: 1fr;
+  width: 50%;
   margin: auto;
 }
 
 .home-photo-yes {
   border: solid #99ff99 5px;
-  height: 250px;
 }
 
 .home-photo-no {
   border: solid #ff4d4d 5px;
-  height: 250px;
+}
+
+@media only screen and (min-width: 640px) {
+  .home-photos {
+    display: grid;
+    grid-gap: 15px;
+    grid-template-columns: 1fr 1fr;
+    width: 60%;
+    margin: auto;
+  }
+
+  .home-photo-yes {
+    border: solid #99ff99 5px;
+    height: 250px;
+  }
+
+  .home-photo-no {
+    border: solid #ff4d4d 5px;
+    height: 250px;
+  }
 }
