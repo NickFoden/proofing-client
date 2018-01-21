@@ -1,9 +1,18 @@
-li {
+/* li {
   display: inline-block;
   margin-top: 10px;
   margin-bottom: 10px;
-}
+} */
 
+:root {
+  --green: #99ff99;
+  --red: #ff4d4d;
+}
+.images-ul {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 10px;
+}
 .guest-caption {
   font-family: "Roboto Slab", serif;
 }
@@ -31,17 +40,15 @@ li {
 .rawImageNo {
   width: auto;
   height: 150px;
-  margin: 20 0 0 0;
-  padding: 0 0;
-  border: 2px solid #e55345;
+  margin: 20px 0 0 0;
+  border: 2px solid var(--red);
 }
 
 .rawImageYes {
   width: auto;
   height: 150px;
-  margin: 20 0 0 0;
-  padding: 0 0;
-  border: 2px solid #5ee83c;
+  margin: 20px 0 0 0;
+  border: 2px solid var(--green);
 }
 
 .final-album-images {
@@ -71,11 +78,11 @@ button {
 }
 
 #yes {
-  background-color: #5ee83c;
+  background-color: var(--green);
 }
 
 #no {
-  background-color: #e55345;
+  background-color: var(--red);
 }
 .guest-album-caption {
   /* border-radius: 5px;
@@ -97,11 +104,18 @@ button {
   color: #ec934c;
 }
 @media only screen and (min-width: 640px) {
-  li {
+  /* li {
     display: inline-block;
     margin-top: 10px;
     margin-bottom: 10px;
+  } */
+
+  .images-ul {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 10px;
   }
+
   .final-album-images-ul {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -117,16 +131,14 @@ button {
   .rawImageNo {
     width: auto;
     height: 300px;
-    margin: 20 0 0 0;
-    padding: 0 0;
+    margin: 25px 0 0 0;
     border: 2px solid #ff4d4d;
   }
 
   .rawImageYes {
     width: auto;
     height: 300px;
-    margin: 20 0 0 0;
-    padding: 0 0;
+    margin: 25px 0 0 0;
     border: 2px solid #99ff99;
   }
   #photoCard {

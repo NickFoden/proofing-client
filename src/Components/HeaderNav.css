@@ -1,6 +1,7 @@
 li {
   display: inline-block;
   padding: 0 25px;
+  margin-top: 14px;
 }
 
 .header-links:hover {
@@ -64,6 +65,7 @@ a {
   li {
     display: inline-block;
     padding: 0 25px;
+    margin-top: 14px;
   }
 
   .header-links:hover {
@@ -74,6 +76,7 @@ a {
     color: black;
     font-size: 20px;
     font-family: "Roboto Slab", serif;
+    margin-top: 10px;
   }
 
   a {

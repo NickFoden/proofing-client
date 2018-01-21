@@ -1,3 +1,8 @@
+:root {
+  --green: #99ff99;
+  --red: #ff4d4d;
+}
+
 .home-photos {
   display: grid;
   grid-gap: 0px;
@@ -7,11 +12,11 @@
 }
 
 .home-photo-yes {
-  border: solid #99ff99 5px;
+  border: solid var(--green) 5px;
 }
 
 .home-photo-no {
-  border: solid #ff4d4d 5px;
+  border: solid var(--red) 5px;
 }
 
 @media only screen and (min-width: 640px) {

@@ -7,7 +7,7 @@ class Images extends React.Component {
   render() {
     return (
       <div>
-        <ul>
+        <ul className="images-ul">
           {this.props.images
             .slice(0)
             .reverse()

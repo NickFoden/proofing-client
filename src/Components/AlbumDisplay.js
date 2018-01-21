@@ -28,7 +28,6 @@ class AlbumDisplay extends React.Component {
           {' '}
           Sort{' '}
         </button>
-        {/* Todo -> remove these two unless there are approved images */}
         <AlbumNameForm {...this.props} />
         <button className="button-remove-approved" onClick={() => this.remove()}>
           {' '}
