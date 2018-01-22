@@ -41,11 +41,11 @@ a {
   height: 75px;
 }
 
-#header-nav ul {
+/* #header-nav ul {
   list-style: none;
   margin-bottom: 20px;
   height: 40px;
-}
+} */
 
 #header-nav #home-link:hover {
   color: #56f8ff;
