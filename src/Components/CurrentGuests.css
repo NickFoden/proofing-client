@@ -23,10 +23,13 @@
   font-size: 12px;
   margin: 0 0 0 0;
   padding: 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
 }
 
 .current-guests-list-items {
   color: #5e6160;
   margin: 0 5px;
   padding: 0;
+  list-style: none;
 }
