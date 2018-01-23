@@ -65,7 +65,7 @@ a {
   .header-li {
     display: inline-block;
     padding: 0 25px;
-    margin-top: 7px;
+    margin-top: 15px;
   }
 
   .header-links:hover {
@@ -127,5 +127,8 @@ a {
     color: black;
     font-size: 30px;
     font-family: "Roboto Slab", serif;
+  }
+  .log-in {
+    margin-top: 5px;
   }
 }
