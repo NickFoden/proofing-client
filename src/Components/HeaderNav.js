@@ -19,7 +19,7 @@ class HeaderNav extends React.Component {
     if (this.props.currentUser.username === null) {
       logButton = (
         <li className="header-li">
-          <Link className="log-button log-in" to="/LogIn">
+          <Link className="log-button" to="/LogIn">
             {' '}
             Log In
           </Link>
@@ -28,7 +28,7 @@ class HeaderNav extends React.Component {
     } else {
       logButton = (
         <li className="header-li">
-          <button className="log-button" onClick={() => this.logOut()}>
+          <button className="log-button log-out" onClick={() => this.logOut()}>
             Log out
           </button>
         </li>
