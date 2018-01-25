@@ -52,7 +52,7 @@ class HeaderNav extends React.Component {
           <li id="home-link" className="header-li">
             <Link className="header-links-home" to="/">
               {' '}
-              Home{' '}
+              Proofer{' '}
             </Link>
           </li>
           {this.props.currentUser.username == null ? (
