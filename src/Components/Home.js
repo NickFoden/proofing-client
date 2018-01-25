@@ -20,7 +20,7 @@ const Home = props => (
           className="home-photo-no"
           alt=" blurry eiffel tower"
           src="https://pashioncase.files.wordpress.com/2014/03/lac201406090247.jpg"
-          width="250"
+          width="200"
         />
         <h4>or nay</h4>
       </div>

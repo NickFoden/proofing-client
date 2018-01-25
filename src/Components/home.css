@@ -17,6 +17,7 @@
 
 .home-photo-no {
   border: solid var(--red) 5px;
+  transform: rotate(7deg);
 }
 
 .footer {
