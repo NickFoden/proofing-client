@@ -11,7 +11,7 @@ const Home = props => (
           className="home-photo-yes"
           alt="great view of eiffel tower"
           src="http://cdn-image.travelandleisure.com/sites/default/files/styles/1600x1000/public/1487701021/eiffel-tower-paris-france-EIFFEL0217.jpg?itok=m0MZOYjh"
-          width="250"
+          width="300"
         />
         <h4>Yay !</h4>
       </div>
@@ -20,7 +20,7 @@ const Home = props => (
           className="home-photo-no"
           alt=" blurry eiffel tower"
           src="https://pashioncase.files.wordpress.com/2014/03/lac201406090247.jpg"
-          width="200"
+          width="250"
         />
         <h4>or nay</h4>
       </div>
