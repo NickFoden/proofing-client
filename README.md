@@ -4,6 +4,8 @@ An app where users can upload an album of photos. Select ones they approve of, a
 
 ## [Proofer Live](https://proofing.netlify.com/ "Link to Proofer Live")
 
+Demo Account:
+
 Username: chris@chris.com
 Password: chris
 
