@@ -22,7 +22,7 @@ class FinalGuestAlbumDisplay extends React.Component {
     return (
       <div>
         <CurrentOwner {...this.props} />
-        <ul>
+        <ul className="final-album-images-ul">
           {this.props.images.map((image, index) => (
             <li key={index}>
               <img
