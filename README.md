@@ -4,7 +4,7 @@ An app where users can upload an album of photos. Select ones they approve of, a
 
 ## [Proofer Live](https://proofing.netlify.com/ "Link to Proofer Live")
 
-Username: henry@henry.com
-Password: henry
+Username: chris@chris.com
+Password: chris
 
 ![Proofing Preview](https://github.com/NickFoden/nick-is-online/blob/master/assets/proofer.png?raw=true "Preview of approved vs not approved eiffel towers in app")
