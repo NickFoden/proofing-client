@@ -1,6 +1,5 @@
 import axios from 'axios';
 import { API_BASE_URL } from '../config';
-// import { loadavg } from 'os';
 
 const MAP_ALBUM = 'MAP_ALBUM';
 export function mapAlbum(data) {
@@ -48,10 +47,6 @@ export function updateGuestAlbum(album) {
   };
 }
 
-// THIS ONE
-// THIS ONE
-// THIS ONE
-
 const ADD_GUEST = 'ADD_GUEST';
 export function addGuest(data) {
   return {
@@ -98,10 +93,7 @@ export const guestApprove = (image, username, index, albumId, authToken, realNam
   })
     .then(response => response.json())
     .then((album) => {
-      // dispatch(loadGuestAlbums(username, authToken));
       dispatch(setCurrentGuestAlbum(album));
-      // dispatch(addGuestAlbum(result.data))
-      // dispatch(updateGuestAlbum(album));
     })
     .catch(error => console.log(error));
 };
@@ -205,9 +197,6 @@ export const inviteGuest = (username, albumId, authToken, guestEmail) => (dispat
     headers: {
       Authorization: `Bearer ${authToken}`,
     },
-    // body: JSON.stringify({
-    //   guestEmail
-    // })
   })
     .then(response => response.json())
     .then((album) => {
