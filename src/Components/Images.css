@@ -98,11 +98,93 @@ button {
 .guest-album-caption p {
   color: #ec934c;
 }
-@media only screen and (min-width: 640px) {
+
+@media only screen and (min-width: 740px) {
   .images-ul {
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-gap: 10px;
+    list-style-type: none;
+  }
+
+  .final-album-images-ul {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    list-style-type: none;
+    grid-gap: 25px;
+  }
+
+  .rawImage {
+    width: auto;
+    height: 200px;
+    margin: 0 0 0 0;
+    padding: 0 0;
+  }
+
+  .rawImageNo {
+    width: auto;
+    height: 200px;
+    margin: 10px 0 0 0;
+    border: 2px solid #ff4d4d;
+  }
+
+  .rawImageYes {
+    width: auto;
+    height: 200px;
+    margin: 10px 0 0 0;
+    border: 2px solid #99ff99;
+  }
+  #photoCard {
+    width: 200px;
+    height: auto;
+    margin: 0 0;
+    padding: 0 0 20px 0;
+  }
+
+  button {
+    width: 80px;
+    height: 20px;
+  }
+  #yes {
+    background-color: #99ff99;
+  }
+  #no {
+    background-color: #ff4d4d;
+  }
+  .final-album-images {
+    width: auto;
+    height: 200px;
+    margin: 10 0 0 0;
+    padding: 0 0;
+    border: 2px solid #c2d5e8;
+  }
+  .final-album-title {
+    font-family: "Roboto Slab", serif;
+    font-size: 26px;
+    text-decoration: underline;
+  }
+  .guest-album-caption {
+    color: black;
+    font-family: "Roboto Slab", serif;
+    height: auto;
+    width: auto;
+    margin: 0px 0px 0px 0px;
+    font-size: 13px;
+  }
+  .guest-album-caption h4 {
+    margin: 5px 0px 0px 0px;
+    font-size: 16px;
+  }
+  .guest-album-caption p {
+    color: #ec934c;
+  }
+}
+
+@media only screen and (min-width: 1000px) {
+  .images-ul {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 5px;
     list-style-type: none;
   }
 
@@ -122,19 +204,19 @@ button {
 
   .rawImageNo {
     width: auto;
-    height: 300px;
-    margin: 25px 0 0 0;
+    height: 250px;
+    margin: 20px 0 0 0;
     border: 2px solid #ff4d4d;
   }
 
   .rawImageYes {
     width: auto;
-    height: 300px;
-    margin: 25px 0 0 0;
+    height: 250px;
+    margin: 20px 0 0 0;
     border: 2px solid #99ff99;
   }
   #photoCard {
-    width: 300px;
+    width: 275px;
     height: auto;
     margin: 0 0;
     padding: 0 0 20px 0;
@@ -152,8 +234,8 @@ button {
   }
   .final-album-images {
     width: auto;
-    height: 300px;
-    margin: 20 0 0 0;
+    height: 250px;
+    margin: 10 0 0 0;
     padding: 0 0;
     border: 2px solid #c2d5e8;
   }

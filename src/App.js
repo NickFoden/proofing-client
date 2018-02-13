@@ -11,6 +11,10 @@ import AlbumRender from './Components/AlbumRender';
 import AlbumList from './Components/AlbumList';
 import AlbumGuestRender from './Components/AlbumGuestRender';
 
+// Hopefully
+// http://kaffeine.herokuapp.com/
+// is keeping https://proofing-server.herokuapp.com/ awake during the day
+
 class App extends Component {
   render() {
     return (
