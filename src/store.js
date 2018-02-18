@@ -15,7 +15,7 @@ window.store = store;
 const authToken = loadAuthToken();
 if (authToken) {
   const token = authToken;
-  store.dispatch(setAuthToken(token));
+  store.dispatch(setAuthToken(token)
 }
 
 export default store;
