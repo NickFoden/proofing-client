@@ -7,17 +7,19 @@
   display: grid;
   grid-gap: 0px;
   grid-template-columns: 1fr;
-  width: 50%;
+  width: 70%;
   margin: auto;
 }
 
 .home-photo-yes {
   border: solid var(--green) 5px;
+  margin-left: -20px;
 }
 
 .home-photo-no {
   border: solid var(--red) 5px;
   transform: rotate(7deg);
+  margin-left: -20px;
 }
 
 .footer {
@@ -28,13 +30,18 @@
   color: #303b94;
   font-weight: bold;
 }
+.welcome-paragraph {
+  margin-left: 20px;
+  margin-right: 20px;
+  width: 80%;
+}
 
 @media only screen and (min-width: 640px) {
   .home-photos {
     display: grid;
     grid-gap: 15px;
     grid-template-columns: 1fr 1fr;
-    width: 60%;
+    width: 80%;
     margin: auto;
   }
 

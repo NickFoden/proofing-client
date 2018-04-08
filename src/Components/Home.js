@@ -4,7 +4,9 @@ import './home.css';
 const Home = props => (
   <div className="welcome-div">
     <h2>Welcome to Proofing</h2>
-    <p>Invite guests to vote which photos from an album can be published.</p>
+    <div className="welcome-paragraph">
+      <p>Invite guests to vote which photos from an album can be published.</p>
+    </div>
     <div className="home-photos">
       <div>
         <img
